@@ -1,0 +1,297 @@
+﻿{
+  "defaultLang": "pt-BR",
+  "labels": {
+    "pt-BR": "PT-BR",
+    "en-US": "EN-US"
+  },
+  "pages": {
+    "index": {
+      "pt-BR": {
+        "htmlLang": "pt-BR",
+        "title": "M.A.R.I.A. | Inteligencia de Risco para Aplicacoes",
+        "meta": {
+          "description": "M.A.R.I.A. ajuda times de engenharia e AppSec a cortar ruido, priorizar risco real e agir mais rapido com confianca.",
+          "ogTitle": "M.A.R.I.A. | Pare de apagar vulnerabilidade. Comece a reduzir risco.",
+          "ogDescription": "Clareza para priorizar o que realmente reduz risco na sua aplicacao.",
+          "twitterTitle": "M.A.R.I.A. | Inteligencia de Risco para Aplicacoes",
+          "twitterDescription": "Menos ruido. Mais prioridade. Risco real sob controle."
+        },
+        "entries": [
+          { "selector": ".brand-copy", "text": "Seguranca com foco em risco real, nao em barulho" },
+          { "selector": ".site-nav a:nth-child(1)", "text": "Home" },
+          { "selector": ".site-nav a:nth-child(2)", "text": "Precos" },
+          { "selector": ".site-nav a:nth-child(3)", "text": "Historia" },
+          { "selector": ".site-nav a:nth-child(4)", "text": "Entrar" },
+
+          { "selector": ".hero .eyebrow", "text": "Management Application Risk Integrated Analysis" },
+          { "selector": ".hero h1", "html": "Pare de <span class=\"text-highlight\">apagar</span> vulnerabilidade.<br />Comece a <span class=\"text-highlight\">reduzir</span> risco." },
+          { "selector": ".hero-subtitle", "text": "Saiba o que realmente importa na seguranca da sua aplicacao e priorize com confianca." },
+          { "selector": ".hero-actions a:nth-child(1)", "text": "Entrar na waitlist" },
+          { "selector": ".hero-actions a:nth-child(2)", "text": "Ver precos" },
+          { "selector": ".hero-trust", "text": "Sem ruido. Sem teatro. Clareza para agir." },
+          { "selector": ".hero-risk-label", "text": "Risco" },
+          { "selector": ".hero-risk-badge", "text": "Alto" },
+          { "selector": ".hero-metrics-grid .hero-metric-card:nth-child(1) span", "text": "Repositorios" },
+          { "selector": ".hero-metrics-grid .hero-metric-card:nth-child(2) span", "text": "Critico" },
+          { "selector": ".hero-metrics-grid .hero-metric-card:nth-child(3) span", "text": "Alto" },
+          { "selector": ".hero-metrics-grid .hero-metric-card:nth-child(4) span", "text": "Delta de Risco no PR" },
+
+          { "selector": ".pain p:nth-child(1)", "html": "Voce tem <span class=\"text-highlight\">1000</span> vulnerabilidades." },
+          { "selector": ".pain p:nth-child(2)", "html": "Voce nao sabe qual <span class=\"text-highlight\">realmente importa</span>." },
+          { "selector": ".pain p:nth-child(3)", "html": "Suas ferramentas nao <span class=\"text-highlight\">concordam</span>." },
+          { "selector": ".pain p:nth-child(4)", "html": "Seu time ignora <span class=\"text-highlight\">a maior parte</span>." },
+          { "selector": ".pain h2", "html": "Isso nao e <span class=\"text-highlight\">seguranca.</span><br />Isso e <span class=\"text-highlight\">ruido.</span>" },
+
+          { "selector": ".solution .eyebrow", "text": "A VIRADA" },
+          { "selector": ".solution h2", "text": "M.A.R.I.A. muda o jogo." },
+          { "selector": ".solution .bullet-list li:nth-child(1)", "text": "Um score claro e configuravel por aplicacao" },
+          { "selector": ".solution .bullet-list li:nth-child(2)", "text": "Impacto real, nao volume de alerta" },
+          { "selector": ".solution .bullet-list li:nth-child(3)", "text": "Mudanca de risco visivel no fluxo de entrega" },
+          { "selector": ".solution .bullet-list li:nth-child(4)", "text": "Prioridade objetiva para quem precisa agir" },
+
+          { "selector": ".flow .eyebrow", "text": "COMO FUNCIONA" },
+          { "selector": ".flow h2", "html": "SARIF &rarr; M.A.R.I.A. &rarr; Acao" },
+          { "selector": ".flow .section-copy", "text": "M.A.R.I.A. unifica sinais de seguranca, calcula risco de aplicacao e entrega uma fila de acao com contexto de negocio." },
+
+          { "selector": ".value .value-card:nth-child(1) .card-kicker", "text": "Risk Score" },
+          { "selector": ".value .value-card:nth-child(1) h3", "text": "Veja o risco real da aplicacao em segundos." },
+          { "selector": ".value .value-card:nth-child(2) .card-kicker", "text": "Flexivel" },
+          { "selector": ".value .value-card:nth-child(2) h3", "text": "Modele o calculo de risco para sua realidade." },
+          { "selector": ".value .value-card:nth-child(3) .card-kicker", "text": "Risk Timeline" },
+          { "selector": ".value .value-card:nth-child(3) h3", "text": "Entenda quando, onde e por que o risco subiu." },
+          { "selector": ".value .value-card:nth-child(4) .card-kicker", "text": "Developer Focus" },
+          { "selector": ".value .value-card:nth-child(4) h3", "text": "Seguranca que entra no ritmo do time de engenharia." },
+
+          { "selector": ".pricing .eyebrow", "text": "PRECOS" },
+          { "selector": ".pricing h2", "html": "Produto completo.<br />Pague so por escala." },
+          { "selector": ".pricing .pricing-card:nth-child(1) h3", "text": "Assinatura" },
+          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(1) span", "text": "1-10 repos" },
+          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(2) span", "text": "11-50 repos" },
+          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(3) span", "text": "51-150 repos" },
+          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(4) span", "text": "151-400 repos" },
+          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(5) span", "text": "400+ repos" },
+          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-note", "text": "Minimo de $9.99/mes" },
+          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-support", "text": "Todos os recursos inclusos. Sem bloqueio por plano." },
+          { "selector": ".pricing .pricing-card:nth-child(1) .button", "text": "Entrar na waitlist" },
+
+          { "selector": ".pricing .pricing-card:nth-child(2) h3", "text": "Lifetime" },
+          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-row:nth-child(1) span", "text": "Ate 25 repos" },
+          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-row:nth-child(2) span", "text": "Ate 50 repos" },
+          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-row:nth-child(3) span", "text": "Ate 100 repos" },
+          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-row:nth-child(4) span", "text": "100+ repos" },
+          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-row:nth-child(4) strong", "text": "Fale com a gente" },
+          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-support:nth-of-type(1)", "text": "Todos os recursos inclusos. Sem bloqueio por plano." },
+          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-support:nth-of-type(2)", "text": "Pagamento unico. Sem surpresa." },
+          { "selector": ".pricing .pricing-card:nth-child(2) .button", "text": "Reservar vaga" },
+
+          { "selector": ".difference p:nth-child(1)", "text": "Nao e mais um scanner" },
+          { "selector": ".difference p:nth-child(2)", "text": "Nao e mais um dashboard" },
+          { "selector": ".difference p:nth-child(3)", "text": "Nao e mais uma suite enterprise" },
+          { "selector": ".difference h2", "text": "Isso e inteligencia de risco." },
+
+          { "selector": ".anti-quadrant .eyebrow", "text": "NOSSO POSICIONAMENTO" },
+          { "selector": ".anti-quadrant h2", "text": "Gartner? Screw it." },
+          { "selector": ".anti-quadrant .section-copy", "text": "Nao estamos aqui para perseguir quadrante. Estamos aqui para reduzir risco de verdade e melhorar o dia a dia de quem entrega software." },
+
+          { "selector": ".founder .eyebrow", "text": "CONSTRUIDO DE OUTRO JEITO" },
+          { "selector": ".founder h2", "text": "Empreendedor independente. Problema real primeiro." },
+          { "selector": ".founder .section-copy", "text": "M.A.R.I.A. nasce de uma iniciativa individual focada em dores serias de AppSec. Sem inflar roadmap com feature de vitrine." },
+
+          { "selector": ".story .eyebrow", "text": "POR QUE EXISTE" },
+          { "selector": ".story h2", "text": "M.A.R.I.A. recebeu esse nome em homenagem a quem dedicou a vida a cuidar dos outros." },
+          { "selector": ".story .section-copy", "text": "Essa plataforma existe para cuidar melhor do seu software e das pessoas por tras dele." },
+          { "selector": ".story .button", "text": "Ler historia completa" },
+
+          { "selector": ".final-cta .eyebrow", "text": "ACESSO ANTECIPADO" },
+          { "selector": ".final-cta h2", "text": "Entrar na waitlist" },
+          { "selector": ".final-cta .section-copy", "text": "Entre cedo e ajude a moldar a plataforma que transforma ruido em prioridade real." },
+          { "selector": ".waitlist-form .button", "text": "Entrar na waitlist" },
+          { "selector": "#email", "placeholder": "voce@empresa.com" },
+          { "selector": ".form-note", "text": "Um campo. Zero friccao. Zero spam." },
+
+          { "selector": ".footer-inner a:nth-child(1)", "text": "Contato" }
+        ],
+        "sendingText": "Enviando..."
+      },
+      "en-US": {
+        "htmlLang": "en-US",
+        "title": "M.A.R.I.A. | Application Risk Intelligence for Builders",
+        "meta": {
+          "description": "M.A.R.I.A. helps engineering and AppSec teams cut noise, prioritize real risk, and move faster with confidence.",
+          "ogTitle": "M.A.R.I.A. | Stop fixing vulnerabilities. Start reducing risk.",
+          "ogDescription": "Prioritize what actually reduces risk in your application.",
+          "twitterTitle": "M.A.R.I.A. | Application Risk Intelligence for Builders",
+          "twitterDescription": "Less noise. Better priorities. Real risk under control."
+        },
+        "entries": [
+          { "selector": ".brand-copy", "text": "Security focused on real risk, not alert theater" },
+          { "selector": ".site-nav a:nth-child(1)", "text": "Home" },
+          { "selector": ".site-nav a:nth-child(2)", "text": "Pricing" },
+          { "selector": ".site-nav a:nth-child(3)", "text": "Story" },
+          { "selector": ".site-nav a:nth-child(4)", "text": "Join" },
+
+          { "selector": ".hero .eyebrow", "text": "Management Application Risk Integrated Analysis" },
+          { "selector": ".hero h1", "html": "Stop <span class=\"text-highlight\">fixing</span> vulnerabilities.<br />Start <span class=\"text-highlight\">reducing</span> risk." },
+          { "selector": ".hero-subtitle", "text": "Know what actually matters in your application security and prioritize with confidence." },
+          { "selector": ".hero-actions a:nth-child(1)", "text": "Join the waitlist" },
+          { "selector": ".hero-actions a:nth-child(2)", "text": "See pricing" },
+          { "selector": ".hero-trust", "text": "No noise. No theater. Clear priorities." },
+          { "selector": ".hero-risk-label", "text": "Risk" },
+          { "selector": ".hero-risk-badge", "text": "High" },
+          { "selector": ".hero-metrics-grid .hero-metric-card:nth-child(1) span", "text": "Repositories" },
+          { "selector": ".hero-metrics-grid .hero-metric-card:nth-child(2) span", "text": "Critical" },
+          { "selector": ".hero-metrics-grid .hero-metric-card:nth-child(3) span", "text": "High" },
+          { "selector": ".hero-metrics-grid .hero-metric-card:nth-child(4) span", "text": "PR Risk Delta" },
+
+          { "selector": ".pain p:nth-child(1)", "html": "You have <span class=\"text-highlight\">1000</span> vulnerabilities." },
+          { "selector": ".pain p:nth-child(2)", "html": "You do not know which one <span class=\"text-highlight\">actually matters</span>." },
+          { "selector": ".pain p:nth-child(3)", "html": "Your tools do not <span class=\"text-highlight\">agree</span>." },
+          { "selector": ".pain p:nth-child(4)", "html": "Your team ignores <s>half</s> <span class=\"text-highlight\">most</span> of it." },
+          { "selector": ".pain h2", "html": "That is not <span class=\"text-highlight\">security.</span><br />That is <span class=\"text-highlight\">noise.</span>" },
+
+          { "selector": ".solution .eyebrow", "text": "THE SHIFT" },
+          { "selector": ".solution h2", "text": "M.A.R.I.A. changes the game." },
+          { "selector": ".solution .bullet-list li:nth-child(1)", "text": "One clear, configurable risk score per application" },
+          { "selector": ".solution .bullet-list li:nth-child(2)", "text": "Understand real impact, not alerts" },
+          { "selector": ".solution .bullet-list li:nth-child(3)", "text": "See real risk changes" },
+          { "selector": ".solution .bullet-list li:nth-child(4)", "text": "Focus on what actually matters" },
+
+          { "selector": ".flow .eyebrow", "text": "HOW IT WORKS" },
+          { "selector": ".flow h2", "html": "Scan &rarr; M.A.R.I.A. &rarr; Act" },
+          { "selector": ".flow .section-copy", "text": "M.A.R.I.A. unifies security findings, calculates application risk, and delivers an action queue with business context." },
+
+          { "selector": ".value .value-card:nth-child(1) .card-kicker", "text": "Risk Score" },
+          { "selector": ".value .value-card:nth-child(1) h3", "text": "See true application risk in seconds." },
+          { "selector": ".value .value-card:nth-child(2) .card-kicker", "text": "Flexible" },
+          { "selector": ".value .value-card:nth-child(2) h3", "text": "Model risk scoring to match your reality." },
+          { "selector": ".value .value-card:nth-child(3) .card-kicker", "text": "Risk Timeline" },
+          { "selector": ".value .value-card:nth-child(3) h3", "text": "Understand when, where, and why risk increased." },
+          { "selector": ".value .value-card:nth-child(4) .card-kicker", "text": "Developer Focus" },
+          { "selector": ".value .value-card:nth-child(4) h3", "text": "Security that fits engineering flow." },
+
+          { "selector": ".pricing .eyebrow", "text": "PRICING" },
+          { "selector": ".pricing h2", "html": "Full product.<br />Pay only for scale." },
+          { "selector": ".pricing .pricing-card:nth-child(1) h3", "text": "Subscription" },
+          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(1) span", "text": "1-10 repos" },
+          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(2) span", "text": "11-50 repos" },
+          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(3) span", "text": "51-150 repos" },
+          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(4) span", "text": "151-400 repos" },
+          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(5) span", "text": "400+ repos" },
+          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-note", "text": "Minimum $9.99/month" },
+          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-support", "text": "All features included. No tier lock-in." },
+          { "selector": ".pricing .pricing-card:nth-child(1) .button", "text": "Join the waitlist" },
+
+          { "selector": ".pricing .pricing-card:nth-child(2) h3", "text": "Lifetime" },
+          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-row:nth-child(1) span", "text": "Up to 25 repos" },
+          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-row:nth-child(2) span", "text": "Up to 50 repos" },
+          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-row:nth-child(3) span", "text": "Up to 100 repos" },
+          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-row:nth-child(4) span", "text": "100+ repos" },
+          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-row:nth-child(4) strong", "text": "Talk to us" },
+          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-support:nth-of-type(1)", "text": "All features included. No tier lock-in." },
+          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-support:nth-of-type(2)", "text": "One-time payment. No surprises." },
+          { "selector": ".pricing .pricing-card:nth-child(2) .button", "text": "Reserve your spot" },
+
+          { "selector": ".difference p:nth-child(1)", "text": "Not another scanner" },
+          { "selector": ".difference p:nth-child(2)", "text": "Not another dashboard" },
+          { "selector": ".difference p:nth-child(3)", "text": "Not another enterprise suite" },
+          { "selector": ".difference h2", "text": "This is risk intelligence." },
+
+          { "selector": ".anti-quadrant .eyebrow", "text": "OUR POSITION" },
+          { "selector": ".anti-quadrant h2", "text": "Gartner? Screw it." },
+          { "selector": ".anti-quadrant .section-copy", "text": "We are not here to chase quadrants. We are here to reduce real risk and improve the daily reality of teams shipping software." },
+
+          { "selector": ".founder .eyebrow", "text": "BUILT DIFFERENTLY" },
+          { "selector": ".founder h2", "text": "Independent founder. Real problems first." },
+          { "selector": ".founder .section-copy", "text": "M.A.R.I.A. is an independent founder initiative focused on serious AppSec pain. No bloated roadmap. No vanity features." },
+
+          { "selector": ".story .eyebrow", "text": "WHY IT EXISTS" },
+          { "selector": ".story h2", "text": "M.A.R.I.A. was named in honor of someone who dedicated her life to caring for others." },
+          { "selector": ".story .section-copy", "text": "This platform exists to better care for your software and the people behind it." },
+          { "selector": ".story .button", "text": "Read full story" },
+
+          { "selector": ".final-cta .eyebrow", "text": "EARLY ACCESS" },
+          { "selector": ".final-cta h2", "text": "Join the waitlist" },
+          { "selector": ".final-cta .section-copy", "text": "Get in early and help shape the platform that turns security noise into real priorities." },
+          { "selector": ".waitlist-form .button", "text": "Join the waitlist" },
+          { "selector": "#email", "placeholder": "you@company.com" },
+          { "selector": ".form-note", "text": "One field. Zero friction. Zero spam." },
+
+          { "selector": ".footer-inner a:nth-child(1)", "text": "Contact" }
+        ],
+        "sendingText": "Sending..."
+      }
+    },
+    "why": {
+      "pt-BR": {
+        "htmlLang": "pt-BR",
+        "title": "Por que M.A.R.I.A. | A historia por tras do nome",
+        "meta": {
+          "description": "A historia do nome M.A.R.I.A. e por que o produto existe: homenagem, cuidado e compromisso com risco real.",
+          "ogTitle": "Por que M.A.R.I.A.",
+          "ogDescription": "A historia do nome e o compromisso por tras da plataforma.",
+          "twitterTitle": "Por que M.A.R.I.A.",
+          "twitterDescription": "Homenagem, cuidado e missao real em AppSec."
+        },
+        "entries": [
+          { "selector": ".brand-copy", "text": "Cuidar de software acima de teatro de seguranca" },
+          { "selector": ".site-nav a:nth-child(1)", "text": "Home" },
+          { "selector": ".site-nav a:nth-child(2)", "text": "Precos" },
+          { "selector": ".site-nav a:nth-child(3)", "text": "Historia" },
+          { "selector": ".site-nav a:nth-child(4)", "text": "Entrar" },
+          { "selector": ".why-hero .eyebrow", "text": "POR QUE EXISTIMOS" },
+          { "selector": ".why-hero h1", "html": "O nome <span class=\"text-highlight\">M.A.R.I.A.</span> é uma homenagem a minha querida mãe." },
+          { "selector": ".why-hero .section-copy", "text": "Antes de ser produto, marca ou estrategia, M.A.R.I.A. é memória, respeito e cuidado de mãe." },
+          { "selector": ".why-content p:nth-child(1)", "html": "Maria Jeane Pereira (<time datetime=\"1956\">&ast; 1956</time> – <time datetime=\"2020\">&#10013; 2020</time>), dedicou a vida a cuidar de pessoas, especialmente dos mais necessitados. Esse exemplo me inspira como filho e me inspirou a criar esta plataforma." },
+          { "selector": ".why-content p:nth-child(2)", "text": "No mundo de AppSec, existe muito barulho e pouca direção. Eu não quis criar mais uma vitrine de recursos e features. Eu quis criar utilidade real para problema real." },
+          { "selector": ".why-content p:nth-child(3)", "html": "Por isso M.A.R.I.A. significa <strong>Management Application Risk Integrated Analysis</strong>. Não só uma sigla, mas algo que representa uma escolha: cuidar." },
+          { "selector": ".why-principles h2", "text": "O que isso significa na prática?" },
+          { "selector": ".why-list li:nth-child(1)", "text": "Resolver dor séria do dia a dia antes de adicionar novas features." },
+          { "selector": ".why-list li:nth-child(2)", "text": "Ajudar times a priorizar o que de fato reduz risco." },
+          { "selector": ".why-list li:nth-child(3)", "text": "Construir um produto que dev quer usar, e não evitar." },
+          { "selector": ".why-list li:nth-child(4)", "text": "Medir sucesso por impacto real, não por buzzword." },
+          { "selector": ".why-cta h2", "text": "Cuidar do software também é cuidar melhor das pessoas." },
+          { "selector": ".why-cta .section-copy", "text": "Se essa visão faz sentido para você, entre cedo e construa isso comigo." },
+          { "selector": ".why-cta .button", "text": "Entrar na waitlist" },
+          { "selector": ".footer-inner a:nth-child(1)", "text": "GitHub" },
+          { "selector": ".footer-inner a:nth-child(2)", "text": "Contato" }
+        ],
+        "sendingText": "Enviando..."
+      },
+      "en-US": {
+        "htmlLang": "en-US",
+        "title": "Why M.A.R.I.A. | The story behind the name",
+        "meta": {
+          "description": "The story behind M.A.R.I.A.: tribute, care, and a clear commitment to solving real AppSec risk.",
+          "ogTitle": "Why M.A.R.I.A.",
+          "ogDescription": "The story behind the name and the commitment behind the platform.",
+          "twitterTitle": "Why M.A.R.I.A.",
+          "twitterDescription": "Tribute, care, and a real AppSec mission."
+        },
+        "entries": [
+          { "selector": ".brand-copy", "text": "Software care over security theater" },
+          { "selector": ".site-nav a:nth-child(1)", "text": "Home" },
+          { "selector": ".site-nav a:nth-child(2)", "text": "Pricing" },
+          { "selector": ".site-nav a:nth-child(3)", "text": "Story" },
+          { "selector": ".site-nav a:nth-child(4)", "text": "Join" },
+          { "selector": ".why-hero .eyebrow", "text": "WHY WE EXIST" },
+          { "selector": ".why-hero h1", "html": "The name <span class=\"text-highlight\">M.A.R.I.A.</span> is a tribute to my beloved mother." },
+          { "selector": ".why-hero .section-copy", "text": "Before product, brand, or strategy, M.A.R.I.A. is memory, respect, and a mother's care." },
+          { "selector": ".why-content p:nth-child(1)", "html": "Maria Jeane Pereira (<time datetime=\"1956\">&ast; 1956</time> - <time datetime=\"2020\">&#10013; 2020</time>) dedicated her life to caring for people, especially those in greatest need. Her example inspires me as a son, and it inspired me to build this platform." },
+          { "selector": ".why-content p:nth-child(2)", "text": "In AppSec, there is too much noise and too little direction. I did not want to build another feature showcase. I wanted practical value for serious day-to-day problems." },
+          { "selector": ".why-content p:nth-child(3)", "html": "That is why M.A.R.I.A. stands for <strong>Management Application Risk Integrated Analysis</strong>. Not just an acronym, but a choice: to care." },
+          { "selector": ".why-principles h2", "text": "What does this mean in practice?" },
+          { "selector": ".why-list li:nth-child(1)", "text": "Solve serious day-to-day pain before adding new features." },
+          { "selector": ".why-list li:nth-child(2)", "text": "Help teams prioritize what actually reduces risk." },
+          { "selector": ".why-list li:nth-child(3)", "text": "Build a product developers want to use, not avoid." },
+          { "selector": ".why-list li:nth-child(4)", "text": "Measure success by real impact, not by buzzwords." },
+          { "selector": ".why-cta h2", "text": "Caring better for software also means caring better for people." },
+          { "selector": ".why-cta .section-copy", "text": "If this resonates with you, join early and help me build this the right way." },
+          { "selector": ".why-cta .button", "text": "Join the waitlist" },
+          { "selector": ".footer-inner a:nth-child(1)", "text": "GitHub" },
+          { "selector": ".footer-inner a:nth-child(2)", "text": "Contact" }
+        ],
+        "sendingText": "Sending..."
+      }
+    }
+  }
+}
