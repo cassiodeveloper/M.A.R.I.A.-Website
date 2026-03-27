@@ -17,6 +17,30 @@ const LANG_UI = {
 let activeSendingText = 'Sending...';
 let i18nConfig = null;
 
+const trackGAEvent = (eventName, params = {}) => {
+    if (!eventName) {
+        return;
+    }
+
+    const eventParams = {
+        page_key: pageKey,
+        page_path: window.location.pathname,
+        ...params
+    };
+
+    if (typeof window.gtag === 'function') {
+        window.gtag('event', eventName, eventParams);
+        return;
+    }
+
+    if (Array.isArray(window.dataLayer)) {
+        window.dataLayer.push({
+            event: eventName,
+            ...eventParams
+        });
+    }
+};
+
 const updateHeaderState = () => {
     if (!header) {
         return;
@@ -215,11 +239,41 @@ const initI18n = async () => {
     applyLanguage(config, initialLang);
 };
 
+document.addEventListener('click', (event) => {
+    const clickedElement = event.target.closest('a, button');
+    if (!clickedElement) {
+        return;
+    }
+
+    const href = clickedElement.getAttribute('href') || '';
+    const trackedEventName = clickedElement.dataset.trackEvent;
+    const fallbackEventName = href.includes('demo.mariaappsec.com') ? 'demo_click' : '';
+    const eventName = trackedEventName || fallbackEventName;
+
+    if (!eventName) {
+        return;
+    }
+
+    const eventLabel = (clickedElement.textContent || '').trim().slice(0, 80);
+    const eventLocation = clickedElement.dataset.trackLocation || (isWhyPage ? 'why_page' : 'index_page');
+
+    trackGAEvent(eventName, {
+        event_category: 'engagement',
+        event_label: eventLabel,
+        cta_location: eventLocation,
+        link_url: href
+    });
+});
+
 updateHeaderState();
 window.addEventListener('scroll', updateHeaderState, { passive: true });
 
 if (form && submitButton) {
     form.addEventListener('submit', () => {
+        trackGAEvent('waitlist_submit', {
+            event_category: 'conversion',
+            cta_location: 'waitlist_form'
+        });
         submitButton.disabled = true;
         submitButton.textContent = activeSendingText;
     });
