@@ -736,6 +736,29 @@ h3 {
     color: var(--text);
 }
 
+.why-memory-photo {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 1rem;
+    text-align: center;
+    padding: 0.55rem;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    box-shadow: 0 10px 34px rgba(0, 0, 0, 0.28);
+}
+
+.why-memory-photo img {
+    display: block;
+    width: min(100%, 400px);
+    height: auto;
+    margin: 0 auto;
+    border-radius: 0.75rem;
+    border: 1px solid var(--line);
+    filter: saturate(0.9) contrast(1.02);
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.35);
+}
+
 .why-story-block {
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
