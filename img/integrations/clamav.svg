@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="ClamAV">
+  <rect width="160" height="160" rx="28" fill="#10251a"/>
+  <path d="M80 24l48 20v34c0 33-18 52-48 64-30-12-48-31-48-64V44l48-20z" fill="#22c55e"/>
+  <circle cx="80" cy="78" r="26" fill="#10251a"/>
+  <path d="M64 78h32M80 62v32" stroke="#22c55e" stroke-width="10" stroke-linecap="round"/>
+</svg>

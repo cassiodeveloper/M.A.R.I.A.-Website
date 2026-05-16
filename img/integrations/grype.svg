@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Grype">
+  <rect width="160" height="160" rx="28" fill="#0b1f33"/>
+  <path d="M80 24l49 28v56l-49 28-49-28V52l49-28z" fill="none" stroke="#5cc8ff" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M52 80h56M80 52v56" stroke="#5cc8ff" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="80" cy="80" r="15" fill="#5cc8ff"/>
+</svg>

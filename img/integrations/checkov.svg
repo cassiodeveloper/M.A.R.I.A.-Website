@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Checkov">
+  <rect width="160" height="160" rx="28" fill="#0f172a"/>
+  <path d="M80 24l50 20v34c0 32-18 51-50 64-32-13-50-32-50-64V44l50-20z" fill="#22c55e"/>
+  <path d="M55 79l17 17 35-39" fill="none" stroke="#0f172a" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

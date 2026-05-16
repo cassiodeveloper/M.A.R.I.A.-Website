@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="TruffleHog">
+  <rect width="160" height="160" rx="28" fill="#3b1f14"/>
+  <path d="M39 91c0-30 20-52 47-52 22 0 38 15 38 36 0 28-26 51-55 51-18 0-30-13-30-35z" fill="#f4a261"/>
+  <circle cx="73" cy="72" r="6" fill="#3b1f14"/>
+  <circle cx="103" cy="72" r="6" fill="#3b1f14"/>
+  <path d="M79 92c8 7 18 7 26 0" fill="none" stroke="#3b1f14" stroke-width="7" stroke-linecap="round"/>
+  <path d="M42 58l-13-16M122 55l13-17" stroke="#f4a261" stroke-width="10" stroke-linecap="round"/>
+</svg>

@@ -859,3 +859,360 @@ h3 {
         padding: 1.6rem;
     }
 }
+
+.openscan-page {
+    background:
+        radial-gradient(circle at 12% 8%, rgba(255, 90, 54, 0.16), transparent 34%),
+        radial-gradient(circle at 86% 2%, rgba(255, 211, 77, 0.1), transparent 30%),
+        linear-gradient(180deg, #080808 0%, #0d0d0d 100%);
+}
+
+.openscan-hero {
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    padding-top: 7rem;
+}
+
+.openscan-hero-grid,
+.openscan-preview-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.openscan-hero-copy {
+    max-width: 760px;
+}
+
+.openscan-upgrade-card,
+.openscan-stage-card,
+.openscan-result-card,
+.openscan-file-list {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018));
+    box-shadow: var(--shadow);
+}
+
+.openscan-upgrade-card {
+    padding: 1.35rem;
+}
+
+.openscan-upgrade-card h2 {
+    margin: 0.35rem 0 1rem;
+    font-size: clamp(1.75rem, 3.2vw, 2.55rem);
+}
+
+.openscan-upgrade-card ul {
+    display: grid;
+    gap: 0.8rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--muted);
+}
+
+.openscan-upgrade-card li {
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--line);
+}
+
+.openscan-generator-section {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.012);
+}
+
+.openscan-section-header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.4rem;
+}
+
+.openscan-section-header h2,
+.openscan-preview-grid h2 {
+    margin: 0.2rem 0 0.7rem;
+}
+
+.openscan-flow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+}
+
+.openscan-flow-step {
+    min-height: 116px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    padding: 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.035);
+    text-align: center;
+    color: var(--muted);
+}
+
+.openscan-flow-step span {
+    width: 1.05rem;
+    height: 1.05rem;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.24);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.openscan-flow-step strong {
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+.openscan-flow-step small {
+    min-height: 2.2em;
+    font-size: 0.76rem;
+    line-height: 1.15;
+}
+
+.openscan-flow-step.is-active {
+    border-color: rgba(255, 211, 77, 0.42);
+    color: var(--text);
+}
+
+.openscan-flow-step.is-active span {
+    border-color: var(--accent-strong);
+    background: var(--accent-strong);
+    box-shadow: 0 0 0 5px rgba(255, 211, 77, 0.11);
+}
+
+.openscan-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1rem 0 1.25rem;
+}
+
+.openscan-toolbar span {
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.openscan-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 1rem;
+}
+
+.openscan-stage-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    min-width: 0;
+    padding: 1rem;
+}
+
+.openscan-stage-card.is-active {
+    border-color: rgba(255, 211, 77, 0.34);
+}
+
+.openscan-stage-card-header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.openscan-stage-card-header span {
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.openscan-stage-card-header h3 {
+    margin: 0.2rem 0 0;
+    font-size: 1.08rem;
+    line-height: 1.18;
+}
+
+.openscan-tool-list {
+    display: grid;
+    gap: 0.65rem;
+}
+
+.openscan-tool-card {
+    display: grid;
+    grid-template-columns: 4.2rem minmax(0, 1fr) auto;
+    gap: 0.9rem;
+    align-items: center;
+    min-height: 5.3rem;
+    padding: 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.18);
+    cursor: pointer;
+}
+
+.openscan-tool-card input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.openscan-tool-card.is-selected {
+    border-color: rgba(255, 211, 77, 0.42);
+    background: rgba(255, 211, 77, 0.075);
+}
+
+.openscan-tool-logo {
+    width: 4.2rem;
+    height: 3.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.07);
+    padding: 0.5rem;
+}
+
+.openscan-tool-logo img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.openscan-tool-copy {
+    display: grid;
+    gap: 0.2rem;
+    min-width: 0;
+}
+
+.openscan-tool-copy strong {
+    font-size: 1rem;
+    line-height: 1.1;
+}
+
+.openscan-switch {
+    width: 2.35rem;
+    height: 1.35rem;
+    padding: 0.16rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.openscan-switch span {
+    display: block;
+    width: 0.92rem;
+    height: 0.92rem;
+    border-radius: 50%;
+    background: var(--muted);
+    transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.openscan-tool-card.is-selected .openscan-switch span {
+    transform: translateX(0.95rem);
+    background: var(--accent-strong);
+}
+
+.openscan-preview-section {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.016), transparent);
+}
+
+.openscan-preview-grid {
+    align-items: start;
+}
+
+.openscan-preview-grid .button {
+    margin: 0.25rem 0.5rem 0.25rem 0;
+}
+
+.openscan-file-list {
+    display: grid;
+    gap: 0.65rem;
+    padding: 1rem;
+}
+
+.openscan-file-list code {
+    display: block;
+    padding: 0.8rem;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.22);
+    color: var(--text);
+    overflow-wrap: anywhere;
+}
+
+.openscan-download-button {
+    position: relative;
+    overflow: hidden;
+    min-width: 180px;
+    transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+}
+
+.openscan-download-button:hover,
+.openscan-download-button:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 34px rgba(255, 90, 54, 0.28);
+}
+
+.openscan-download-button.is-busy {
+    pointer-events: none;
+    color: #141414;
+}
+
+.openscan-download-button.is-busy::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+    animation: openscan-download-sweep 0.8s linear infinite;
+}
+
+.openscan-download-button.is-done {
+    background: var(--accent-strong);
+    color: #141414;
+    box-shadow: 0 0 0 4px rgba(255, 211, 77, 0.14);
+}
+
+@keyframes openscan-download-sweep {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@media (min-width: 900px) {
+    .openscan-hero-grid {
+        grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+        align-items: center;
+    }
+
+    .openscan-preview-grid {
+        grid-template-columns: minmax(0, 0.85fr) minmax(360px, 1.15fr);
+    }
+}
+
+@media (max-width: 760px) {
+    .openscan-section-header {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .openscan-tool-card {
+        grid-template-columns: 3.6rem minmax(0, 1fr);
+    }
+
+    .openscan-switch {
+        grid-column: 1 / -1;
+        justify-self: start;
+    }
+}

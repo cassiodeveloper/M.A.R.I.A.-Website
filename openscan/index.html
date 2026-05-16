@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARIA Open Scan Pack Generator | Templates AppSec gratuitos</title>
+    <meta name="description" content="Gere gratuitamente templates de CI com scanners open-source para SAST, Secrets, SCA, Container, IaC, DAST, Malware e SBOM. Sem login e sem conectar seu repositório.">
+    <meta name="keywords" content="Open Scan Pack, AppSec open source, Semgrep, Gitleaks, OSV Scanner, Trivy, KICS, ZAP, SBOM, SARIF">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="M.A.R.I.A.">
+    <link rel="canonical" href="https://mariaappsec.com/openscan/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MARIA Open Scan Pack Generator">
+    <meta property="og:description" content="Escolha sua stack AppSec open-source e baixe templates de CI prontos para rodar.">
+    <meta property="og:url" content="https://mariaappsec.com/openscan/">
+    <meta property="og:site_name" content="M.A.R.I.A.">
+    <meta property="og:image" content="https://mariaappsec.com/img/maria.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MARIA Open Scan Pack Generator">
+    <meta name="twitter:description" content="Templates AppSec gratuitos com scanners open-source.">
+    <meta name="twitter:image" content="https://mariaappsec.com/img/maria.png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-09VC70Q0TF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-09VC70Q0TF');
+    </script>
+</head>
+<body class="openscan-page" data-page="openscan">
+    <header class="site-header" id="top">
+        <div class="container header-inner">
+            <a class="brand" href="/" aria-label="M.A.R.I.A. home">
+                <span class="brand-mark">M.A.R.I.A.</span>
+                <span class="brand-copy">Open-source scanners. Risk intelligence when you are ready.</span>
+            </a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="/">Home</a>
+                <a href="/openscan/">Open Scan</a>
+                <a href="/#pricing">Pricing</a>
+                <a href="/why/">Why</a>
+                <a href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="openscan_nav">Demo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="openscan-hero section">
+            <div class="container openscan-hero-grid">
+                <div class="openscan-hero-copy">
+                    <p class="eyebrow">FREE OPEN SCAN PACK</p>
+                    <h1>Comece AppSec sem esperar budget enterprise.</h1>
+                    <p class="hero-subtitle">Escolha uma stack mínima de scanners open-source, baixe os templates e rode tudo no seu CI. Sem login. Sem conectar GitHub. Sem entregar código para ninguém.</p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#generator" data-track-event="openscan_start" data-track-location="openscan_hero">Gerar templates grátis</a>
+                        <a class="button button-secondary" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="openscan_hero">Ver versão automatizada</a>
+                    </div>
+                </div>
+                <aside class="openscan-upgrade-card" aria-label="Paid MARIA automation">
+                    <p class="card-kicker">O upgrade natural</p>
+                    <h2>No MARIA pago, isso vira programa.</h2>
+                    <ul>
+                        <li>Cria pull requests direto nos repositórios.</li>
+                        <li>Gera tokens e configura upload de SARIF, JSON e CycloneDX.</li>
+                        <li>Normaliza findings, cria baseline e calcula risk score.</li>
+                        <li>Comenta delta de risco em pull requests.</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section openscan-generator-section" id="generator">
+            <div class="container">
+                <div class="openscan-section-header">
+                    <div>
+                        <p class="eyebrow">GENERATOR</p>
+                        <h2>Escolha sua stack</h2>
+                        <p class="section-copy">O pacote gerado inclui GitHub Actions e arquivos de configuração. O upload para MARIA fica comentado como próximo passo.</p>
+                    </div>
+                    <button class="button button-primary openscan-download-button" type="button" id="downloadPackTop" data-openscan-download>Download ZIP</button>
+                </div>
+
+                <div class="openscan-flow" id="scanFlow" aria-label="Open Scan Pack coverage flow"></div>
+                <div class="openscan-toolbar">
+                    <button type="button" class="button button-secondary" id="selectRecommended">Selecionar recomendado</button>
+                    <button type="button" class="button button-secondary" id="clearStack">Limpar stack</button>
+                    <span id="selectedSummary">0 ferramentas selecionadas</span>
+                </div>
+                <div class="openscan-stack-grid" id="stackGrid"></div>
+            </div>
+        </section>
+
+        <section class="section openscan-preview-section">
+            <div class="container openscan-preview-grid">
+                <div>
+                    <p class="eyebrow">O QUE VEM NO ZIP</p>
+                    <h2>Templates prontos para revisar e commitar.</h2>
+                    <p class="section-copy">Nada é executado pelo site. O download é gerado no navegador e os scanners rodam no CI/CD do seu repositório.</p>
+                    <button class="button button-primary openscan-download-button" type="button" id="downloadPackBottom" data-openscan-download>Baixar maria-open-scan-pack.zip</button>
+                    <a class="button button-secondary" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="openscan_bottom">Quero o MARIA automatizando isso</a>
+                </div>
+                <div class="openscan-file-list" id="fileList" aria-label="Generated files"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <a href="mailto:contact@mariaappsec.com" class="footer-link">Contact</a>
+            <a href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" class="footer-link" data-track-event="demo_click" data-track-location="openscan_footer">Demo</a>
+            <p class="footer-copy">Free templates get you started. MARIA turns scanner outputs into application risk intelligence.</p>
+            <p class="footer-note">Management Application Risk Integrated Analysis</p>
+            <p>&copy; 2026 M.A.R.I.A.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/openscan.js"></script>
+</body>
+</html>
