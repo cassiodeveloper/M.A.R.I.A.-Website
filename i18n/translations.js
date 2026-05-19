@@ -113,7 +113,52 @@
           { "selector": "#email", "placeholder": "voce@empresa.com" },
           { "selector": ".form-note", "text": "Um campo. Zero friccao. Zero spam." },
 
-          { "selector": ".footer-inner a:nth-child(1)", "text": "Contato" }
+          { "selector": ".footer-inner a:nth-child(1)", "text": "Contato" },
+          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(5) strong", "text": "Enterprise" },
+
+          { "selector": ".enterprise-pricing .eyebrow", "text": "ENTERPRISE" },
+          { "selector": ".enterprise-header h2", "text": "Feito para escala de verdade." },
+          { "selector": ".enterprise-header .section-copy", "text": "Para empresas com centenas ou milhares de repositorios, M.A.R.I.A. precifica por repositorios ativos e relevantes, nao por cemiterio digital." },
+
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(1) .card-kicker", "text": "Enterprise Starter" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(1) h3", "text": "Ate 1.000 repos ativos" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(1) .enterprise-price", "text": "$3k a $5k/mes" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(1) .pricing-support", "text": "Para times saindo do caos de scanners para uma operacao AppSec baseada em risco." },
+
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(2) .card-kicker", "text": "Enterprise Scale" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(2) h3", "text": "Ate 3.000 repos ativos" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(2) .enterprise-price", "text": "$6k a $9k/mes" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(2) .pricing-support", "text": "Para organizacoes maduras padronizando inteligencia de risco em engenharia." },
+
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(3) .card-kicker", "text": "Enterprise Plus" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(3) h3", "text": "Ate 7.500 repos ativos" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(3) .enterprise-price", "text": "$10k a $15k/mes" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(3) .pricing-support", "text": "Melhor encaixe para ambientes grandes com milhares de repositorios." },
+
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(4) .card-kicker", "text": "Strategic" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(4) h3", "text": "7.500+ repos ativos" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(4) .enterprise-price", "text": "Custom" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(4) .pricing-support", "text": "Para ambientes enterprise complexos, suporte dedicado e onboarding customizado." },
+
+          { "selector": ".enterprise-detail > div:nth-child(1) h3", "text": "O que conta como repo ativo?" },
+          { "selector": ".enterprise-detail > div:nth-child(1) .pricing-support", "text": "Um repositorio faturavel e um repositorio ativo, privado, relevante, conectado ao M.A.R.I.A. e usado na analise de risco." },
+
+          { "selector": ".enterprise-detail > div:nth-child(2) h3", "text": "O que nao conta?" },
+          { "selector": ".enterprise-detail > div:nth-child(2) .enterprise-list li:nth-child(1)", "text": "Repositorios arquivados" },
+          { "selector": ".enterprise-detail > div:nth-child(2) .enterprise-list li:nth-child(2)", "text": "Forks, mirrors, templates e repositorios apenas de documentacao" },
+          { "selector": ".enterprise-detail > div:nth-child(2) .enterprise-list li:nth-child(3)", "text": "Provas de conceito sem ownership ativo" },
+          { "selector": ".enterprise-detail > div:nth-child(2) .enterprise-list li:nth-child(4)", "text": "Repositorios sem sinal de seguranca relevante" },
+
+          { "selector": ".enterprise-detail > div:nth-child(3) h3", "text": "Enterprise inclui" },
+          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(1)", "text": "Integracao com SCM" },
+          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(2)", "text": "Normalizacao SARIF" },
+          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(3)", "text": "Application risk score" },
+          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(4)", "text": "Motor de priorizacao por risco" },
+          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(5)", "text": "Relatorios executivos" },
+          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(6)", "text": "SSO, audit logs e suporte" },
+
+          { "selector": ".enterprise-cta p", "html": "Para ambientes perto de <strong>7.000 repositorios</strong>, Enterprise Plus normalmente e a conversa certa." },
+          { "selector": ".enterprise-cta .button", "text": "Falar sobre Enterprise" }   
         ],
         "sendingText": "Enviando..."
       },
@@ -128,6 +173,7 @@
           "twitterDescription": "Less noise. Better priorities. Real risk under control."
         },
         "entries": [
+          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(5) strong", "text": "Enterprise" },
           { "selector": ".brand-copy", "text": "Security focused on real risk, not alert theater" },
           { "selector": ".site-nav a:nth-child(1)", "text": "Home" },
           { "selector": ".site-nav a:nth-child(2)", "text": "Open Scan" },
@@ -199,6 +245,49 @@
           { "selector": ".pricing .pricing-card:nth-child(2) .pricing-support:nth-of-type(2)", "text": "One-time payment. No surprises." },
           { "selector": ".pricing .pricing-card:nth-child(2) .button", "text": "Reserve your spot" },
 
+          { "selector": ".enterprise-pricing .eyebrow", "text": "ENTERPRISE" },
+          { "selector": ".enterprise-header h2", "text": "Built for serious scale." },
+          { "selector": ".enterprise-header .section-copy", "text": "For companies with hundreds or thousands of repositories, M.A.R.I.A. is priced by active, relevant repositories, not by digital graveyard inventory." },
+
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(1) .card-kicker", "text": "Enterprise Starter" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(1) h3", "text": "Up to 1,000 active repos" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(1) .enterprise-price", "text": "$3k to $5k/month" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(1) .pricing-support", "text": "For teams moving from noisy scanners to risk-based AppSec operations." },
+
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(2) .card-kicker", "text": "Enterprise Scale" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(2) h3", "text": "Up to 3,000 active repos" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(2) .enterprise-price", "text": "$6k to $9k/month" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(2) .pricing-support", "text": "For mature engineering organizations standardizing risk intelligence." },
+
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(3) .card-kicker", "text": "Enterprise Plus" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(3) h3", "text": "Up to 7,500 active repos" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(3) .enterprise-price", "text": "$10k to $15k/month" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(3) .pricing-support", "text": "Best fit for large environments with thousands of repositories." },
+
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(4) .card-kicker", "text": "Strategic" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(4) h3", "text": "7,500+ active repos" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(4) .enterprise-price", "text": "Custom" },
+          { "selector": ".enterprise-grid .enterprise-card:nth-child(4) .pricing-support", "text": "For complex enterprise environments, dedicated support, and custom onboarding." },
+
+          { "selector": ".enterprise-detail > div:nth-child(1) h3", "text": "What counts as an active repo?" },
+          { "selector": ".enterprise-detail > div:nth-child(1) .pricing-support", "text": "A billable repository is an active, private, relevant code repository connected to M.A.R.I.A. and used for risk analysis." },
+
+          { "selector": ".enterprise-detail > div:nth-child(2) h3", "text": "What does not count?" },
+          { "selector": ".enterprise-detail > div:nth-child(2) .enterprise-list li:nth-child(1)", "text": "Archived repositories" },
+          { "selector": ".enterprise-detail > div:nth-child(2) .enterprise-list li:nth-child(2)", "text": "Forks, mirrors, templates, and docs-only repositories" },
+          { "selector": ".enterprise-detail > div:nth-child(2) .enterprise-list li:nth-child(3)", "text": "Proofs of concept with no active ownership" },
+          { "selector": ".enterprise-detail > div:nth-child(2) .enterprise-list li:nth-child(4)", "text": "Repositories with no relevant security signal" },
+
+          { "selector": ".enterprise-detail > div:nth-child(3) h3", "text": "Enterprise includes" },
+          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(1)", "text": "SCM integration" },
+          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(2)", "text": "SARIF normalization" },
+          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(3)", "text": "Application risk score" },
+          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(4)", "text": "Risk prioritization engine" },
+          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(5)", "text": "Executive reporting" },
+          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(6)", "text": "SSO, audit logs, and support" },
+
+          { "selector": ".enterprise-cta p", "html": "For environments around <strong>7,000 repositories</strong>, Enterprise Plus is usually the right conversation." },
+          { "selector": ".enterprise-cta .button", "text": "Talk Enterprise" },
           { "selector": ".difference p:nth-child(1)", "text": "Not another scanner" },
           { "selector": ".difference p:nth-child(2)", "text": "Not another dashboard" },
           { "selector": ".difference p:nth-child(3)", "text": "Not another enterprise suite" },
