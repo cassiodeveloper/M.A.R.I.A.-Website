@@ -1,57 +1,45 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M.A.R.I.A. | Management Application Risk Integrated Analysis</title>
-    <meta name="description" content="M.A.R.I.A. helps developers and AppSec teams understand application risk, prioritize what matters, and see pull request impact on security. Join the waitlist.">
-    <meta name="keywords" content="application risk intelligence, AppSec, developer security, pull request risk, risk score, security timeline, waitlist">
+    <title>M.A.R.I.A. | Application Risk Intelligence</title>
+    <meta name="description" content="M.A.R.I.A. reads the output of the scanners you already run and turns it into one risk score per application, per pull request, over time. Repository-based pricing.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="M.A.R.I.A.">
     <link rel="canonical" href="https://mariaappsec.com/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="M.A.R.I.A. | Stop fixing vulnerabilities. Start reducing risk.">
-    <meta property="og:description" content="Understand what actually matters in your application security. Built for developers and AppSec teams.">
+    <meta property="og:description" content="Application risk intelligence on top of the security tools you already have. Built for developers and AppSec teams.">
     <meta property="og:url" content="https://mariaappsec.com/">
     <meta property="og:site_name" content="M.A.R.I.A.">
     <meta property="og:locale" content="en_US">
     <meta property="og:image" content="https://mariaappsec.com/img/maria.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="M.A.R.I.A. | Management Application Risk Integrated Analysis">
-    <meta name="twitter:description" content="No noise. No dashboards. Just risk clarity.">
+    <meta name="twitter:title" content="M.A.R.I.A. | Application Risk Intelligence">
+    <meta name="twitter:description" content="One risk score per application. Risk impact on every pull request. Built on the tools you already run.">
     <meta name="twitter:image" content="https://mariaappsec.com/img/maria.png">
     <link rel="stylesheet" href="css/styles.css">
+    <script>document.documentElement.classList.add('i18n-pending');</script>
     <script src="i18n/translations.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-09VC70Q0TF"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-09VC70Q0TF');
-    </script>    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "M.A.R.I.A.",
+      "alternateName": "Management Application Risk Integrated Analysis",
       "applicationCategory": "SecurityApplication",
-      "category": "Management Application Risk Integrated Analysis",
       "operatingSystem": "Web",
-      "description": "Management Application Risk Integrated Analysis built for developers and AppSec teams to understand application risk, prioritize what matters, see pull request impact on security, and reduce noise.",
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "Repository Pricing",
-          "priceCurrency": "USD",
-          "description": "1-10 repos: $0.99, 11-50 repos: $2, 51-150 repos: $3, 151-400 repos: $4, 400+ repos: $5, minimum $10 per month."
-        },
-        {
-          "@type": "Offer",
-          "name": "Lifetime Pricing",
-          "priceCurrency": "USD",
-          "description": "$199 up to 25 repos, $299 up to 50 repos, $499 up to 100 repos."
-        }
-      ]
+      "url": "https://mariaappsec.com/",
+      "description": "Application risk intelligence. M.A.R.I.A. normalizes findings from existing security scanners, calculates an application risk score, shows risk impact per pull request, and tracks risk over time.",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "9.99",
+        "highPrice": "499",
+        "offerCount": "3",
+        "url": "https://mariaappsec.com/pricing/"
+      }
     }
     </script>
     <!-- Google tag (gtag.js) -->
@@ -60,130 +48,232 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-09VC70Q0TF');
     </script>
 </head>
 <body data-page="index">
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
     <header class="site-header" id="home">
         <div class="container header-inner">
-            <a class="brand" href="#home" aria-label="M.A.R.I.A. home">
+            <a class="brand" href="/" data-i18n-aria="nav.homeAria" aria-label="M.A.R.I.A. home">
                 <span class="brand-mark">M.A.R.I.A.</span>
-                <span class="brand-copy">Finally someone(thing) that cares about your software</span>
+                <span class="brand-copy" data-i18n="brand.copy">Application risk intelligence</span>
             </a>
             <nav class="site-nav" aria-label="Primary">
-                <a href="#home">Home</a>
-                <a href="/openscan/">Open Scan</a>
-                <a href="#pricing">Pricing</a>
-                <a href="/why/">Why</a>
-                <a href="#join">Join</a>
-                <a href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="nav_top">Demo</a>
+                <a href="/product/" data-i18n="nav.product">Product</a>
+                <a href="/openscan/" data-i18n="nav.openscan">Open Scan</a>
+                <a href="/pricing/" data-i18n="nav.pricing">Pricing</a>
+                <a href="/why/" data-i18n="nav.why">Why</a>
             </nav>
-            <div class="lang-toggle" role="group" aria-label="Language selector" data-active-lang="pt-BR">
-                <button type="button" data-lang="en-US" aria-pressed="false"><span class="lang-flag" aria-hidden="true">🇺🇸</span><span class="lang-label">EN</span></button>
-                <button type="button" data-lang="pt-BR" aria-pressed="true"><span class="lang-flag" aria-hidden="true">🇧🇷</span><span class="lang-label">PT</span></button>
+            <div class="header-actions">
+                <a class="button button-primary button-compact" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="nav_top" data-i18n="cta.demoShort">See the demo</a>
+                <div class="lang-toggle" role="group" aria-label="Language selector" data-active-lang="en-US">
+                    <button type="button" data-lang="en-US" aria-pressed="true"><span class="lang-flag" aria-hidden="true">🇺🇸</span><span class="lang-label">EN</span></button>
+                    <button type="button" data-lang="pt-BR" aria-pressed="false"><span class="lang-flag" aria-hidden="true">🇧🇷</span><span class="lang-label">PT</span></button>
+                </div>
             </div>
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <section class="hero section">
             <div class="container hero-grid">
-                <div class="hero-copy">
-                    <p class="eyebrow">Management Application Risk Integrated Analysis</p>
-                    <h1>Stop <span class="text-highlight">fixing</span> vulnerabilities.<br />Start <span class="text-highlight">reducing</span> risk.</h1>
-                    <p class="hero-subtitle">Understand what actually matters in your application security.</p>
-                    <div class="hero-actions">
-                        <a class="button button-primary" href="#join" data-track-event="waitlist_cta_click" data-track-location="hero_primary">Join the waitlist</a>
-                        <a class="button button-secondary" href="/openscan/" data-track-event="openscan_click" data-track-location="hero_cta">Free Open Scan Pack</a>
-                        <a class="button button-secondary" href="#pricing">See pricing</a>
-                        <a class="button button-secondary" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="hero_cta">Try demo</a>
-                    </div>
-                    <p class="hero-trust">No noise. No dashboards (if you want). Just risk clarity.</p>
+                <div class="hero-head">
+                    <p class="eyebrow" data-i18n="hero.eyebrow">Application Risk Intelligence</p>
+                    <h1 data-i18n="hero.h1">You don't have <span class="text-highlight">1,000</span> vulnerabilities.<br />You have <span class="text-highlight">six</span> that matter.</h1>
                 </div>
-                <div class="hero-panel" aria-label="Product value summary">
-                    <div class="hero-score-panel">
-                        <div class="hero-score-column">
-                            <div class="hero-risk-circle high">
-                                <span class="hero-risk-value">72</span>
-                                <span class="hero-risk-label">Risk</span>
-                            </div>
-                            <span class="hero-risk-badge">High</span>
+                <div class="hero-copy">
+                    <p class="hero-subtitle" data-i18n="hero.sub">M.A.R.I.A. reads the output of the scanners you already run &mdash; SARIF, SBOMs, secrets, dependencies &mdash; and turns it into one risk score per application, per pull request, over time.</p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="hero_primary" data-i18n="cta.demo">See it on real data</a>
+                        <a class="button button-secondary" href="#join" data-track-event="waitlist_cta_click" data-track-location="hero_secondary" data-i18n="cta.waitlist">Join the waitlist</a>
+                    </div>
+                    <p class="hero-trust" data-i18n="hero.trust">Reads scanner output &mdash; SARIF, CycloneDX, JSON. Sits on top of the tools you already have. Priced per repository, never per developer.</p>
+                </div>
+                <div class="hero-panel" aria-label="Example application risk view">
+                    <div class="evidence-card">
+                        <div class="evidence-head">
+                            <span class="evidence-app">payments-api</span>
+                            <span class="evidence-score high">RISK 84 <span aria-hidden="true">&#9650;</span></span>
                         </div>
-                        <div class="hero-metrics-grid">
-                            <div class="hero-metric-card">
-                                <strong>148</strong>
-                                <span>Repositories</span>
+                        <p class="evidence-context" data-i18n="hero.card.context">Internet-facing &middot; handles PII &middot; deployed 4&times;/week</p>
+                        <dl class="evidence-facts">
+                            <div>
+                                <dt data-i18n="hero.card.driverLabel">Top driver</dt>
+                                <dd data-i18n="hero.card.driverValue">CVE-2025-31324 in <code>spring-core</code>, reachable from an exposed endpoint</dd>
                             </div>
-                            <div class="hero-metric-card critical">
-                                <strong>37</strong>
-                                <span>Critical</span>
+                            <div>
+                                <dt data-i18n="hero.card.fixLabel">Fix first</dt>
+                                <dd data-i18n="hero.card.fixValue">Bump <code>spring-core</code> 6.1.4 &rarr; 6.1.6 &mdash; risk 84 &rarr; 41</dd>
                             </div>
-                            <div class="hero-metric-card high">
-                                <strong>112</strong>
-                                <span>High</span>
-                            </div>
-                            <div class="hero-metric-card">
-                                <strong>+14</strong>
-                                <span>PR Risk Delta</span>
-                            </div>
-                        </div>
+                        </dl>
+                        <p class="evidence-footnote" data-i18n="hero.card.footnote">3 of 212 findings account for 61% of this application's risk.</p>
+                        <p class="evidence-tag" data-i18n="common.illustrative">Illustrative example</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <section class="integrations section-tight">
+            <div class="container">
+                <p class="integrations-title" data-i18n="integrations.title">M.A.R.I.A. doesn't replace your tools. It reads them.</p>
+                <ul class="integrations-strip">
+                    <li><img src="img/integrations/semgrep.svg" alt="Semgrep" loading="lazy" width="120" height="32"></li>
+                    <li><img src="img/integrations/trivy.svg" alt="Trivy" loading="lazy" width="120" height="32"></li>
+                    <li><img src="img/integrations/grype.svg" alt="Grype" loading="lazy" width="120" height="32"></li>
+                    <li><img src="img/integrations/syft.svg" alt="Syft" loading="lazy" width="120" height="32"></li>
+                    <li><img src="img/integrations/gitleaks.svg" alt="Gitleaks" loading="lazy" width="120" height="32"></li>
+                    <li><img src="img/integrations/trufflehog.svg" alt="TruffleHog" loading="lazy" width="120" height="32"></li>
+                    <li><img src="img/integrations/owasp-zap.png" alt="OWASP ZAP" loading="lazy" width="120" height="32"></li>
+                    <li><img src="img/integrations/nuclei.svg" alt="Nuclei" loading="lazy" width="120" height="32"></li>
+                    <li><img src="img/integrations/checkov.svg" alt="Checkov" loading="lazy" width="120" height="32"></li>
+                    <li><img src="img/integrations/kics.png" alt="KICS" loading="lazy" width="120" height="32"></li>
+                    <li><img src="img/integrations/osv-scanner.svg" alt="OSV-Scanner" loading="lazy" width="120" height="32"></li>
+                    <li><img src="img/integrations/opengrep.svg" alt="Opengrep" loading="lazy" width="120" height="32"></li>
+                    <li><img src="img/integrations/dependency-check.png" alt="OWASP Dependency-Check" loading="lazy" width="120" height="32"></li>
+                    <li><img src="img/integrations/cyclonedx.svg" alt="CycloneDX" loading="lazy" width="120" height="32"></li>
+                </ul>
+                <p class="integrations-note" data-i18n="integrations.note">Anything that speaks SARIF, CycloneDX or JSON findings.</p>
+            </div>
+        </section>
+
         <section class="pain section">
             <div class="container narrow">
-                <p>You have <span class="text-highlight">1000</span> vulnerabilities.</p>
-                <p>You don't know which one <span class="text-highlight">matters</span>.</p>
-                <p>Your tools do not <span class="text-highlight">agree</span>.</p>
-                <p>Your team ignores <s>half</s> <span class="text-highlight">most</span> of it.</p>
-                <h2>It's not <span class="text-highlight">security.</span><br /> It's <span class="text-highlight">noise.</span></h2>
+                <p data-i18n="pain.line1">You have <span class="text-highlight">1,000</span> vulnerabilities.</p>
+                <p data-i18n="pain.line2">You don't know which one <span class="text-highlight">matters</span>.</p>
+                <p data-i18n="pain.line3">Your tools don't <span class="text-highlight">agree</span> with each other.</p>
+                <p data-i18n="pain.line4">Your team stopped <span class="text-highlight">reading</span> the alerts months ago.</p>
+                <h2 data-i18n="pain.h2">That's not <span class="text-highlight">security.</span><br />That's <span class="text-highlight">noise.</span></h2>
             </div>
         </section>
 
         <section class="solution section">
             <div class="container split">
                 <div>
-                    <p class="eyebrow">THE SHIFT</p>
-                    <h2>M.A.R.I.A. changes the model.</h2>
+                    <p class="eyebrow" data-i18n="shift.eyebrow">THE SHIFT</p>
+                    <h2 data-i18n="shift.h2">A vulnerability is not a risk.</h2>
                 </div>
-                <ul class="bullet-list">
-                    <li>One clear and configurable risk score per application</li>
-                    <li>Understand real impact, not alerts</li>
-                    <li>See real risk changes</li>
-                    <li>Focus on what actually matters</li>
-                </ul>
+                <div class="shift-copy">
+                    <p class="section-copy" data-i18n="shift.p1">A 9.8 CVE in a library you never call, inside an internal tool that holds no data, is not your problem. A medium-severity flaw in the service that handles payments and ships four times a week is.</p>
+                    <p class="section-copy" data-i18n="shift.p2"><strong>Severity is a property of the vulnerability. Risk is a property of your application.</strong> M.A.R.I.A. calculates the second one.</p>
+                </div>
             </div>
         </section>
 
         <section class="flow section">
             <div class="container">
-                <p class="eyebrow">HOW IT WORKS</p>
-                <h2>SARIF &rarr; M.A.R.I.A. &rarr; Act</h2>
-                <p class="section-copy">M.A.R.I.A. sits above your existing security tools, normalizes findings, calculates application risk, and gives teams a clear next move.</p>
+                <p class="eyebrow" data-i18n="how.eyebrow">HOW IT WORKS</p>
+                <h2 data-i18n="how.h2">Three steps. No new scanners.</h2>
+                <ol class="step-list">
+                    <li>
+                        <span class="step-number" aria-hidden="true">1</span>
+                        <h3 data-i18n="how.step1.title">Connect</h3>
+                        <p data-i18n="how.step1.body">Point M.A.R.I.A. at the repositories you want covered. It works from findings and repository metadata.</p>
+                    </li>
+                    <li>
+                        <span class="step-number" aria-hidden="true">2</span>
+                        <h3 data-i18n="how.step2.title">Ingest</h3>
+                        <p data-i18n="how.step2.body">Your existing scanners upload their output &mdash; SARIF, CycloneDX, JSON. M.A.R.I.A. deduplicates, normalizes and correlates it into one model.</p>
+                        <p class="step-aside"><a href="/openscan/" data-track-event="openscan_click" data-track-location="how_step2" data-i18n="how.step2.link">No scanners yet? Start with the free Open Scan Pack &rarr;</a></p>
+                    </li>
+                    <li>
+                        <span class="step-number" aria-hidden="true">3</span>
+                        <h3 data-i18n="how.step3.title">Act</h3>
+                        <p data-i18n="how.step3.body">Every application gets a risk score with the reasons behind it. Every pull request gets a risk delta before merge. Every week you can see what moved, and why.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="evidence section">
+            <div class="container">
+                <p class="eyebrow" data-i18n="evidence.eyebrow">IN THE PULL REQUEST</p>
+                <h2 data-i18n="evidence.h2">Security that arrives where the work happens.</h2>
+                <p class="section-copy" data-i18n="evidence.sub">This is the shape of what a developer receives &mdash; in the review they already have open, about code they wrote minutes ago.</p>
+                <pre class="code-block" aria-label="Example pull request comment"><code>🔎 M.A.R.I.A. — risk impact of this pull request
+
+payments-api      Risk 41 → 58   (+17, High)
+
+▲ Added
+  · jsonwebtoken 8.5.1 — CVE-2022-23529, critical, fix in 9.0.0
+  · New public route POST /api/v1/refund — no rate limiting detected
+
+▼ Removed
+  · spring-core upgraded 6.1.4 → 6.1.6 — closes CVE-2025-31324  (−23)
+
+⚑ Needs a decision
+  jsonwebtoken 8.5.1 is 3 major versions behind and sits in the auth path.
+  Upgrading to 9.0.0 would make this PR a net −6 instead of +17.
+
+Not blocking. Baseline updates on merge.</code></pre>
+                <p class="evidence-tag" data-i18n="common.illustrative">Illustrative example</p>
+                <div class="section-actions">
+                    <a class="button button-primary" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="evidence_section" data-i18n="cta.demoTry">Try it on a demo organization</a>
+                    <a class="button button-secondary" href="/product/pull-request-risk/" data-i18n="evidence.link">How PR analysis works</a>
+                </div>
             </div>
         </section>
 
         <section class="value section">
             <div class="container">
+                <p class="eyebrow" data-i18n="features.eyebrow">WHAT'S INSIDE</p>
+                <h2 data-i18n="features.h2">Five things, done properly.</h2>
                 <div class="card-grid">
                     <article class="value-card">
                         <p class="card-kicker">Risk Score</p>
-                        <h3>Know how risky your application really is.</h3>
+                        <h3 data-i18n="features.score.title">One number per application, and the reasoning behind it.</h3>
+                        <p data-i18n="features.score.body">Exposure, data sensitivity, exploitability and change velocity &mdash; weighted your way, never a black box.</p>
+                        <a href="/product/risk-score/" class="card-link" data-i18n="features.score.link">How the score works &rarr;</a>
                     </article>
                     <article class="value-card">
-                        <p class="card-kicker">Flexible</p>
-                        <h3>You decide how your risk is calculated.</h3>
+                        <p class="card-kicker">Pull Request Risk</p>
+                        <h3 data-i18n="features.pr.title">See whether a change raises or lowers risk, before it merges.</h3>
+                        <p data-i18n="features.pr.body">A comment on the PR with the delta, the cause, and the fix that would flip it.</p>
+                        <a href="/product/pull-request-risk/" class="card-link" data-i18n="features.pr.link">See it in the PR &rarr;</a>
                     </article>
                     <article class="value-card">
                         <p class="card-kicker">Risk Timeline</p>
-                        <h3>Understand how risk evolves over time.</h3>
+                        <h3 data-i18n="features.timeline.title">Risk over time, with the events that moved it.</h3>
+                        <p data-i18n="features.timeline.body">Answer "are we better than last quarter?" with evidence instead of anecdote.</p>
+                        <a href="/product/risk-timeline/" class="card-link" data-i18n="features.timeline.link">See the timeline &rarr;</a>
+                    </article>
+                    <article class="value-card">
+                        <p class="card-kicker">Normalization</p>
+                        <h3 data-i18n="features.norm.title">Many tools, several formats, one model.</h3>
+                        <p data-i18n="features.norm.body">The same issue reported by four scanners becomes one finding with four sources of evidence.</p>
+                        <a href="/product/normalization/" class="card-link" data-i18n="features.norm.link">How normalization works &rarr;</a>
                     </article>
                     <article class="value-card">
                         <p class="card-kicker">Developer Focus</p>
-                        <h3>Security your developers actually use.</h3>
+                        <h3 data-i18n="features.dev.title">Security where engineers already work.</h3>
+                        <p data-i18n="features.dev.body">Not a dashboard nobody has a reason to open. One thing to do, with the reason attached.</p>
+                        <a href="/product/for-developers/" class="card-link" data-i18n="features.dev.link">Why this matters &rarr;</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="difference section">
+            <div class="container">
+                <p class="eyebrow" data-i18n="diff.eyebrow">WHAT M.A.R.I.A. IS NOT</p>
+                <h2 data-i18n="diff.h2">I'd rather be clear than impressive.</h2>
+                <div class="not-grid">
+                    <article>
+                        <h3 data-i18n="diff.scanner.title">Not a scanner.</h3>
+                        <p data-i18n="diff.scanner.body">M.A.R.I.A. doesn't find vulnerabilities. Your tools already do that, and they're good at it.</p>
+                    </article>
+                    <article>
+                        <h3 data-i18n="diff.replace.title">Not a replacement.</h3>
+                        <p data-i18n="diff.replace.body">Keep Semgrep. Keep Trivy. Keep whatever works. M.A.R.I.A. sits above them and makes their output usable.</p>
+                    </article>
+                    <article>
+                        <h3 data-i18n="diff.seat.title">Not priced per developer.</h3>
+                        <p data-i18n="diff.seat.body">Hire ten engineers and the bill stays the same. You pay for repositories, because that's what carries the risk.</p>
+                    </article>
+                    <article>
+                        <h3 data-i18n="diff.quadrant.title">Not built for a quadrant.</h3>
+                        <p data-i18n="diff.quadrant.body">This is built around the problems teams have this quarter, not around a checklist for an analyst report. That's a deliberate trade-off: you'll find capabilities here that bigger platforms lack, and enterprise checkboxes there that this doesn't have yet.</p>
                     </article>
                 </div>
             </div>
@@ -191,188 +281,148 @@
 
         <section class="pricing section" id="pricing">
             <div class="container">
-                <p class="eyebrow">PRICING</p>
-                <h2>Full product. <br />Pay only for scale.</h2>
+                <p class="eyebrow" data-i18n="pricing.eyebrow">PRICING</p>
+                <h2 data-i18n="pricing.h2">Full product. Pay only for scale.</h2>
+                <p class="section-copy" data-i18n="pricing.sub">Every feature in every plan. No per-seat pricing. No "contact us" to see a number.</p>
                 <div class="pricing-grid">
                     <article class="pricing-card">
-                        <h3>Subscription</h3>
-                        <div class="pricing-table" role="table" aria-label="Monthly pricing by repositories">
-                            <div class="pricing-row" role="row"><span>1-10 repos</span><strong>$0.99</strong></div>
-                            <div class="pricing-row" role="row"><span>11-50 repos</span><strong>$2</strong></div>
-                            <div class="pricing-row" role="row"><span>51-150 repos</span><strong>$3</strong></div>
-                            <div class="pricing-row" role="row"><span>151-400 repos</span><strong>$4</strong></div>
-                            <div class="pricing-row" role="row"><span>400+ repos</span><strong>Enterprise</strong></div>
+                        <h3 data-i18n="pricing.monthly.title">Monthly</h3>
+                        <p class="pricing-headline" data-i18n="pricing.monthly.headline">from $9.99<span>/month</span></p>
+                        <p class="pricing-note" data-i18n="pricing.monthly.unit">Per repository, per month:</p>
+                        <div class="pricing-table">
+                            <div class="pricing-row"><span>1&ndash;10 <span data-i18n="pricing.repos">repos</span></span><strong>$0.99</strong></div>
+                            <div class="pricing-row"><span>11&ndash;50 <span data-i18n="pricing.repos">repos</span></span><strong>$2</strong></div>
+                            <div class="pricing-row"><span>51&ndash;150 <span data-i18n="pricing.repos">repos</span></span><strong>$3</strong></div>
+                            <div class="pricing-row"><span>151&ndash;400 <span data-i18n="pricing.repos">repos</span></span><strong>$4</strong></div>
+                            <div class="pricing-row"><span>400+ <span data-i18n="pricing.repos">repos</span></span><strong data-i18n="pricing.talk">Let's talk</strong></div>
                         </div>
-                        <p class="pricing-note">Minimum $9.99/month</p>
-                        <p class="pricing-support">All features included. No hidden tiers.</p>
-                        <a class="button button-primary button-block" href="#join" data-track-event="waitlist_cta_click" data-track-location="pricing_subscription">Join the waitlist</a>
+                        <p class="pricing-example" data-i18n="pricing.monthly.example">Example: 30 repositories = <strong>$60/month</strong>. That's it.</p>
+                        <p class="pricing-support" data-i18n="pricing.allIncluded">All features included. No hidden tiers.</p>
+                        <a class="button button-primary button-block" href="#join" data-track-event="waitlist_cta_click" data-track-location="pricing_monthly" data-i18n="cta.waitlist">Join the waitlist</a>
                     </article>
                     <article class="pricing-card pricing-card-alt">
-                        <h3>Lifetime</h3>
-                        <div class="pricing-table" role="table" aria-label="Lifetime pricing by repositories">
-                            <div class="pricing-row" role="row"><span>Up to 25 repos</span><strong>$199</strong></div>
-                            <div class="pricing-row" role="row"><span>Up to 50 repos</span><strong>$299</strong></div>
-                            <div class="pricing-row" role="row"><span>Up to 100 repos</span><strong>$499</strong></div>
-                            <div class="pricing-row" role="row"><span>100+ repos</span><strong>Get in touch</strong></div>
+                        <h3 data-i18n="pricing.lifetime.title">Lifetime</h3>
+                        <p class="pricing-headline" data-i18n="pricing.lifetime.headline">one payment</p>
+                        <p class="pricing-note" data-i18n="pricing.lifetime.unit">Pay once, use it for good:</p>
+                        <div class="pricing-table">
+                            <div class="pricing-row"><span data-i18n="pricing.upto25">Up to 25 repos</span><strong>$199</strong></div>
+                            <div class="pricing-row"><span data-i18n="pricing.upto50">Up to 50 repos</span><strong>$299</strong></div>
+                            <div class="pricing-row"><span data-i18n="pricing.upto100">Up to 100 repos</span><strong>$499</strong></div>
+                            <div class="pricing-row"><span data-i18n="pricing.over100">100+ repos</span><strong data-i18n="pricing.talk">Let's talk</strong></div>
                         </div>
-                        <p class="pricing-support">All features included. No hidden tiers.</p>
-                        <p class="pricing-support">One-time payment. No surprises.</p>
-                        <div class="pricing-spacer" aria-hidden="true"></div>
-                        <a class="button button-secondary button-block" href="#join" data-track-event="waitlist_cta_click" data-track-location="pricing_lifetime">Reserve your spot</a>
+                        <p class="pricing-example" data-i18n="pricing.lifetime.example">One-time payment. No renewal, no surprise invoice.</p>
+                        <p class="pricing-support" data-i18n="pricing.allIncluded">All features included. No hidden tiers.</p>
+                        <a class="button button-secondary button-block" href="#join" data-track-event="waitlist_cta_click" data-track-location="pricing_lifetime" data-i18n="cta.reserve">Reserve your spot</a>
                     </article>
-                    <article class="pricing-card">
-                        <h3>Founder support</h3>
-                        <div class="pricing-table" role="table" aria-label="Lifetime pricing by repositories">
-                            <div class="pricing-row" role="row"><span>Up to 50 repos</span><strong>$249</strong></div>
-                        </div>
-                        <p class="pricing-support">Includes:
-                            <ul>
-                                <li>Lifetime access (up to 50 repos)</li>
-                                <li>Founding user badge</li>
-                                <li>Early access to new features</li>
-                                <li>Direct feedback channel</li>
-                                <li>Priority onboarding</li>
-                            </ul>
-                        </p>
-                        <p class="pricing-support">
-                            Only 50 founding teams will ever get this.
-                        </p>
-                        <p class="pricing-support">
-                            This is not a discount plan. This is for teams that want to shape M.A.R.I.A.
-                        </p>
-                        <div class="pricing-spacer" aria-hidden="true"></div>
-                        <a class="button button-secondary button-block" href="#join" data-track-event="waitlist_cta_click" data-track-location="pricing_founder">Reserve your spot</a>
-                    </article>                    
-                </div>              
-                <section class="enterprise-pricing" id="enterprise" aria-labelledby="enterprise-title">
-                    <div class="enterprise-header">
-                        <p class="eyebrow">ENTERPRISE</p>
-                        <h2 id="enterprise-title">Built for serious scale.</h2>
-                        <p class="section-copy">
-                            For companies with hundreds or thousands of repositories, M.A.R.I.A. is priced by active, relevant repositories, not by digital graveyard inventory.
-                        </p>
-                    </div>
-
-                    <div class="enterprise-grid" role="table" aria-label="Enterprise pricing by active repositories">
-                        <article class="enterprise-card">
-                            <p class="card-kicker">Enterprise Starter</p>
-                            <h3>Up to 1,000 active repos</h3>
-                            <p class="enterprise-price">$3k to $5k/month</p>
-                            <p class="pricing-support">For teams moving from noisy scanners to risk-based AppSec operations.</p>
-                        </article>
-
-                        <article class="enterprise-card">
-                            <p class="card-kicker">Enterprise Scale</p>
-                            <h3>Up to 3,000 active repos</h3>
-                            <p class="enterprise-price">$6k to $9k/month</p>
-                            <p class="pricing-support">For mature engineering organizations standardizing risk intelligence.</p>
-                        </article>
-
-                        <article class="enterprise-card enterprise-card-featured">
-                            <p class="card-kicker">Enterprise Plus</p>
-                            <h3>Up to 7,500 active repos</h3>
-                            <p class="enterprise-price">$10k to $15k/month</p>
-                            <p class="pricing-support">Best fit for large environments with thousands of repositories.</p>
-                        </article>
-
-                        <article class="enterprise-card">
-                            <p class="card-kicker">Strategic</p>
-                            <h3>7,500+ active repos</h3>
-                            <p class="enterprise-price">Custom</p>
-                            <p class="pricing-support">For complex enterprise environments, dedicated support, and custom onboarding.</p>
-                        </article>
-                    </div>
-
-                    <div class="enterprise-detail">
-                        <div>
-                            <h3>What counts as an active repo?</h3>
-                            <p class="pricing-support">
-                                A billable repository is an active, private, relevant code repository connected to M.A.R.I.A. and used for risk analysis.
-                            </p>
-                        </div>
-
-                        <div>
-                            <h3>What does not count?</h3>
-                            <ul class="enterprise-list">
-                                <li>Archived repositories</li>
-                                <li>Forks, mirrors, templates, and docs-only repositories</li>
-                                <li>Proofs of concept with no active ownership</li>
-                                <li>Repositories with no relevant security signal</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3>Enterprise includes</h3>
-                            <ul class="enterprise-list">
-                                <li>SCM integration</li>
-                                <li>SARIF normalization</li>
-                                <li>Application risk score</li>
-                                <li>Risk prioritization engine</li>
-                                <li>Executive reporting</li>
-                                <li>SSO, audit logs, and support</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="enterprise-cta">
-                        <p>
-                            For environments around <strong>7,000 repositories</strong>, Enterprise Plus is usually the right conversation.
-                        </p>
-                        <a class="button button-primary" href="mailto:contact@mariaappsec.com?subject=M.A.R.I.A.%20Enterprise%20Pricing" data-track-event="enterprise_pricing_click" data-track-location="enterprise_pricing">
-                            Talk Enterprise
-                        </a>
-                    </div>
-                </section>                
-            </div>            
-        </section>
-
-        <section class="difference section">
-            <div class="container narrow">
-                <p>Not another scanner</p>
-                <p>Not another dashboard</p>
-                <p>Not another enterprise tool</p>
-                <h2>This is risk intelligence.</h2>
-            </div>
-        </section>
-
-        <section class="anti-quadrant section">
-            <div class="container narrow">
-                <p class="eyebrow">OUR POSITION</p>
-                <h2>Gartner? Screw it.</h2>
-                <p class="section-copy">We are not here to win a quadrant. We are here to care for your software, reduce real risk, and help teams build safer systems that improve society.</p>
-            </div>
-        </section>
-
-        <section class="founder section">
-            <div class="container narrow">
-                <p class="eyebrow">BUILT DIFFERENTLY</p>
-                <h2>Independent founder. Real problems first.</h2>
-                <p class="section-copy">M.A.R.I.A. is an individual founder initiative focused on serious day-to-day security pain. We build to solve what hurts teams now, not to stuff the product with features just to sell more.</p>
-                <p><a title="Cássio B. Pereira" target="_blank" class="button button-secondary" href="https://cassiodevelo.com.br">Meet the founder</a></p>
+                    <article class="pricing-card pricing-card-founder">
+                        <p class="card-kicker" data-i18n="founder.kicker">FOUNDING TEAMS</p>
+                        <h3 data-i18n="founder.title">50 teams. Then never again.</h3>
+                        <p class="pricing-headline">$249</p>
+                        <p class="pricing-note" data-i18n="founder.unit">Lifetime access, up to 50 repositories</p>
+                        <ul class="feature-list">
+                            <li data-i18n="founder.item1">Lifetime access, up to 50 repos</li>
+                            <li data-i18n="founder.item2">Founding user badge</li>
+                            <li data-i18n="founder.item3">Early access to everything new</li>
+                            <li data-i18n="founder.item4">A direct channel to me, not a support queue</li>
+                            <li data-i18n="founder.item5">Priority onboarding, done with you</li>
+                        </ul>
+                        <p class="pricing-support" data-i18n="founder.why">This isn't a discount. It's cheaper than the $299 lifetime plan because founding teams pay with something else: telling me what's wrong with the product while it's still cheap to change.</p>
+                        <a class="button button-primary button-block" href="#join" data-track-event="founder_cta_click" data-track-location="pricing_founder" data-i18n="cta.founder">Become a founding team</a>
+                    </article>
+                </div>
+                <p class="pricing-footer-link">
+                    <a href="/pricing/" data-i18n="pricing.fullLink">Full pricing, worked examples and commercial FAQ &rarr;</a>
+                    <span aria-hidden="true">&middot;</span>
+                    <a href="/enterprise/" data-i18n="pricing.enterpriseLink">Hundreds or thousands of repositories? &rarr;</a>
+                </p>
             </div>
         </section>
 
         <section class="story section">
             <div class="container narrow">
-                <p class="eyebrow">WHY IT EXISTS</p>
-                <h2>M.A.R.I.A. is named after someone who cared for others.</h2>
-                <p class="section-copy">This platform exists to care for your software.</p>
-                <p><a class="button button-secondary" href="/why/" data-track-event="story_click" data-track-location="story_section">Read the full story</a></p>
+                <p class="eyebrow" data-i18n="story.eyebrow">WHY THIS EXISTS</p>
+                <h2 data-i18n="story.h2">M.A.R.I.A. is named after my mother.</h2>
+                <p class="section-copy" data-i18n="story.p1">Maria Jeane Pereira (1956&ndash;2020) spent her life taking care of people, mostly people no one else was taking care of.</p>
+                <p class="section-copy" data-i18n="story.p2">The acronym is real &mdash; Management Application Risk Integrated Analysis. So is the reason behind it: software should have someone paying attention to it.</p>
+                <p class="section-copy" data-i18n="story.p3">I'm Cássio Pereira. I build this alone, on purpose, and I'd rather fix what hurts teams today than ship features that demo well.</p>
+                <div class="section-actions">
+                    <a class="button button-secondary" href="/why/" data-track-event="story_click" data-track-location="story_section" data-i18n="story.link">Read the full story</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq section">
+            <div class="container narrow">
+                <p class="eyebrow" data-i18n="faq.eyebrow">STRAIGHT ANSWERS</p>
+                <h2 data-i18n="faq.h2">The questions you're already asking.</h2>
+
+                <details class="faq-item">
+                    <summary data-i18n="faq.q1">Is this another scanner?</summary>
+                    <p data-i18n="faq.a1">No. M.A.R.I.A. doesn't scan anything. It consumes what your scanners produce &mdash; SARIF, CycloneDX, JSON findings &mdash; and turns it into risk you can act on. If your scanners are working, M.A.R.I.A. makes them useful. If you have none yet, start with the free Open Scan Pack.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary data-i18n="faq.q2">What if I don't have any scanners set up?</summary>
+                    <p data-i18n="faq.a2">Use the <a href="/openscan/">free Open Scan Pack</a>: pick a stack of open-source scanners, download ready-made CI templates, and run them in your own pipeline. No login, no repository access, nothing leaves your CI. Once those run, you have the input M.A.R.I.A. needs.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary data-i18n="faq.q3">Will I have to replace my current tools?</summary>
+                    <p data-i18n="faq.a3">No, and you shouldn't. M.A.R.I.A. is only useful because your scanners already work. It sits above them, removes the duplicates, and puts the remaining findings in order of what actually matters.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary data-i18n="faq.q4">How is the risk score calculated?</summary>
+                    <p data-i18n="faq.a4">From the properties of the application, not just the severity of the finding: exposure, data sensitivity, exploitability, reachability, how often the code changes, and the findings themselves. Every score opens up to show the factors that produced it, and the weights are yours to change &mdash; a fintech and an internal tools team don't share a risk model. <a href="/product/risk-score/">See how the score works &rarr;</a></p>
+                </details>
+
+                <details class="faq-item">
+                    <summary data-i18n="faq.q5">Why price by repository instead of by developer?</summary>
+                    <p data-i18n="faq.a5">Because charging per developer punishes you for growing the team, and your risk doesn't scale with headcount &mdash; it scales with the code you own. Ten engineers on twelve repositories carry roughly the same application risk as three engineers on twelve repositories.</p>
+                </details>
+
+                <!--
+                TODO(cassio): estas perguntas são as que mais bloqueiam conversão, mas as
+                respostas dependem de fatos do produto que eu não posso inventar.
+                Preencha e descomente. Marcação e i18n já estão prontos.
+
+                <details class="faq-item">
+                    <summary data-i18n="faq.q6">Do you read my source code?</summary>
+                    <p data-i18n="faq.a6">[resposta real: o que é enviado, o que é armazenado, o que nunca sai do CI]</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary data-i18n="faq.q7">Which platforms do you support?</summary>
+                    <p data-i18n="faq.a7">[GitHub / GitLab / Azure DevOps / Bitbucket — apenas os que realmente funcionam hoje]</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary data-i18n="faq.q8">How long does setup take?</summary>
+                    <p data-i18n="faq.a8">[tempo real para conectar e para o primeiro score]</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary data-i18n="faq.q9">You're one person. What happens if you stop?</summary>
+                    <p data-i18n="faq.a9">[a resposta honesta: export de dados a qualquer momento, o que acontece com lifetime, etc.]</p>
+                </details>
+                -->
             </div>
         </section>
 
         <section class="final-cta section" id="join">
             <div class="container final-cta-grid">
                 <div>
-                    <p class="eyebrow">EARLY ACCESS</p>
-                    <h2>Join the waitlist</h2>
-                    <p class="section-copy">Be among the first teams to understand application risk.</p>
+                    <p class="eyebrow" data-i18n="join.eyebrow">EARLY ACCESS</p>
+                    <h2 data-i18n="join.h2">Find out what your real risk looks like.</h2>
+                    <p class="section-copy" data-i18n="join.sub">Join the waitlist and I'll reach out personally when your spot opens. Founding teams first.</p>
                 </div>
-                <form class="waitlist-form" action="https://formspree.io/f/xeerdder" method="POST">
-                    <label class="sr-only" for="email">Email</label>
-                    <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required>
-                    <button type="submit" class="button button-primary button-block">Join Waitlist</button>
-                    <p class="form-note">One field. No friction. No spam.</p>
+                <form class="waitlist-form" action="https://formspree.io/f/xeerdder" method="POST" data-form-location="landing_final">
+                    <label class="sr-only" for="email" data-i18n="join.label">Email</label>
+                    <input id="email" name="email" type="email" data-i18n-placeholder="join.placeholder" placeholder="you@company.com" autocomplete="email" required>
+                    <input type="hidden" name="_next" value="https://mariaappsec.com/thanks/">
+                    <input type="hidden" name="_subject" value="New M.A.R.I.A. waitlist signup">
+                    <button type="submit" class="button button-primary button-block" data-i18n="cta.waitlist">Join the waitlist</button>
+                    <p class="form-note" data-i18n="join.note">One field. No password. No sales sequence. I read every reply.</p>
                 </form>
             </div>
         </section>
@@ -380,8 +430,15 @@
 
     <footer class="site-footer">
         <div class="container footer-inner">
-            <a href="mailto:contact@mariaappsec.com" class="footer-link">Contact</a>
-            <p class="footer-copy">Built for developers and AppSec teams who want less noise and better decisions.</p>
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="/product/" data-i18n="nav.product">Product</a>
+                <a href="/pricing/" data-i18n="nav.pricing">Pricing</a>
+                <a href="/openscan/" data-i18n="nav.openscan">Open Scan</a>
+                <a href="/why/" data-i18n="nav.why">Why</a>
+                <a href="/enterprise/" data-i18n="nav.enterprise">Enterprise</a>
+                <a href="mailto:contact@mariaappsec.com" class="footer-link" data-i18n="nav.contact">Contact</a>
+            </nav>
+            <p class="footer-copy" data-i18n="footer.copy">Built for developers and AppSec teams who want less noise and better decisions.</p>
             <p class="footer-note">Management Application Risk Integrated Analysis</p>
             <p>&copy; 2026 M.A.R.I.A.</p>
         </div>

@@ -1,24 +1,24 @@
-﻿<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Por que M.A.R.I.A. | A historia por tras do nome</title>
-    <meta name="description" content="A historia do nome M.A.R.I.A. e por que o produto existe: uma homenagem a Maria, mae do fundador, e um compromisso com software mais seguro e humano.">
-    <meta name="keywords" content="M.A.R.I.A. historia, homenagem, appsec, application risk, software care">
+    <title>Why M.A.R.I.A. | The story behind the name</title>
+    <meta name="description" content="The story behind the name M.A.R.I.A.: a tribute to Maria Jeane Pereira, and what caring for software actually means in an AppSec product.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://mariaappsec.com/why/">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Por que M.A.R.I.A.">
-    <meta property="og:description" content="Esta plataforma nasceu como homenagem e compromisso: cuidar melhor do software e das pessoas por tras dele.">
+    <meta property="og:title" content="Why M.A.R.I.A.">
+    <meta property="og:description" content="This platform started as a tribute and a commitment: to take better care of software, and of the people behind it.">
     <meta property="og:url" content="https://mariaappsec.com/why/">
     <meta property="og:site_name" content="M.A.R.I.A.">
     <meta property="og:image" content="https://mariaappsec.com/img/maria.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Por que M.A.R.I.A.">
-    <meta name="twitter:description" content="A historia do nome e a missao por tras da plataforma.">
+    <meta name="twitter:title" content="Why M.A.R.I.A.">
+    <meta name="twitter:description" content="The story behind the name, and the commitment behind the platform.">
     <meta name="twitter:image" content="https://mariaappsec.com/img/maria.png">
     <link rel="stylesheet" href="../css/styles.css">
+    <script>document.documentElement.classList.add('i18n-pending');</script>
     <script src="../i18n/translations.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-09VC70Q0TF"></script>
@@ -26,38 +26,40 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-09VC70Q0TF');
-    </script>    
+    </script>
 </head>
 <body class="why-page" data-page="why">
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
     <header class="site-header" id="top">
         <div class="container header-inner">
-            <a class="brand" href="/" aria-label="M.A.R.I.A. home">
+            <a class="brand" href="/" data-i18n-aria="nav.homeAria" aria-label="M.A.R.I.A. home">
                 <span class="brand-mark">M.A.R.I.A.</span>
-                <span class="brand-copy">Software care over security theater</span>
+                <span class="brand-copy" data-i18n="brand.copy">Application risk intelligence</span>
             </a>
             <nav class="site-nav" aria-label="Primary">
-                <a href="/">Home</a>
-                <a href="/openscan/">Open Scan</a>
-                <a href="/#pricing">Pricing</a>
-                <a href="/why/">Why</a>
-                <a href="/#join">Join</a>
-                <a href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer">Demo</a>
+                <a href="/product/" data-i18n="nav.product">Product</a>
+                <a href="/openscan/" data-i18n="nav.openscan">Open Scan</a>
+                <a href="/pricing/" data-i18n="nav.pricing">Pricing</a>
+                <a href="/why/" class="is-current" data-i18n="nav.why">Why</a>
             </nav>
-            <div class="lang-toggle" role="group" aria-label="Language selector" data-active-lang="pt-BR">
-                <button type="button" data-lang="en-US" aria-pressed="false"><span class="lang-flag" aria-hidden="true">🇺🇸</span><span class="lang-label">EN</span></button>
-                <button type="button" data-lang="pt-BR" aria-pressed="true"><span class="lang-flag" aria-hidden="true">🇧🇷</span><span class="lang-label">PT</span></button>
+            <div class="header-actions">
+                <a class="button button-primary button-compact" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="nav_top" data-i18n="cta.demoShort">See the demo</a>
+                <div class="lang-toggle" role="group" aria-label="Language selector" data-active-lang="en-US">
+                    <button type="button" data-lang="en-US" aria-pressed="true"><span class="lang-flag" aria-hidden="true">🇺🇸</span><span class="lang-label">EN</span></button>
+                    <button type="button" data-lang="pt-BR" aria-pressed="false"><span class="lang-flag" aria-hidden="true">🇧🇷</span><span class="lang-label">PT</span></button>
+                </div>
             </div>
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <section class="section why-hero">
             <div class="container narrow">
-                <p class="eyebrow">POR QUE EXISTIMOS</p>
-                <h1>O nome <span class="text-highlight">M.A.R.I.A.</span> e uma homenagem a minha mae.</h1>
-                <p class="section-copy">Antes de ser produto, marca ou estrategia, M.A.R.I.A. e memoria, respeito e cuidado.</p>
+                <p class="eyebrow" data-i18n="why.eyebrow">WHY THIS EXISTS</p>
+                <h1 data-i18n="why.h1">The name <span class="text-highlight">M.A.R.I.A.</span> is a tribute to my mother.</h1>
+                <p class="section-copy" data-i18n="why.sub">Before it was a product, a brand or a strategy, M.A.R.I.A. was memory, respect and care.</p>
             </div>
         </section>
 
@@ -66,38 +68,58 @@
                 <figure class="why-memory-photo">
                     <img src="../img/maria.png" alt="Maria Jeane Pereira" loading="lazy" />
                 </figure>
-                <p>Maria Jeane Pereira (<time datetime="1956">&ast; 1956</time> &ndash; <time datetime="2020">&#10013; 2020</time>), dedicou a vida a cuidar de pessoas, especialmente dos mais necessitados. Esse exemplo me inspira como filho e me inspirou a criar esta plataforma.</p>
-                <p>No mundo de AppSec, e comum ver muito barulho, muitas ferramentas e pouca clareza. A gente nao quis criar mais uma vitrine de features. A gente quis criar cuidado real para software real.</p>
-                <p>Por isso o nome M.A.R.I.A. significa <strong>Management Application Risk Integrated Analysis</strong>. Mas, acima da sigla, ele representa uma ideia simples: tecnologia tambem pode cuidar.</p>
+                <p data-i18n="why.p1">Maria Jeane Pereira (<time datetime="1956">&ast; 1956</time> &ndash; <time datetime="2020">&#10013; 2020</time>) spent her life taking care of people, mostly people no one else was taking care of. That example shapes me as her son, and it is what pushed me to build this platform.</p>
+                <p data-i18n="why.p2">In AppSec there is a lot of noise, a lot of tooling and very little clarity. I didn't want to build another showcase of features. I wanted to build real care for real software.</p>
+                <p data-i18n="why.p3">That's why M.A.R.I.A. stands for <strong>Management Application Risk Integrated Analysis</strong>. But above the acronym, it carries a simpler idea: technology can also take care of things.</p>
             </div>
         </section>
 
-        <section class="section why-principles">
+        <section class="section why-principles alt-band">
             <div class="container narrow">
-                <h2>O que isso significa na pratica</h2>
+                <h2 data-i18n="why.principlesH2">What that means in practice</h2>
                 <ul class="bullet-list why-list">
-                    <li>Resolver problemas serios do dia a dia antes de adicionar novas features.</li>
-                    <li>Ajudar times a priorizar o que realmente reduz risco.</li>
-                    <li>Construir um produto que desenvolvedores realmente queiram usar.</li>
-                    <li>Medir sucesso por impacto real, nao por buzzword ou quadrante.</li>
+                    <li data-i18n="why.principle1">Solve serious day-to-day problems before adding new features.</li>
+                    <li data-i18n="why.principle2">Help teams prioritize what actually reduces risk.</li>
+                    <li data-i18n="why.principle3">Build a product developers genuinely want to use.</li>
+                    <li data-i18n="why.principle4">Measure success by real impact, not by buzzwords or quadrants.</li>
                 </ul>
             </div>
         </section>
 
-        <section class="section why-cta">
+        <section class="section why-founder">
             <div class="container narrow">
-                <h2>Cuidar melhor do software tambem e cuidar melhor das pessoas.</h2>
-                <p class="section-copy">Se essa visao faz sentido para voce, venha construir isso com a gente desde o comeco.</p>
-                <p><a class="button button-primary" href="/#join">Join the waitlist</a></p>
+                <h2 data-i18n="why.founderH2">Who builds this</h2>
+                <p data-i18n="why.founderBody">I'm Cássio Pereira. M.A.R.I.A. is an independent, one-person initiative, and that's a deliberate choice: it means I answer your email myself, I can change direction in a week when the product is wrong, and I'd rather fix what hurts teams today than ship features that demo well. It also means I'm honest about the trade-off &mdash; you'll find capabilities here that bigger platforms don't have, and enterprise checkboxes there that this doesn't have yet.</p>
+                <!-- TODO(cassio): o link "Meet the founder" apontava para https://cassiodevelo.com.br,
+                     que parece truncado. Confirme a URL correta e reative o botão abaixo.
+                <p><a class="button button-secondary" href="https://SUA-URL-AQUI" target="_blank" rel="noreferrer" data-i18n="why.founderLink">More about me</a></p>
+                -->
+            </div>
+        </section>
+
+        <section class="section why-cta final-cta">
+            <div class="container narrow center">
+                <h2 data-i18n="why.ctaH2">Taking better care of software means taking better care of people.</h2>
+                <p class="section-copy" data-i18n="why.ctaSub">If that makes sense to you, come build it with me from the start.</p>
+                <div class="section-actions">
+                    <a class="button button-primary" href="/#join" data-track-event="waitlist_cta_click" data-track-location="why_cta" data-i18n="cta.waitlist">Join the waitlist</a>
+                    <a class="button button-secondary" href="/product/" data-i18n="why.productLink">See what it does</a>
+                </div>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
         <div class="container footer-inner">
-            <a href="https://github.com/" target="_blank" rel="noreferrer" class="footer-link">GitHub</a>
-            <a href="mailto:contact@mariaappsec.com" class="footer-link">Contact</a>
-            <p class="footer-copy">Built for developers and AppSec teams who want less noise and better decisions.</p>
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="/product/" data-i18n="nav.product">Product</a>
+                <a href="/pricing/" data-i18n="nav.pricing">Pricing</a>
+                <a href="/openscan/" data-i18n="nav.openscan">Open Scan</a>
+                <a href="/why/" data-i18n="nav.why">Why</a>
+                <a href="/enterprise/" data-i18n="nav.enterprise">Enterprise</a>
+                <a href="mailto:contact@mariaappsec.com" class="footer-link" data-i18n="nav.contact">Contact</a>
+            </nav>
+            <p class="footer-copy" data-i18n="footer.copy">Built for developers and AppSec teams who want less noise and better decisions.</p>
             <p class="footer-note">Management Application Risk Integrated Analysis</p>
             <p>&copy; 2026 M.A.R.I.A.</p>
         </div>

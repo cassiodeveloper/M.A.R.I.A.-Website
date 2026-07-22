@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Risk Score — how M.A.R.I.A. scores your apps | M.A.R.I.A.</title>
+    <meta name="description" content="A CVSS score describes a vulnerability. A risk score describes your application. See the factors behind M.A.R.I.A.'s application risk score, and how to tune them.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mariaappsec.com/product/risk-score/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Application Risk Score | M.A.R.I.A.">
+    <meta property="og:description" content="A vulnerability has a severity. An application has a risk. Here is how that number is built.">
+    <meta property="og:url" content="https://mariaappsec.com/product/risk-score/">
+    <meta property="og:site_name" content="M.A.R.I.A.">
+    <meta property="og:image" content="https://mariaappsec.com/img/maria.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Application Risk Score | M.A.R.I.A.">
+    <meta name="twitter:description" content="A vulnerability has a severity. An application has a risk.">
+    <meta name="twitter:image" content="https://mariaappsec.com/img/maria.png">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <script>document.documentElement.classList.add('i18n-pending');</script>
+    <script src="../../i18n/translations.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-09VC70Q0TF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-09VC70Q0TF');
+    </script>
+</head>
+<body data-page="riskScore">
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/" data-i18n-aria="nav.homeAria" aria-label="M.A.R.I.A. home">
+                <span class="brand-mark">M.A.R.I.A.</span>
+                <span class="brand-copy" data-i18n="brand.copy">Application risk intelligence</span>
+            </a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="/product/" class="is-current" data-i18n="nav.product">Product</a>
+                <a href="/openscan/" data-i18n="nav.openscan">Open Scan</a>
+                <a href="/pricing/" data-i18n="nav.pricing">Pricing</a>
+                <a href="/why/" data-i18n="nav.why">Why</a>
+            </nav>
+            <div class="header-actions">
+                <a class="button button-primary button-compact" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="nav_top" data-i18n="cta.demoShort">See the demo</a>
+                <div class="lang-toggle" role="group" aria-label="Language selector" data-active-lang="en-US">
+                    <button type="button" data-lang="en-US" aria-pressed="true"><span class="lang-flag" aria-hidden="true">🇺🇸</span><span class="lang-label">EN</span></button>
+                    <button type="button" data-lang="pt-BR" aria-pressed="false"><span class="lang-flag" aria-hidden="true">🇧🇷</span><span class="lang-label">PT</span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="page-hero section">
+            <div class="container narrow">
+                <p class="breadcrumb"><a href="/product/" data-i18n="nav.product">Product</a> <span aria-hidden="true">/</span> <span data-i18n="score.crumb">Application Risk Score</span></p>
+                <h1 data-i18n="score.h1">A vulnerability has a severity. An application has a <span class="text-highlight">risk</span>.</h1>
+                <p class="section-copy" data-i18n="score.sub">One score per application, built from exposure, data sensitivity, exploitability and change velocity &mdash; with every factor visible and every weight yours to change.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section">
+            <div class="container narrow">
+                <h2 data-i18n="score.problemH2">The problem with sorting by severity</h2>
+                <p data-i18n="score.problem1">Severity is assigned by someone who has never seen your architecture. CVSS 9.8 means "this is bad in general". It says nothing about whether the vulnerable function is ever called, whether the service is reachable from the internet, or whether it touches a single piece of customer data.</p>
+                <p data-i18n="score.problem2">So teams do the only thing a flat list allows: sort by severity and work top-down. That's how you end up patching a critical in an internal batch job while the payments API keeps a "medium" open for eight months.</p>
+                <p data-i18n="score.problem3">Volume makes it worse. Once the list passes a few hundred items, severity sorting stops being triage and becomes a lottery.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section alt-band">
+            <div class="container narrow">
+                <h2 data-i18n="score.solutionH2">How M.A.R.I.A. scores an application</h2>
+                <p data-i18n="score.solution1">M.A.R.I.A. scores the <strong>application</strong>, not the finding. The score combines:</p>
+                <ul class="feature-list">
+                    <li data-i18n="score.factor1"><strong>Exposure</strong> &mdash; internet-facing, internal, or isolated</li>
+                    <li data-i18n="score.factor2"><strong>Data sensitivity</strong> &mdash; PII, payment data, credentials, or nothing that matters</li>
+                    <li data-i18n="score.factor3"><strong>Exploitability</strong> &mdash; known exploited, public exploit available, exploitation probability</li>
+                    <li data-i18n="score.factor4"><strong>Reachability</strong> &mdash; whether the vulnerable code path is actually used</li>
+                    <li data-i18n="score.factor5"><strong>Change velocity</strong> &mdash; code that changes daily carries different risk from code frozen for two years</li>
+                    <li data-i18n="score.factor6"><strong>Finding severity and density</strong> &mdash; the raw signal from your scanners, as one input among several rather than the whole answer</li>
+                </ul>
+                <p data-i18n="score.solution2">Every score opens up. You see the factors, their weights, and which findings drive the number. Nothing is a black box &mdash; a score nobody can explain gets ignored exactly like the alerts it replaced.</p>
+                <p data-i18n="score.solution3">And the weights are yours. A fintech and an internal tools team don't have the same risk model, and M.A.R.I.A. doesn't pretend they do.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section">
+            <div class="container narrow">
+                <h2 data-i18n="score.whyH2">Why it matters</h2>
+                <p data-i18n="score.why1">Because a number everyone trusts changes the conversation.</p>
+                <ul class="feature-list">
+                    <li data-i18n="score.why2">A developer stops asking "which of these 212 findings do I do first?"</li>
+                    <li data-i18n="score.why3">A tech lead can justify spending a sprint on one service instead of spreading fixes thin across ten.</li>
+                    <li data-i18n="score.why4">A CTO gets a portfolio view that answers "where are we actually exposed?" instead of a bar chart of open findings that goes up every time you buy another scanner.</li>
+                </ul>
+                <p class="pull-quote" data-i18n="score.why5">One honest number beats a thousand accurate alerts.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section alt-band">
+            <div class="container narrow">
+                <h2 data-i18n="score.exampleH2">A practical example</h2>
+                <p data-i18n="score.exampleIntro">Two applications in the same organization. One of them has fewer findings and far more risk.</p>
+                <pre class="code-block" aria-label="Example comparison of two application risk scores"><code>payments-api            RISK 84  (High)      internal-reports      RISK 22  (Low)
+─────────────────────────────────            ─────────────────────────────────
+Findings        212                          Findings        347
+Critical         14                          Critical         31
+Internet-facing YES                          Internet-facing NO
+Handles PII     YES                          Handles PII     NO
+Deploys/week      4                          Deploys/week      0.2
+
+Top 3 drivers of payments-api risk:
+1  CVE-2025-31324 · spring-core · reachable from /api/v1/checkout   +23
+2  Hardcoded AWS key · config/prod.yml · valid, unrotated 94 days   +19
+3  No auth on /internal/debug · exposed via ingress                 +12
+
+3 findings drive 61% of the risk. Fix those and the score drops 84 → 41.</code></pre>
+                <p class="evidence-tag" data-i18n="common.illustrative">Illustrative example</p>
+                <p data-i18n="score.exampleOutro"><code>internal-reports</code> has <strong>more</strong> findings and <strong>more</strong> criticals &mdash; and a quarter of the risk. Severity sorting would have sent your team to the wrong repository. That's the whole argument, in one table.</p>
+            </div>
+        </section>
+
+        <section class="final-cta section">
+            <div class="container narrow center">
+                <h2 data-i18n="score.ctaH2">See it scored on a real portfolio.</h2>
+                <p class="section-copy" data-i18n="score.ctaSub">The demo organization has a dozen applications with real scanner output behind them.</p>
+                <div class="section-actions">
+                    <a class="button button-primary" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="risk_score_cta" data-i18n="cta.demo">See it on real data</a>
+                    <a class="button button-secondary" href="/#join" data-track-event="waitlist_cta_click" data-track-location="risk_score_cta" data-i18n="cta.waitlist">Join the waitlist</a>
+                </div>
+                <p class="next-link"><a href="/product/pull-request-risk/" data-i18n="score.next">Next: how risk changes with every pull request &rarr;</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="/product/" data-i18n="nav.product">Product</a>
+                <a href="/pricing/" data-i18n="nav.pricing">Pricing</a>
+                <a href="/openscan/" data-i18n="nav.openscan">Open Scan</a>
+                <a href="/why/" data-i18n="nav.why">Why</a>
+                <a href="/enterprise/" data-i18n="nav.enterprise">Enterprise</a>
+                <a href="mailto:contact@mariaappsec.com" class="footer-link" data-i18n="nav.contact">Contact</a>
+            </nav>
+            <p class="footer-copy" data-i18n="footer.copy">Built for developers and AppSec teams who want less noise and better decisions.</p>
+            <p class="footer-note">Management Application Risk Integrated Analysis</p>
+            <p>&copy; 2026 M.A.R.I.A.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+</body>
+</html>

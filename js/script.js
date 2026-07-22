@@ -1,21 +1,34 @@
-﻿const header = document.querySelector('.site-header');
-const form = document.querySelector('.waitlist-form');
-const submitButton = form?.querySelector('button[type="submit"]');
+/**
+ * M.A.R.I.A. site runtime: language switching, analytics events, form state.
+ *
+ * i18n contract
+ * -------------
+ * Markup declares translation targets with stable keys, never positions:
+ *
+ *   <h1 data-i18n="hero.h1">…</h1>            -> innerHTML
+ *   <input data-i18n-placeholder="form.email">-> placeholder attribute
+ *   <a data-i18n-aria="nav.home">             -> aria-label attribute
+ *
+ * Strings live in i18n/translations.js as `common` (shared chrome) plus a
+ * per-page map. A page only needs to declare what is unique to it.
+ */
 
 const LANG_STORAGE_KEY = 'maria_lang';
-const body = document.body;
-const pageKey = body?.dataset?.page || (window.location.pathname.includes('/why/') ? 'why' : 'index');
-const isWhyPage = pageKey === 'why';
-const preferredTranslationsPath = isWhyPage ? '../i18n/translations.json' : 'i18n/translations.json';
-
 const LANG_ORDER = ['en-US', 'pt-BR'];
 const LANG_UI = {
-    'en-US': { short: 'EN', flag: '🇺🇸' },
-    'pt-BR': { short: 'PT', flag: '🇧🇷' }
+    'en-US': { short: 'EN', flag: '\u{1F1FA}\u{1F1F8}' },
+    'pt-BR': { short: 'PT', flag: '\u{1F1E7}\u{1F1F7}' }
 };
 
+const header = document.querySelector('.site-header');
+const body = document.body;
+const pageKey = body?.dataset?.page || 'index';
+
 let activeSendingText = 'Sending...';
-let i18nConfig = null;
+let sourceTitle = document.title;
+let i18nConfig = window.MARIA_TRANSLATIONS || null;
+
+/* ---------------------------------------------------------------- analytics */
 
 const trackGAEvent = (eventName, params = {}) => {
     if (!eventName) {
@@ -34,22 +47,27 @@ const trackGAEvent = (eventName, params = {}) => {
     }
 
     if (Array.isArray(window.dataLayer)) {
-        window.dataLayer.push({
-            event: eventName,
-            ...eventParams
-        });
+        window.dataLayer.push({ event: eventName, ...eventParams });
     }
 };
 
-const updateHeaderState = () => {
-    if (!header) {
-        return;
-    }
+/* -------------------------------------------------------------------- i18n */
 
-    header.classList.toggle('is-scrolled', window.scrollY > 12);
+const getSavedLang = () => {
+    try {
+        return localStorage.getItem(LANG_STORAGE_KEY);
+    } catch {
+        return null;
+    }
 };
 
-const getSavedLang = () => localStorage.getItem(LANG_STORAGE_KEY);
+const saveLang = (lang) => {
+    try {
+        localStorage.setItem(LANG_STORAGE_KEY, lang);
+    } catch {
+        /* private mode: language still applies for this page view */
+    }
+};
 
 const pickInitialLang = (config) => {
     const saved = getSavedLang();
@@ -57,46 +75,82 @@ const pickInitialLang = (config) => {
         return saved;
     }
 
-    const browser = (navigator.language || '').toLowerCase();
-    if (browser.startsWith('pt')) {
+    if ((navigator.language || '').toLowerCase().startsWith('pt')) {
         return 'pt-BR';
     }
 
-    return config.defaultLang || 'pt-BR';
+    return config.defaultLang || 'en-US';
 };
+
+const sourceMeta = new Map();
 
 const setMetaContent = (selector, value) => {
-    if (!value) {
+    const element = document.querySelector(selector);
+    if (!element) {
         return;
     }
 
-    const element = document.querySelector(selector);
-    if (element) {
-        element.setAttribute('content', value);
+    if (!sourceMeta.has(selector)) {
+        sourceMeta.set(selector, element.getAttribute('content') || '');
     }
+
+    element.setAttribute('content', value || sourceMeta.get(selector));
 };
 
-const applyEntry = (entry) => {
-    if (!entry?.selector) {
-        return;
-    }
+/**
+ * The HTML source is the source language (see `sourceLang`). Snapshotting it at
+ * boot means translation files only carry the *other* languages, and a key that
+ * is missing or not yet translated falls back to real copy instead of blanking.
+ */
+const sourceStrings = new Map();
 
-    const targets = document.querySelectorAll(entry.selector);
-    if (!targets.length) {
-        return;
-    }
+const snapshotSource = () => {
+    document.querySelectorAll('[data-i18n]').forEach((element) => {
+        sourceStrings.set(element.dataset.i18n, element.innerHTML);
+    });
 
-    targets.forEach((target) => {
-        if (entry.text !== undefined) {
-            target.textContent = entry.text;
+    document.querySelectorAll('[data-i18n-placeholder]').forEach((element) => {
+        sourceStrings.set(
+            `@placeholder:${element.dataset.i18nPlaceholder}`,
+            element.getAttribute('placeholder') || ''
+        );
+    });
+
+    document.querySelectorAll('[data-i18n-aria]').forEach((element) => {
+        sourceStrings.set(
+            `@aria:${element.dataset.i18nAria}`,
+            element.getAttribute('aria-label') || ''
+        );
+    });
+};
+
+const resolveStrings = (config, lang) => ({
+    ...(config.common?.[lang] || {}),
+    ...(config.pages?.[pageKey]?.[lang]?.strings || {})
+});
+
+const applyStrings = (strings) => {
+    document.querySelectorAll('[data-i18n]').forEach((element) => {
+        const key = element.dataset.i18n;
+        const value = strings[key] ?? sourceStrings.get(key);
+        if (value !== undefined) {
+            element.innerHTML = value;
         }
+    });
 
-        if (entry.html !== undefined) {
-            target.innerHTML = entry.html;
+    document.querySelectorAll('[data-i18n-placeholder]').forEach((element) => {
+        const key = element.dataset.i18nPlaceholder;
+        const value = strings[key] ?? sourceStrings.get(`@placeholder:${key}`);
+        if (value !== undefined) {
+            element.setAttribute('placeholder', value);
         }
+    });
 
-        if (entry.placeholder !== undefined) {
-            target.setAttribute('placeholder', entry.placeholder);
+    document.querySelectorAll('[data-i18n-aria]').forEach((element) => {
+        const key = element.dataset.i18nAria;
+        const value = strings[key] ?? sourceStrings.get(`@aria:${key}`);
+        if (value !== undefined) {
+            element.setAttribute('aria-label', value);
         }
     });
 };
@@ -114,169 +168,123 @@ const paintToggleState = (lang) => {
 };
 
 const applyLanguage = (config, lang) => {
-    const pageTranslations = config.pages?.[pageKey]?.[lang];
-    if (!pageTranslations) {
-        return;
+    const page = config.pages?.[pageKey]?.[lang];
+
+    document.documentElement.lang = page?.htmlLang || lang;
+
+    if (page?.title) {
+        document.title = page.title;
+    } else if (sourceTitle) {
+        document.title = sourceTitle;
     }
 
-    document.documentElement.lang = pageTranslations.htmlLang || lang;
-    document.title = pageTranslations.title || document.title;
+    setMetaContent('meta[name="description"]', page?.meta?.description);
+    setMetaContent('meta[property="og:title"]', page?.meta?.ogTitle);
+    setMetaContent('meta[property="og:description"]', page?.meta?.ogDescription);
+    setMetaContent('meta[name="twitter:title"]', page?.meta?.twitterTitle);
+    setMetaContent('meta[name="twitter:description"]', page?.meta?.twitterDescription);
 
-    setMetaContent('meta[name="description"]', pageTranslations.meta?.description);
-    setMetaContent('meta[property="og:title"]', pageTranslations.meta?.ogTitle);
-    setMetaContent('meta[property="og:description"]', pageTranslations.meta?.ogDescription);
-    setMetaContent('meta[name="twitter:title"]', pageTranslations.meta?.twitterTitle);
-    setMetaContent('meta[name="twitter:description"]', pageTranslations.meta?.twitterDescription);
+    applyStrings(resolveStrings(config, lang));
 
-    (pageTranslations.entries || []).forEach(applyEntry);
-
-    activeSendingText = pageTranslations.sendingText || activeSendingText;
+    activeSendingText = page?.sendingText || activeSendingText;
     paintToggleState(lang);
 };
 
-const ensureToggle = (config, initialLang) => {
-    const headerInner = document.querySelector('.header-inner');
-    if (!headerInner || !config.labels) {
+const buildToggle = (config, initialLang) => {
+    const toggle = document.querySelector('.lang-toggle');
+    if (!toggle || !config?.labels) {
         return;
-    }
-
-    let toggle = headerInner.querySelector('.lang-toggle');
-
-    if (!toggle) {
-        toggle = document.createElement('div');
-        toggle.className = 'lang-toggle';
-        toggle.setAttribute('role', 'group');
-        toggle.setAttribute('aria-label', 'Language selector');
-        headerInner.appendChild(toggle);
     }
 
     toggle.innerHTML = '';
 
-    LANG_ORDER.filter((langCode) => config.labels?.[langCode]).forEach((langCode) => {
-        const ui = LANG_UI[langCode] || { short: config.labels[langCode], flag: '' };
+    LANG_ORDER.filter((code) => config.labels[code]).forEach((code) => {
+        const ui = LANG_UI[code] || { short: config.labels[code], flag: '' };
         const button = document.createElement('button');
 
         button.type = 'button';
-        button.dataset.lang = langCode;
-        button.innerHTML = `<span class="lang-flag" aria-hidden="true">${ui.flag}</span><span class="lang-label">${ui.short}</span>`;
-        button.setAttribute('aria-pressed', langCode === initialLang ? 'true' : 'false');
-        button.className = langCode === initialLang ? 'active' : '';
+        button.dataset.lang = code;
+        button.innerHTML =
+            `<span class="lang-flag" aria-hidden="true">${ui.flag}</span>` +
+            `<span class="lang-label">${ui.short}</span>`;
         button.addEventListener('click', () => {
-            localStorage.setItem(LANG_STORAGE_KEY, langCode);
-            if (i18nConfig) {
-                applyLanguage(i18nConfig, langCode);
-            } else {
-                paintToggleState(langCode);
-            }
+            saveLang(code);
+            applyLanguage(config, code);
+            trackGAEvent('language_switch', { language: code });
         });
+
         toggle.appendChild(button);
     });
 
     paintToggleState(initialLang);
 };
 
-const bindStaticToggleFallback = () => {
-    document.querySelectorAll('.lang-toggle button').forEach((button) => {
-        button.addEventListener('click', () => {
-            const lang = button.dataset.lang;
-            if (!lang) {
-                return;
-            }
-
-            localStorage.setItem(LANG_STORAGE_KEY, lang);
-            if (!i18nConfig) {
-                paintToggleState(lang);
-            }
-        });
-    });
-
-    const saved = getSavedLang();
-    if (saved) {
-        paintToggleState(saved);
-    }
-};
-
-const fetchTranslationsConfig = async () => {
-    if (window.MARIA_TRANSLATIONS) {
-        return window.MARIA_TRANSLATIONS;
-    }
-
-    const candidatePaths = [
-        preferredTranslationsPath,
-        '/i18n/translations.json',
-        'i18n/translations.json',
-        '../i18n/translations.json'
-    ];
-
-    for (const path of candidatePaths) {
-        try {
-            const response = await fetch(path, { cache: 'no-cache' });
-            if (!response.ok) {
-                continue;
-            }
-
-            return await response.json();
-        } catch {
-            // Try next path.
-        }
-    }
-
-    return null;
-};
-
-const initI18n = async () => {
-    bindStaticToggleFallback();
-
-    const config = await fetchTranslationsConfig();
-    if (!config) {
+const initI18n = () => {
+    if (!i18nConfig) {
         return;
     }
 
-    i18nConfig = config;
+    snapshotSource();
 
-    const initialLang = pickInitialLang(config);
-    ensureToggle(config, initialLang);
-    applyLanguage(config, initialLang);
+    const initialLang = pickInitialLang(i18nConfig);
+    buildToggle(i18nConfig, initialLang);
+    applyLanguage(i18nConfig, initialLang);
+};
+
+/* --------------------------------------------------------------- behaviour */
+
+const updateHeaderState = () => {
+    header?.classList.toggle('is-scrolled', window.scrollY > 12);
+};
+
+const initForm = () => {
+    const form = document.querySelector('.waitlist-form');
+    const submitButton = form?.querySelector('button[type="submit"]');
+
+    if (!form || !submitButton) {
+        return;
+    }
+
+    form.addEventListener('submit', () => {
+        trackGAEvent('waitlist_submit', {
+            event_category: 'conversion',
+            cta_location: form.dataset.formLocation || 'waitlist_form'
+        });
+
+        submitButton.disabled = true;
+        submitButton.textContent = activeSendingText;
+    });
 };
 
 document.addEventListener('click', (event) => {
-    const clickedElement = event.target.closest('a, button');
-    if (!clickedElement) {
+    const element = event.target.closest('a, button');
+    if (!element) {
         return;
     }
 
-    const href = clickedElement.getAttribute('href') || '';
-    const trackedEventName = clickedElement.dataset.trackEvent;
-    const fallbackEventName = href.includes('demo.mariaappsec.com') ? 'demo_click' : '';
-    const eventName = trackedEventName || fallbackEventName;
+    const href = element.getAttribute('href') || '';
+    const eventName =
+        element.dataset.trackEvent ||
+        (href.includes('demo.mariaappsec.com') ? 'demo_click' : '');
 
     if (!eventName) {
         return;
     }
 
-    const eventLabel = (clickedElement.textContent || '').trim().slice(0, 80);
-    const eventLocation = clickedElement.dataset.trackLocation || (isWhyPage ? 'why_page' : 'index_page');
-
     trackGAEvent(eventName, {
         event_category: 'engagement',
-        event_label: eventLabel,
-        cta_location: eventLocation,
+        event_label: (element.textContent || '').trim().slice(0, 80),
+        cta_location: element.dataset.trackLocation || `${pageKey}_page`,
         link_url: href
     });
 });
 
-updateHeaderState();
 window.addEventListener('scroll', updateHeaderState, { passive: true });
 
-if (form && submitButton) {
-    form.addEventListener('submit', () => {
-        trackGAEvent('waitlist_submit', {
-            event_category: 'conversion',
-            cta_location: 'waitlist_form'
-        });
-        submitButton.disabled = true;
-        submitButton.textContent = activeSendingText;
-    });
-}
+updateHeaderState();
+initI18n();
+initForm();
 
-void initI18n();
+// The pre-paint guard in <head> hides the body until strings are applied, so a
+// pt-BR visitor never sees the English source flash past. Always release it.
+document.documentElement.classList.remove('i18n-pending');

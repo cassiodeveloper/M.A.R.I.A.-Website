@@ -1,397 +1,600 @@
-﻿window.MARIA_TRANSLATIONS = {
-  "defaultLang": "pt-BR",
+﻿/**
+ * Traduções do site M.A.R.I.A.
+ *
+ * O HTML fonte está em inglês (en-US) e é capturado pelo runtime no boot, então
+ * este arquivo só precisa conter os idiomas ADICIONAIS. Uma chave ausente cai
+ * de volta no texto original em inglês em vez de sumir da página.
+ *
+ * Chaves são estáveis e semânticas (`hero.h1`), nunca posicionais. Adicionar,
+ * remover ou reordenar seções no HTML não quebra tradução nenhuma.
+ *
+ * Como adicionar texto novo:
+ *   1. no HTML:  <p data-i18n="secao.item">English source</p>
+ *   2. aqui:     "secao.item": "Texto em português"
+ *
+ * Atributos:  data-i18n-placeholder  e  data-i18n-aria  usam as mesmas chaves.
+ */
+window.MARIA_TRANSLATIONS = {
+  "defaultLang": "en-US",
   "labels": {
     "pt-BR": "PT-BR",
     "en-US": "EN-US"
   },
+
+  /* Chrome compartilhado por todas as páginas. */
+  "common": {
+    "pt-BR": {
+      "a11y.skip": "Pular para o conteúdo",
+      "brand.copy": "Inteligência de risco para aplicações",
+      "nav.homeAria": "M.A.R.I.A. página inicial",
+      "nav.product": "Produto",
+      "nav.openscan": "Open Scan",
+      "nav.pricing": "Preços",
+      "nav.why": "História",
+      "nav.enterprise": "Enterprise",
+      "nav.contact": "Contato",
+
+      "cta.demo": "Ver funcionando com dados reais",
+      "cta.demoShort": "Ver demo",
+      "cta.demoTry": "Testar numa organização de exemplo",
+      "cta.waitlist": "Entrar na waitlist",
+      "cta.reserve": "Reservar minha vaga",
+      "cta.founder": "Quero ser founding team",
+      "cta.openscan": "Baixar o Open Scan Pack grátis",
+      "cta.talk": "Falar comigo",
+      "cta.talkEnterprise": "Falar sobre Enterprise",
+
+      "common.illustrative": "Exemplo ilustrativo",
+      "footer.copy": "Feito para desenvolvedores e times de AppSec que querem menos ruído e decisões melhores.",
+
+      "features.score.title": "Um número por aplicação, e todo o raciocínio por trás dele.",
+      "features.score.link": "Como o score funciona &rarr;",
+      "features.pr.title": "Veja se uma mudança aumenta ou reduz risco, antes do merge.",
+      "features.pr.link": "Ver no pull request &rarr;",
+      "features.timeline.title": "Risco ao longo do tempo, com os eventos que o moveram.",
+      "features.timeline.link": "Ver a timeline &rarr;",
+      "features.norm.title": "Várias ferramentas, vários formatos, um modelo só.",
+      "features.norm.link": "Como a normalização funciona &rarr;",
+      "features.dev.title": "Segurança onde o time de engenharia já trabalha.",
+      "features.dev.link": "Por que isso importa &rarr;",
+
+      "pricing.eyebrow": "PREÇOS",
+      "pricing.repos": "repos",
+      "pricing.talk": "Vamos conversar",
+      "pricing.allIncluded": "Todas as funcionalidades inclusas. Sem plano escondido.",
+      "pricing.monthly.title": "Mensal",
+      "pricing.monthly.headline": "a partir de $9,99<span>/mês</span>",
+      "pricing.monthly.unit": "Por repositório, por mês:",
+      "pricing.monthly.example": "Exemplo: 30 repositórios = <strong>$60/mês</strong>. Só isso.",
+      "pricing.lifetime.title": "Vitalício",
+      "pricing.lifetime.headline": "pagamento único",
+      "pricing.lifetime.unit": "Pague uma vez, use para sempre:",
+      "pricing.lifetime.example": "Pagamento único. Sem renovação, sem fatura surpresa.",
+      "pricing.upto25": "Até 25 repos",
+      "pricing.upto50": "Até 50 repos",
+      "pricing.upto100": "Até 100 repos",
+      "pricing.over100": "Mais de 100 repos",
+
+      "founder.kicker": "FOUNDING TEAMS",
+      "founder.title": "50 times. Depois, nunca mais.",
+      "founder.unit": "Acesso vitalício, até 50 repositórios",
+      "founder.item1": "Acesso vitalício, até 50 repositórios",
+      "founder.item2": "Badge de founding user",
+      "founder.item3": "Acesso antecipado a tudo que for novo",
+      "founder.item4": "Um canal direto comigo, não uma fila de suporte",
+      "founder.item5": "Onboarding prioritário, feito junto com você",
+      "founder.why": "Isto não é desconto. É mais barato que o plano vitalício de $299 porque founding teams pagam com outra coisa: me dizer o que está errado no produto enquanto ainda é barato mudar.",
+      "founder.choose": "Se você só quer a ferramenta, pegue o plano vitalício. Se você quer moldá-la, pegue este."
+    }
+  },
+
   "pages": {
+
+    /* ------------------------------------------------------------- landing */
     "index": {
       "pt-BR": {
         "htmlLang": "pt-BR",
-        "title": "M.A.R.I.A. | Inteligencia de Risco para Aplicacoes",
+        "title": "M.A.R.I.A. | Inteligência de risco para aplicações",
         "meta": {
-          "description": "M.A.R.I.A. ajuda times de engenharia e AppSec a cortar ruido, priorizar risco real e agir mais rapido com confianca.",
-          "ogTitle": "M.A.R.I.A. | Pare de \"corrigir\" vulnerabilidade. Comece a reduzir risco.",
-          "ogDescription": "Clareza para priorizar o que realmente reduz risco na sua aplicacao.",
-          "twitterTitle": "M.A.R.I.A. | Inteligencia de Risco para Aplicacoes",
-          "twitterDescription": "Menos ruido. Mais prioridade. Risco real sob controle."
+          "description": "M.A.R.I.A. lê a saída dos scanners que você já roda e transforma isso em um score de risco por aplicação, por pull request, ao longo do tempo. Preço por repositório.",
+          "ogTitle": "M.A.R.I.A. | Pare de apagar vulnerabilidade. Comece a reduzir risco.",
+          "ogDescription": "Inteligência de risco em cima das ferramentas de segurança que você já tem. Feito para desenvolvedores e times de AppSec.",
+          "twitterTitle": "M.A.R.I.A. | Inteligência de risco para aplicações",
+          "twitterDescription": "Um score de risco por aplicação. Impacto de risco em cada pull request. Sobre as ferramentas que você já roda."
         },
-        "entries": [
-          { "selector": ".brand-copy", "text": "Seguranca com foco em risco real, nao em barulho" },
-          { "selector": ".site-nav a:nth-child(1)", "text": "Home" },
-          { "selector": ".site-nav a:nth-child(2)", "text": "Open Scan" },
-          { "selector": ".site-nav a:nth-child(3)", "text": "Precos" },
-          { "selector": ".site-nav a:nth-child(4)", "text": "Historia" },
-          { "selector": ".site-nav a:nth-child(5)", "text": "Entrar" },
-          { "selector": ".site-nav a:nth-child(6)", "text": "Demo" },
+        "sendingText": "Enviando...",
+        "strings": {
+          "hero.eyebrow": "Inteligência de risco para aplicações",
+          "hero.h1": "Você não tem <span class=\"text-highlight\">1.000</span> vulnerabilidades.<br />Você tem <span class=\"text-highlight\">seis</span> que importam.",
+          "hero.sub": "M.A.R.I.A. lê a saída dos scanners que você já roda &mdash; SARIF, SBOM, secrets, dependências &mdash; e transforma isso em um score de risco por aplicação, por pull request, ao longo do tempo.",
+          "hero.trust": "Lê a saída dos scanners &mdash; SARIF, CycloneDX, JSON. Fica acima das ferramentas que você já tem. Preço por repositório, nunca por desenvolvedor.",
+          "hero.card.context": "Exposta na internet &middot; trata PII &middot; deploy 4&times;/semana",
+          "hero.card.driverLabel": "Maior fator",
+          "hero.card.driverValue": "CVE-2025-31324 em <code>spring-core</code>, alcançável por um endpoint exposto",
+          "hero.card.fixLabel": "Corrija primeiro",
+          "hero.card.fixValue": "Suba <code>spring-core</code> 6.1.4 &rarr; 6.1.6 &mdash; risco 84 &rarr; 41",
+          "hero.card.footnote": "3 de 212 findings respondem por 61% do risco desta aplicação.",
 
-          { "selector": ".hero .eyebrow", "text": "Management Application Risk Integrated Analysis" },
-          { "selector": ".hero h1", "html": "Pare de <span class=\"text-highlight\">apagar</span> vulnerabilidade.<br />Comece a <span class=\"text-highlight\">reduzir</span> risco." },
-          { "selector": ".hero-subtitle", "text": "Saiba o que realmente importa na seguranca da sua aplicacao e priorize com confianca." },
-          { "selector": ".hero-actions a:nth-child(1)", "text": "Entrar na waitlist" },
-          { "selector": ".hero-actions a:nth-child(2)", "text": "Open Scan Pack grátis" },
-          { "selector": ".hero-actions a:nth-child(3)", "text": "Ver precos" },
-          { "selector": ".hero-actions a:nth-child(4)", "text": "Ver demo" },
-          { "selector": ".hero-trust", "text": "Sem ruido. Sem teatro. Clareza para agir." },
-          { "selector": ".hero-risk-label", "text": "Risco" },
-          { "selector": ".hero-risk-badge", "text": "Alto" },
-          { "selector": ".hero-metrics-grid .hero-metric-card:nth-child(1) span", "text": "Repositorios" },
-          { "selector": ".hero-metrics-grid .hero-metric-card:nth-child(2) span", "text": "Critico" },
-          { "selector": ".hero-metrics-grid .hero-metric-card:nth-child(3) span", "text": "Alto" },
-          { "selector": ".hero-metrics-grid .hero-metric-card:nth-child(4) span", "text": "Delta de Risco no PR" },
+          "integrations.title": "M.A.R.I.A. não substitui suas ferramentas. Ela lê o que elas produzem.",
+          "integrations.note": "Qualquer coisa que fale SARIF, CycloneDX ou findings em JSON.",
 
-          { "selector": ".pain p:nth-child(1)", "html": "Voce tem <span class=\"text-highlight\">1000</span> vulnerabilidades." },
-          { "selector": ".pain p:nth-child(2)", "html": "Voce nao sabe qual <span class=\"text-highlight\">realmente importa</span>." },
-          { "selector": ".pain p:nth-child(3)", "html": "Suas ferramentas nao <span class=\"text-highlight\">concordam</span>." },
-          { "selector": ".pain p:nth-child(4)", "html": "Seu time ignora <span class=\"text-highlight\">a maior parte</span>." },
-          { "selector": ".pain h2", "html": "Isso nao e <span class=\"text-highlight\">seguranca.</span><br />Isso e <span class=\"text-highlight\">ruido.</span>" },
+          "pain.line1": "Você tem <span class=\"text-highlight\">1.000</span> vulnerabilidades.",
+          "pain.line2": "Você não sabe qual delas <span class=\"text-highlight\">importa</span>.",
+          "pain.line3": "Suas ferramentas não <span class=\"text-highlight\">concordam</span> entre si.",
+          "pain.line4": "Seu time parou de <span class=\"text-highlight\">ler</span> os alertas meses atrás.",
+          "pain.h2": "Isso não é <span class=\"text-highlight\">segurança.</span><br />Isso é <span class=\"text-highlight\">ruído.</span>",
 
-          { "selector": ".solution .eyebrow", "text": "A VIRADA" },
-          { "selector": ".solution h2", "text": "M.A.R.I.A. muda o jogo." },
-          { "selector": ".solution .bullet-list li:nth-child(1)", "text": "Um score claro e configuravel por aplicacao" },
-          { "selector": ".solution .bullet-list li:nth-child(2)", "text": "Impacto real, nao volume de alerta" },
-          { "selector": ".solution .bullet-list li:nth-child(3)", "text": "Mudanca de risco visivel no fluxo de entrega" },
-          { "selector": ".solution .bullet-list li:nth-child(4)", "text": "Prioridade objetiva para quem precisa agir" },
+          "shift.eyebrow": "A VIRADA",
+          "shift.h2": "Vulnerabilidade não é risco.",
+          "shift.p1": "Um CVE 9.8 numa biblioteca que você nunca chama, dentro de um sistema interno que não guarda dado nenhum, não é o seu problema. Uma falha de severidade média no serviço que processa pagamentos e sobe quatro vezes por semana é.",
+          "shift.p2": "<strong>Severidade é uma propriedade da vulnerabilidade. Risco é uma propriedade da sua aplicação.</strong> M.A.R.I.A. calcula a segunda.",
 
-          { "selector": ".flow .eyebrow", "text": "COMO FUNCIONA" },
-          { "selector": ".flow h2", "html": "SARIF &rarr; M.A.R.I.A. &rarr; Acao" },
-          { "selector": ".flow .section-copy", "text": "M.A.R.I.A. unifica sinais de seguranca, calcula risco de aplicacao e entrega uma fila de acao com contexto de negocio." },
+          "how.eyebrow": "COMO FUNCIONA",
+          "how.h2": "Três passos. Nenhum scanner novo.",
+          "how.step1.title": "Conectar",
+          "how.step1.body": "Aponte M.A.R.I.A. para os repositórios que você quer cobrir. Ela trabalha a partir de findings e metadados do repositório.",
+          "how.step2.title": "Ingerir",
+          "how.step2.body": "Seus scanners atuais enviam a saída deles &mdash; SARIF, CycloneDX, JSON. M.A.R.I.A. deduplica, normaliza e correlaciona tudo em um modelo só.",
+          "how.step2.link": "Ainda não roda scanner? Comece pelo Open Scan Pack gratuito &rarr;",
+          "how.step3.title": "Agir",
+          "how.step3.body": "Cada aplicação ganha um score de risco com os motivos por trás dele. Cada pull request ganha um delta de risco antes do merge. Toda semana você vê o que mudou, e por quê.",
 
-          { "selector": ".value .value-card:nth-child(1) .card-kicker", "text": "Risk Score" },
-          { "selector": ".value .value-card:nth-child(1) h3", "text": "Veja o risco real da aplicacao em segundos." },
-          { "selector": ".value .value-card:nth-child(2) .card-kicker", "text": "Flexivel" },
-          { "selector": ".value .value-card:nth-child(2) h3", "text": "Modele o calculo de risco para sua realidade." },
-          { "selector": ".value .value-card:nth-child(3) .card-kicker", "text": "Risk Timeline" },
-          { "selector": ".value .value-card:nth-child(3) h3", "text": "Entenda quando, onde e por que o risco subiu." },
-          { "selector": ".value .value-card:nth-child(4) .card-kicker", "text": "Developer Focus" },
-          { "selector": ".value .value-card:nth-child(4) h3", "text": "Seguranca que entra no ritmo do time de engenharia." },
+          "evidence.eyebrow": "NO PULL REQUEST",
+          "evidence.h2": "Segurança que chega onde o trabalho acontece.",
+          "evidence.sub": "Este é o formato do que um desenvolvedor recebe &mdash; no review que ele já tem aberto, sobre código que ele escreveu minutos atrás.",
+          "evidence.link": "Como funciona a análise de PR",
 
-          { "selector": ".pricing .eyebrow", "text": "PRECOS" },
-          { "selector": ".pricing h2", "html": "Produto completo.<br />Pague so por escala." },
-          { "selector": ".pricing .pricing-card:nth-child(1) h3", "text": "Assinatura" },
-          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(1) span", "text": "1-10 repos" },
-          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(2) span", "text": "11-50 repos" },
-          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(3) span", "text": "51-150 repos" },
-          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(4) span", "text": "151-400 repos" },
-          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(5) span", "text": "400+ repos" },
-          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-note", "text": "Minimo de $9.99/mes" },
-          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-support", "text": "Todos os recursos inclusos. Sem bloqueio por plano." },
-          { "selector": ".pricing .pricing-card:nth-child(1) .button", "text": "Entrar na waitlist" },
+          "features.eyebrow": "O QUE TEM DENTRO",
+          "features.h2": "Cinco coisas, bem feitas.",
+          "features.score.body": "Exposição, sensibilidade dos dados, explorabilidade e velocidade de mudança &mdash; com os pesos do seu jeito, nunca uma caixa-preta.",
+          "features.pr.body": "Um comentário no PR com o delta, a causa e a correção que inverteria o resultado.",
+          "features.timeline.body": "Responda \"estamos melhores que no trimestre passado?\" com evidência em vez de opinião.",
+          "features.norm.body": "O mesmo problema reportado por quatro scanners vira um finding com quatro fontes de evidência.",
+          "features.dev.body": "Não um painel que ninguém tem motivo para abrir. Uma coisa para fazer, com o motivo junto.",
 
-          { "selector": ".pricing .pricing-card:nth-child(2) h3", "text": "Lifetime" },
-          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-row:nth-child(1) span", "text": "Ate 25 repos" },
-          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-row:nth-child(2) span", "text": "Ate 50 repos" },
-          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-row:nth-child(3) span", "text": "Ate 100 repos" },
-          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-row:nth-child(4) span", "text": "100+ repos" },
-          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-row:nth-child(4) strong", "text": "Fale com a gente" },
-          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-support:nth-of-type(1)", "text": "Todos os recursos inclusos. Sem bloqueio por plano." },
-          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-support:nth-of-type(2)", "text": "Pagamento unico. Sem surpresa." },
-          { "selector": ".pricing .pricing-card:nth-child(2) .button", "text": "Reservar vaga" },
+          "diff.eyebrow": "O QUE M.A.R.I.A. NÃO É",
+          "diff.h2": "Prefiro ser claro a ser impressionante.",
+          "diff.scanner.title": "Não é scanner.",
+          "diff.scanner.body": "M.A.R.I.A. não encontra vulnerabilidades. Suas ferramentas já fazem isso, e fazem bem.",
+          "diff.replace.title": "Não é substituição.",
+          "diff.replace.body": "Continue com Semgrep. Continue com Trivy. Continue com o que funciona. M.A.R.I.A. fica acima delas e torna a saída delas utilizável.",
+          "diff.seat.title": "Não é cobrada por desenvolvedor.",
+          "diff.seat.body": "Contrate dez engenheiros e a conta continua igual. Você paga por repositório, porque é ele que carrega o risco.",
+          "diff.quadrant.title": "Não é construída para quadrante.",
+          "diff.quadrant.body": "Isto é construído em volta dos problemas que os times têm neste trimestre, não em volta de um checklist para relatório de analista. É uma escolha consciente: você vai encontrar aqui capacidades que plataformas maiores não têm, e lá checkboxes de enterprise que aqui ainda não existem.",
 
-          { "selector": ".difference p:nth-child(1)", "text": "Nao e mais um scanner" },
-          { "selector": ".difference p:nth-child(2)", "text": "Nao e mais um dashboard" },
-          { "selector": ".difference p:nth-child(3)", "text": "Nao e mais uma suite enterprise" },
-          { "selector": ".difference h2", "text": "Isso e inteligencia de risco." },
+          "pricing.h2": "Produto completo. Pague só pela escala.",
+          "pricing.sub": "Todas as funcionalidades em todos os planos. Sem cobrança por assento. Sem \"fale conosco\" para ver um número.",
+          "pricing.fullLink": "Preço completo, exemplos de cálculo e dúvidas comerciais &rarr;",
+          "pricing.enterpriseLink": "Centenas ou milhares de repositórios? &rarr;",
 
-          { "selector": ".anti-quadrant .eyebrow", "text": "NOSSO POSICIONAMENTO" },
-          { "selector": ".anti-quadrant h2", "text": "Gartner? Screw it." },
-          { "selector": ".anti-quadrant .section-copy", "text": "Nao estamos aqui para perseguir quadrante. Estamos aqui para reduzir risco de verdade e melhorar o dia a dia de quem entrega software." },
+          "story.eyebrow": "POR QUE ISTO EXISTE",
+          "story.h2": "M.A.R.I.A. é o nome da minha mãe.",
+          "story.p1": "Maria Jeane Pereira (1956&ndash;2020) passou a vida cuidando de pessoas, principalmente das que ninguém mais estava cuidando.",
+          "story.p2": "A sigla é real &mdash; Management Application Risk Integrated Analysis. E o motivo por trás dela também: software deveria ter alguém prestando atenção nele.",
+          "story.p3": "Eu sou Cássio Pereira. Construo isso sozinho, por escolha, e prefiro resolver o que dói nos times hoje a lançar features que ficam bonitas em demo.",
+          "story.link": "Ler a história completa",
 
-          { "selector": ".founder .eyebrow", "text": "CONSTRUIDO DE OUTRO JEITO" },
-          { "selector": ".founder h2", "text": "Empreendedor independente. Problema real primeiro." },
-          { "selector": ".founder .section-copy", "text": "M.A.R.I.A. nasce de uma iniciativa individual focada em dores serias de AppSec. Sem inflar roadmap com feature de vitrine." },
+          "faq.eyebrow": "RESPOSTAS DIRETAS",
+          "faq.h2": "As perguntas que você já está fazendo.",
+          "faq.q1": "Isso é mais um scanner?",
+          "faq.a1": "Não. M.A.R.I.A. não escaneia nada. Ela consome o que os seus scanners produzem &mdash; SARIF, CycloneDX, findings em JSON &mdash; e transforma isso em risco no qual você pode agir. Se seus scanners funcionam, M.A.R.I.A. os torna úteis. Se você ainda não tem nenhum, comece pelo Open Scan Pack gratuito.",
+          "faq.q2": "E se eu não tiver scanner nenhum configurado?",
+          "faq.a2": "Use o <a href=\"/openscan/\">Open Scan Pack gratuito</a>: escolha uma stack de scanners open-source, baixe templates de CI prontos e rode no seu próprio pipeline. Sem login, sem acesso ao repositório, nada sai do seu CI. Depois que eles rodam, você tem a entrada de que M.A.R.I.A. precisa.",
+          "faq.q3": "Vou ter que trocar minhas ferramentas atuais?",
+          "faq.a3": "Não, e nem deveria. M.A.R.I.A. só é útil porque seus scanners já funcionam. Ela fica acima deles, remove as duplicatas e coloca o que sobra na ordem do que realmente importa.",
+          "faq.q4": "Como o score de risco é calculado?",
+          "faq.a4": "A partir das propriedades da aplicação, não só da severidade do finding: exposição, sensibilidade dos dados, explorabilidade, alcançabilidade, com que frequência o código muda, e os findings em si. Todo score abre e mostra os fatores que o produziram, e os pesos são seus para ajustar &mdash; uma fintech e um time de ferramentas internas não compartilham modelo de risco. <a href=\"/product/risk-score/\">Ver como o score funciona &rarr;</a>",
+          "faq.q5": "Por que cobrar por repositório em vez de por desenvolvedor?",
+          "faq.a5": "Porque cobrar por desenvolvedor te pune por crescer o time, e seu risco não escala com headcount &mdash; escala com o código que você mantém. Dez engenheiros em doze repositórios carregam mais ou menos o mesmo risco de aplicação que três engenheiros em doze repositórios.",
 
-          { "selector": ".story .eyebrow", "text": "POR QUE EXISTE" },
-          { "selector": ".story h2", "text": "M.A.R.I.A. recebeu esse nome em homenagem a quem dedicou a vida a cuidar dos outros." },
-          { "selector": ".story .section-copy", "text": "Essa plataforma existe para cuidar melhor do seu software e das pessoas por tras dele." },
-          { "selector": ".story .button", "text": "Ler historia completa" },
-
-          { "selector": ".final-cta .eyebrow", "text": "ACESSO ANTECIPADO" },
-          { "selector": ".final-cta h2", "text": "Entrar na waitlist" },
-          { "selector": ".final-cta .section-copy", "text": "Entre cedo e ajude a moldar a plataforma que transforma ruido em prioridade real." },
-          { "selector": ".waitlist-form .button", "text": "Entrar na waitlist" },
-          { "selector": "#email", "placeholder": "voce@empresa.com" },
-          { "selector": ".form-note", "text": "Um campo. Zero friccao. Zero spam." },
-
-          { "selector": ".footer-inner a:nth-child(1)", "text": "Contato" },
-          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(5) strong", "text": "Enterprise" },
-
-          { "selector": ".enterprise-pricing .eyebrow", "text": "ENTERPRISE" },
-          { "selector": ".enterprise-header h2", "text": "Feito para escala de verdade." },
-          { "selector": ".enterprise-header .section-copy", "text": "Para empresas com centenas ou milhares de repositorios, M.A.R.I.A. precifica por repositorios ativos e relevantes, nao por cemiterio digital." },
-
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(1) .card-kicker", "text": "Enterprise Starter" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(1) h3", "text": "Ate 1.000 repos ativos" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(1) .enterprise-price", "text": "$3k a $5k/mes" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(1) .pricing-support", "text": "Para times saindo do caos de scanners para uma operacao AppSec baseada em risco." },
-
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(2) .card-kicker", "text": "Enterprise Scale" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(2) h3", "text": "Ate 3.000 repos ativos" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(2) .enterprise-price", "text": "$6k a $9k/mes" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(2) .pricing-support", "text": "Para organizacoes maduras padronizando inteligencia de risco em engenharia." },
-
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(3) .card-kicker", "text": "Enterprise Plus" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(3) h3", "text": "Ate 7.500 repos ativos" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(3) .enterprise-price", "text": "$10k a $15k/mes" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(3) .pricing-support", "text": "Melhor encaixe para ambientes grandes com milhares de repositorios." },
-
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(4) .card-kicker", "text": "Strategic" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(4) h3", "text": "7.500+ repos ativos" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(4) .enterprise-price", "text": "Custom" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(4) .pricing-support", "text": "Para ambientes enterprise complexos, suporte dedicado e onboarding customizado." },
-
-          { "selector": ".enterprise-detail > div:nth-child(1) h3", "text": "O que conta como repo ativo?" },
-          { "selector": ".enterprise-detail > div:nth-child(1) .pricing-support", "text": "Um repositorio faturavel e um repositorio ativo, privado, relevante, conectado ao M.A.R.I.A. e usado na analise de risco." },
-
-          { "selector": ".enterprise-detail > div:nth-child(2) h3", "text": "O que nao conta?" },
-          { "selector": ".enterprise-detail > div:nth-child(2) .enterprise-list li:nth-child(1)", "text": "Repositorios arquivados" },
-          { "selector": ".enterprise-detail > div:nth-child(2) .enterprise-list li:nth-child(2)", "text": "Forks, mirrors, templates e repositorios apenas de documentacao" },
-          { "selector": ".enterprise-detail > div:nth-child(2) .enterprise-list li:nth-child(3)", "text": "Provas de conceito sem ownership ativo" },
-          { "selector": ".enterprise-detail > div:nth-child(2) .enterprise-list li:nth-child(4)", "text": "Repositorios sem sinal de seguranca relevante" },
-
-          { "selector": ".enterprise-detail > div:nth-child(3) h3", "text": "Enterprise inclui" },
-          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(1)", "text": "Integracao com SCM" },
-          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(2)", "text": "Normalizacao SARIF" },
-          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(3)", "text": "Application risk score" },
-          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(4)", "text": "Motor de priorizacao por risco" },
-          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(5)", "text": "Relatorios executivos" },
-          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(6)", "text": "SSO, audit logs e suporte" },
-
-          { "selector": ".enterprise-cta p", "html": "Para ambientes perto de <strong>7.000 repositorios</strong>, Enterprise Plus normalmente e a conversa certa." },
-          { "selector": ".enterprise-cta .button", "text": "Falar sobre Enterprise" }   
-        ],
-        "sendingText": "Enviando..."
-      },
-      "en-US": {
-        "htmlLang": "en-US",
-        "title": "M.A.R.I.A. | Application Risk Intelligence for Builders",
-        "meta": {
-          "description": "M.A.R.I.A. helps engineering and AppSec teams cut noise, prioritize real risk, and move faster with confidence.",
-          "ogTitle": "M.A.R.I.A. | Stop fixing vulnerabilities. Start reducing risk.",
-          "ogDescription": "Prioritize what actually reduces risk in your application.",
-          "twitterTitle": "M.A.R.I.A. | Application Risk Intelligence for Builders",
-          "twitterDescription": "Less noise. Better priorities. Real risk under control."
-        },
-        "entries": [
-          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(5) strong", "text": "Enterprise" },
-          { "selector": ".brand-copy", "text": "Security focused on real risk, not alert theater" },
-          { "selector": ".site-nav a:nth-child(1)", "text": "Home" },
-          { "selector": ".site-nav a:nth-child(2)", "text": "Open Scan" },
-          { "selector": ".site-nav a:nth-child(3)", "text": "Pricing" },
-          { "selector": ".site-nav a:nth-child(4)", "text": "Story" },
-          { "selector": ".site-nav a:nth-child(5)", "text": "Join" },
-          { "selector": ".site-nav a:nth-child(6)", "text": "Demo" },
-
-          { "selector": ".hero .eyebrow", "text": "Management Application Risk Integrated Analysis" },
-          { "selector": ".hero h1", "html": "Stop <span class=\"text-highlight\">fixing</span> vulnerabilities.<br />Start <span class=\"text-highlight\">reducing</span> risk." },
-          { "selector": ".hero-subtitle", "text": "Know what actually matters in your application security and prioritize with confidence." },
-          { "selector": ".hero-actions a:nth-child(1)", "text": "Join the waitlist" },
-          { "selector": ".hero-actions a:nth-child(2)", "text": "Free Open Scan Pack" },
-          { "selector": ".hero-actions a:nth-child(3)", "text": "See pricing" },
-          { "selector": ".hero-actions a:nth-child(4)", "text": "Try demo" },
-          { "selector": ".hero-trust", "text": "No noise. No theater. Clear priorities." },
-          { "selector": ".hero-risk-label", "text": "Risk" },
-          { "selector": ".hero-risk-badge", "text": "High" },
-          { "selector": ".hero-metrics-grid .hero-metric-card:nth-child(1) span", "text": "Repositories" },
-          { "selector": ".hero-metrics-grid .hero-metric-card:nth-child(2) span", "text": "Critical" },
-          { "selector": ".hero-metrics-grid .hero-metric-card:nth-child(3) span", "text": "High" },
-          { "selector": ".hero-metrics-grid .hero-metric-card:nth-child(4) span", "text": "PR Risk Delta" },
-
-          { "selector": ".pain p:nth-child(1)", "html": "You have <span class=\"text-highlight\">1000</span> vulnerabilities." },
-          { "selector": ".pain p:nth-child(2)", "html": "You do not know which one <span class=\"text-highlight\">actually matters</span>." },
-          { "selector": ".pain p:nth-child(3)", "html": "Your tools do not <span class=\"text-highlight\">agree</span>." },
-          { "selector": ".pain p:nth-child(4)", "html": "Your team ignores <s>half</s> <span class=\"text-highlight\">most</span> of it." },
-          { "selector": ".pain h2", "html": "That is not <span class=\"text-highlight\">security.</span><br />That is <span class=\"text-highlight\">noise.</span>" },
-
-          { "selector": ".solution .eyebrow", "text": "THE SHIFT" },
-          { "selector": ".solution h2", "text": "M.A.R.I.A. changes the game." },
-          { "selector": ".solution .bullet-list li:nth-child(1)", "text": "One clear, configurable risk score per application" },
-          { "selector": ".solution .bullet-list li:nth-child(2)", "text": "Understand real impact, not alerts" },
-          { "selector": ".solution .bullet-list li:nth-child(3)", "text": "See real risk changes" },
-          { "selector": ".solution .bullet-list li:nth-child(4)", "text": "Focus on what actually matters" },
-
-          { "selector": ".flow .eyebrow", "text": "HOW IT WORKS" },
-          { "selector": ".flow h2", "html": "Scan &rarr; M.A.R.I.A. &rarr; Act" },
-          { "selector": ".flow .section-copy", "text": "M.A.R.I.A. unifies security findings, calculates application risk, and delivers an action queue with business context." },
-
-          { "selector": ".value .value-card:nth-child(1) .card-kicker", "text": "Risk Score" },
-          { "selector": ".value .value-card:nth-child(1) h3", "text": "See true application risk in seconds." },
-          { "selector": ".value .value-card:nth-child(2) .card-kicker", "text": "Flexible" },
-          { "selector": ".value .value-card:nth-child(2) h3", "text": "Model risk scoring to match your reality." },
-          { "selector": ".value .value-card:nth-child(3) .card-kicker", "text": "Risk Timeline" },
-          { "selector": ".value .value-card:nth-child(3) h3", "text": "Understand when, where, and why risk increased." },
-          { "selector": ".value .value-card:nth-child(4) .card-kicker", "text": "Developer Focus" },
-          { "selector": ".value .value-card:nth-child(4) h3", "text": "Security that fits engineering flow." },
-
-          { "selector": ".pricing .eyebrow", "text": "PRICING" },
-          { "selector": ".pricing h2", "html": "Full product.<br />Pay only for scale." },
-          { "selector": ".pricing .pricing-card:nth-child(1) h3", "text": "Subscription" },
-          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(1) span", "text": "1-10 repos" },
-          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(2) span", "text": "11-50 repos" },
-          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(3) span", "text": "51-150 repos" },
-          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(4) span", "text": "151-400 repos" },
-          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-row:nth-child(5) span", "text": "400+ repos" },
-          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-note", "text": "Minimum $9.99/month" },
-          { "selector": ".pricing .pricing-card:nth-child(1) .pricing-support", "text": "All features included. No tier lock-in." },
-          { "selector": ".pricing .pricing-card:nth-child(1) .button", "text": "Join the waitlist" },
-
-          { "selector": ".pricing .pricing-card:nth-child(2) h3", "text": "Lifetime" },
-          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-row:nth-child(1) span", "text": "Up to 25 repos" },
-          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-row:nth-child(2) span", "text": "Up to 50 repos" },
-          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-row:nth-child(3) span", "text": "Up to 100 repos" },
-          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-row:nth-child(4) span", "text": "100+ repos" },
-          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-row:nth-child(4) strong", "text": "Talk to us" },
-          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-support:nth-of-type(1)", "text": "All features included. No tier lock-in." },
-          { "selector": ".pricing .pricing-card:nth-child(2) .pricing-support:nth-of-type(2)", "text": "One-time payment. No surprises." },
-          { "selector": ".pricing .pricing-card:nth-child(2) .button", "text": "Reserve your spot" },
-
-          { "selector": ".enterprise-pricing .eyebrow", "text": "ENTERPRISE" },
-          { "selector": ".enterprise-header h2", "text": "Built for serious scale." },
-          { "selector": ".enterprise-header .section-copy", "text": "For companies with hundreds or thousands of repositories, M.A.R.I.A. is priced by active, relevant repositories, not by digital graveyard inventory." },
-
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(1) .card-kicker", "text": "Enterprise Starter" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(1) h3", "text": "Up to 1,000 active repos" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(1) .enterprise-price", "text": "$3k to $5k/month" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(1) .pricing-support", "text": "For teams moving from noisy scanners to risk-based AppSec operations." },
-
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(2) .card-kicker", "text": "Enterprise Scale" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(2) h3", "text": "Up to 3,000 active repos" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(2) .enterprise-price", "text": "$6k to $9k/month" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(2) .pricing-support", "text": "For mature engineering organizations standardizing risk intelligence." },
-
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(3) .card-kicker", "text": "Enterprise Plus" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(3) h3", "text": "Up to 7,500 active repos" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(3) .enterprise-price", "text": "$10k to $15k/month" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(3) .pricing-support", "text": "Best fit for large environments with thousands of repositories." },
-
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(4) .card-kicker", "text": "Strategic" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(4) h3", "text": "7,500+ active repos" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(4) .enterprise-price", "text": "Custom" },
-          { "selector": ".enterprise-grid .enterprise-card:nth-child(4) .pricing-support", "text": "For complex enterprise environments, dedicated support, and custom onboarding." },
-
-          { "selector": ".enterprise-detail > div:nth-child(1) h3", "text": "What counts as an active repo?" },
-          { "selector": ".enterprise-detail > div:nth-child(1) .pricing-support", "text": "A billable repository is an active, private, relevant code repository connected to M.A.R.I.A. and used for risk analysis." },
-
-          { "selector": ".enterprise-detail > div:nth-child(2) h3", "text": "What does not count?" },
-          { "selector": ".enterprise-detail > div:nth-child(2) .enterprise-list li:nth-child(1)", "text": "Archived repositories" },
-          { "selector": ".enterprise-detail > div:nth-child(2) .enterprise-list li:nth-child(2)", "text": "Forks, mirrors, templates, and docs-only repositories" },
-          { "selector": ".enterprise-detail > div:nth-child(2) .enterprise-list li:nth-child(3)", "text": "Proofs of concept with no active ownership" },
-          { "selector": ".enterprise-detail > div:nth-child(2) .enterprise-list li:nth-child(4)", "text": "Repositories with no relevant security signal" },
-
-          { "selector": ".enterprise-detail > div:nth-child(3) h3", "text": "Enterprise includes" },
-          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(1)", "text": "SCM integration" },
-          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(2)", "text": "SARIF normalization" },
-          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(3)", "text": "Application risk score" },
-          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(4)", "text": "Risk prioritization engine" },
-          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(5)", "text": "Executive reporting" },
-          { "selector": ".enterprise-detail > div:nth-child(3) .enterprise-list li:nth-child(6)", "text": "SSO, audit logs, and support" },
-
-          { "selector": ".enterprise-cta p", "html": "For environments around <strong>7,000 repositories</strong>, Enterprise Plus is usually the right conversation." },
-          { "selector": ".enterprise-cta .button", "text": "Talk Enterprise" },
-          { "selector": ".difference p:nth-child(1)", "text": "Not another scanner" },
-          { "selector": ".difference p:nth-child(2)", "text": "Not another dashboard" },
-          { "selector": ".difference p:nth-child(3)", "text": "Not another enterprise suite" },
-          { "selector": ".difference h2", "text": "This is risk intelligence." },
-
-          { "selector": ".anti-quadrant .eyebrow", "text": "OUR POSITION" },
-          { "selector": ".anti-quadrant h2", "text": "Gartner? Screw it." },
-          { "selector": ".anti-quadrant .section-copy", "text": "We are not here to chase quadrants. We are here to reduce real risk and improve the daily reality of teams shipping software." },
-
-          { "selector": ".founder .eyebrow", "text": "BUILT DIFFERENTLY" },
-          { "selector": ".founder h2", "text": "Independent founder. Real problems first." },
-          { "selector": ".founder .section-copy", "text": "M.A.R.I.A. is an independent founder initiative focused on serious AppSec pain. No bloated roadmap. No vanity features." },
-
-          { "selector": ".story .eyebrow", "text": "WHY IT EXISTS" },
-          { "selector": ".story h2", "text": "M.A.R.I.A. was named in honor of someone who dedicated her life to caring for others." },
-          { "selector": ".story .section-copy", "text": "This platform exists to better care for your software and the people behind it." },
-          { "selector": ".story .button", "text": "Read full story" },
-
-          { "selector": ".final-cta .eyebrow", "text": "EARLY ACCESS" },
-          { "selector": ".final-cta h2", "text": "Join the waitlist" },
-          { "selector": ".final-cta .section-copy", "text": "Get in early and help shape the platform that turns security noise into real priorities." },
-          { "selector": ".waitlist-form .button", "text": "Join the waitlist" },
-          { "selector": "#email", "placeholder": "you@company.com" },
-          { "selector": ".form-note", "text": "One field. Zero friction. Zero spam." },
-
-          { "selector": ".footer-inner a:nth-child(1)", "text": "Contact" }
-        ],
-        "sendingText": "Sending..."
+          "join.eyebrow": "ACESSO ANTECIPADO",
+          "join.h2": "Descubra como é o seu risco de verdade.",
+          "join.sub": "Entre na waitlist e eu falo com você pessoalmente quando sua vaga abrir. Founding teams primeiro.",
+          "join.label": "E-mail",
+          "join.placeholder": "voce@empresa.com",
+          "join.note": "Um campo. Sem senha. Sem sequência de vendas. Eu leio todas as respostas."
+        }
       }
     },
+
+    /* -------------------------------------------------------- índice produto */
+    "product": {
+      "pt-BR": {
+        "htmlLang": "pt-BR",
+        "title": "Produto | M.A.R.I.A. Inteligência de risco para aplicações",
+        "meta": {
+          "description": "Score de risco por aplicação, análise de risco em pull request, timeline de risco, normalização de findings e AppSec com foco em desenvolvedor.",
+          "ogTitle": "Produto | M.A.R.I.A.",
+          "ogDescription": "Cinco capacidades: score de risco, risco no pull request, timeline, normalização e foco em desenvolvedor.",
+          "twitterTitle": "Produto | M.A.R.I.A.",
+          "twitterDescription": "O que M.A.R.I.A. faz, capacidade por capacidade."
+        },
+        "strings": {
+          "product.eyebrow": "O PRODUTO",
+          "product.h1": "Cinco capacidades. Um objetivo: dizer o que realmente importa.",
+          "product.sub": "M.A.R.I.A. fica acima das ferramentas de segurança que você já roda. Cada página abaixo explica uma parte de como isso funciona, com um exemplo concreto da saída.",
+          "product.score.body": "Vulnerabilidade tem severidade. Aplicação tem risco. Exposição, sensibilidade dos dados, explorabilidade, alcançabilidade e velocidade de mudança, com os pesos do seu jeito.",
+          "product.pr.body": "Todo pull request move o seu risco. M.A.R.I.A. comenta o delta no PR enquanto o autor ainda tem o contexto na cabeça.",
+          "product.timeline.body": "Quando subiu, quando caiu, o que causou cada movimento e quais decisões realmente funcionaram.",
+          "product.norm.body": "SARIF, CycloneDX e saída bruta de scanner, deduplicados e correlacionados em uma única visão do que está errado.",
+          "product.dev.body": "Desenvolvedor não ignora segurança. Ele ignora lista na qual não dá para agir. É essa a diferença.",
+          "product.ctaH2": "Mais fácil de ver do que de descrever.",
+          "product.ctaSub": "A demo roda numa organização de exemplo. Nada para instalar, nada para conectar."
+        }
+      }
+    },
+
+    /* ----------------------------------------------------------- risk score */
+    "riskScore": {
+      "pt-BR": {
+        "htmlLang": "pt-BR",
+        "title": "Application Risk Score — como M.A.R.I.A. mede risco de aplicação",
+        "meta": {
+          "description": "Um score CVSS descreve uma vulnerabilidade. Um risk score descreve a sua aplicação. Veja os fatores por trás do score do M.A.R.I.A. e como ajustá-los.",
+          "ogTitle": "Application Risk Score | M.A.R.I.A.",
+          "ogDescription": "Vulnerabilidade tem severidade. Aplicação tem risco. Veja como esse número é construído.",
+          "twitterTitle": "Application Risk Score | M.A.R.I.A.",
+          "twitterDescription": "Vulnerabilidade tem severidade. Aplicação tem risco."
+        },
+        "strings": {
+          "score.crumb": "Application Risk Score",
+          "score.h1": "Vulnerabilidade tem severidade. Aplicação tem <span class=\"text-highlight\">risco</span>.",
+          "score.sub": "Um score por aplicação, construído a partir de exposição, sensibilidade dos dados, explorabilidade e velocidade de mudança &mdash; com cada fator visível e cada peso ajustável por você.",
+          "score.problemH2": "O problema de ordenar por severidade",
+          "score.problem1": "Severidade é atribuída por alguém que nunca viu a sua arquitetura. CVSS 9.8 significa \"isto é ruim em geral\". Não diz nada sobre a função vulnerável ser chamada algum dia, sobre o serviço ser alcançável pela internet, ou sobre ele tocar em um único dado de cliente.",
+          "score.problem2": "Então os times fazem a única coisa que uma lista plana permite: ordenar por severidade e trabalhar de cima para baixo. É assim que você corrige um crítico num job interno enquanto a API de pagamentos mantém um \"médio\" aberto por oito meses.",
+          "score.problem3": "O volume piora tudo. Passando de algumas centenas de itens, ordenar por severidade deixa de ser triagem e vira loteria.",
+          "score.solutionH2": "Como M.A.R.I.A. pontua uma aplicação",
+          "score.solution1": "M.A.R.I.A. pontua a <strong>aplicação</strong>, não o finding. O score combina:",
+          "score.factor1": "<strong>Exposição</strong> &mdash; exposta na internet, interna ou isolada",
+          "score.factor2": "<strong>Sensibilidade dos dados</strong> &mdash; PII, dados de pagamento, credenciais, ou nada que importe",
+          "score.factor3": "<strong>Explorabilidade</strong> &mdash; exploração conhecida, exploit público disponível, probabilidade de exploração",
+          "score.factor4": "<strong>Alcançabilidade</strong> &mdash; se o caminho de código vulnerável é de fato usado",
+          "score.factor5": "<strong>Velocidade de mudança</strong> &mdash; código que muda todo dia carrega risco diferente de código congelado há dois anos",
+          "score.factor6": "<strong>Severidade e densidade dos findings</strong> &mdash; o sinal bruto dos seus scanners, como uma entrada entre várias e não como a resposta inteira",
+          "score.solution2": "Todo score abre. Você vê os fatores, os pesos e quais findings puxam o número. Nada é caixa-preta &mdash; um score que ninguém consegue explicar é ignorado exatamente como os alertas que ele substituiu.",
+          "score.solution3": "E os pesos são seus. Uma fintech e um time de ferramentas internas não têm o mesmo modelo de risco, e M.A.R.I.A. não finge que têm.",
+          "score.whyH2": "Por que isso importa",
+          "score.why1": "Porque um número em que todo mundo confia muda a conversa.",
+          "score.why2": "O desenvolvedor para de perguntar \"qual destes 212 findings eu faço primeiro?\"",
+          "score.why3": "O tech lead consegue justificar gastar uma sprint em um serviço, em vez de espalhar correções por dez.",
+          "score.why4": "O CTO ganha uma visão de portfólio que responde \"onde a gente está realmente exposto?\", em vez de um gráfico de barras de findings abertos que sobe toda vez que você compra mais um scanner.",
+          "score.why5": "Um número honesto vale mais que mil alertas corretos.",
+          "score.exampleH2": "Um exemplo prático",
+          "score.exampleIntro": "Duas aplicações da mesma organização. Uma delas tem menos findings e muito mais risco.",
+          "score.exampleOutro": "<code>internal-reports</code> tem <strong>mais</strong> findings e <strong>mais</strong> críticos &mdash; e um quarto do risco. Ordenar por severidade teria mandado seu time para o repositório errado. É esse o argumento inteiro, em uma tabela.",
+          "score.ctaH2": "Veja isso pontuado num portfólio real.",
+          "score.ctaSub": "A organização de demonstração tem uma dúzia de aplicações com saída real de scanner por trás.",
+          "score.next": "A seguir: como o risco muda a cada pull request &rarr;"
+        }
+      }
+    },
+
+    /* ------------------------------------------------------------- PR risk */
+    "prRisk": {
+      "pt-BR": {
+        "htmlLang": "pt-BR",
+        "title": "Pull Request Risk Analysis — impacto de segurança antes do merge",
+        "meta": {
+          "description": "Todo pull request muda seu risco. M.A.R.I.A. comenta o delta direto no PR: o que a mudança adiciona, o que remove e o que precisa de decisão — antes do merge.",
+          "ogTitle": "Pull Request Risk Analysis | M.A.R.I.A.",
+          "ogDescription": "Veja o impacto de segurança de uma mudança enquanto o autor ainda tem o contexto na cabeça.",
+          "twitterTitle": "Pull Request Risk Analysis | M.A.R.I.A.",
+          "twitterDescription": "Todo pull request muda seu risco. A maioria dos times descobre meses depois."
+        },
+        "strings": {
+          "pr.crumb": "Pull Request Risk Analysis",
+          "pr.h1": "Todo pull request muda o seu risco. A maioria dos times descobre <span class=\"text-highlight\">meses depois</span>.",
+          "pr.sub": "M.A.R.I.A. comenta no PR com o delta de risco: o que a mudança introduz, o que ela remove e o que precisa de decisão &mdash; enquanto o autor ainda tem o contexto na cabeça.",
+          "pr.problemH2": "O finding chega muito depois da decisão",
+          "pr.problem1": "Findings de segurança chegam num calendário que não tem nada a ver com engenharia. Uma dependência adicionada na segunda aparece num relatório três semanas depois, atribuída a quem estiver de plantão, sobre um código que essa pessoa não escreveu, num serviço que ela talvez nem conheça.",
+          "pr.problem2": "A essa altura, corrigir virou arqueologia. O autor já seguiu em frente, o contexto sumiu e a mudança está enterrada sob quarenta commits. O momento mais barato para corrigir um problema de segurança &mdash; os cinco minutos antes do merge, com alguém já pensando naquele código exato &mdash; é justamente o momento que ninguém usa.",
+          "pr.problem3": "O contrário também é invisível. Quando um time <em>reduz</em> risco, nada registra isso. Trabalho de segurança parece só custo, porque só as falhas são reportadas.",
+          "pr.solutionH2": "Impacto de risco, no pull request",
+          "pr.solution1": "M.A.R.I.A. avalia cada pull request contra a baseline de risco atual da aplicação e comenta direto nele:",
+          "pr.solution2": "<strong>O que este PR adiciona</strong> &mdash; novas dependências com vulnerabilidades conhecidas, novos secrets, novos endpoints expostos, código novo em caminhos que já eram arriscados",
+          "pr.solution3": "<strong>O que este PR remove</strong> &mdash; upgrades, remoções, correções, findings que fecham",
+          "pr.solution4": "<strong>O delta líquido</strong> &mdash; um número: esta mudança move o risco de X para Y",
+          "pr.solution5": "<strong>O que precisa de gente</strong> &mdash; os dois ou três itens que merecem a atenção de quem revisa, não a lista inteira",
+          "pr.solution6": "É um comentário, não um portão. Uma ferramenta de segurança que começa bloqueando merge no primeiro dia é uma ferramenta de segurança desativada na segunda semana.",
+          "pr.whyH2": "Por que isso importa",
+          "pr.why1": "É aqui que AppSec entra na cultura de engenharia, ou não entra.",
+          "pr.why2": "O desenvolvedor recebe o retorno na ferramenta em que já está, sobre código que escreveu dez minutos atrás, no review que já está lendo.",
+          "pr.why3": "Quem revisa ganha uma opinião de segurança sem precisar ser especialista em segurança.",
+          "pr.why4": "O engenheiro de AppSec deixa de ser a pessoa que aparece depois com má notícia.",
+          "pr.why5": "Risco deixa de ser relatório mensal e vira propriedade da mudança.",
+          "pr.why6": "O objetivo não é pegar mais coisa. É pegar quando corrigir custa cinco minutos em vez de cinco dias.",
+          "pr.exampleH2": "Um exemplo prático",
+          "pr.exampleIntro": "Um pull request que adiciona uma feature, sobe uma dependência e, de quebra, introduz um problema maior do que resolve:",
+          "pr.exampleOutro": "Repare no que o desenvolvedor recebe: um número, um motivo, uma ação específica e o resultado de tomar essa ação &mdash; no lugar onde ele já está. Ninguém precisou abrir painel nenhum, e o upgrade que este PR <em>de fato</em> entregou é creditado em vez de ignorado.",
+          "pr.ctaH2": "Veja o que seu time receberia de verdade.",
+          "pr.ctaSub": "A organização de demonstração tem pull requests com deltas reais por trás.",
+          "pr.next": "A seguir: como esses deltas se acumulam ao longo do tempo &rarr;"
+        }
+      }
+    },
+
+    /* ------------------------------------------------------------ timeline */
+    "timeline": {
+      "pt-BR": {
+        "htmlLang": "pt-BR",
+        "title": "Risk Timeline — como seu risco mudou, e por quê",
+        "meta": {
+          "description": "Veja risco ao longo do tempo com os eventos que o moveram: o release que subiu, o upgrade que derrubou, o finding aberto há 90 dias. Evidência em vez de foto do momento.",
+          "ogTitle": "Risk Timeline | M.A.R.I.A.",
+          "ogDescription": "Estamos melhores que no trimestre passado? Você deveria conseguir responder isso.",
+          "twitterTitle": "Risk Timeline | M.A.R.I.A.",
+          "twitterDescription": "Risco ao longo do tempo, com os eventos que o moveram."
+        },
+        "strings": {
+          "timeline.crumb": "Risk Timeline",
+          "timeline.h1": "\"A gente está melhor que no trimestre passado?\" Você deveria conseguir <span class=\"text-highlight\">responder isso</span>.",
+          "timeline.sub": "M.A.R.I.A. registra risco ao longo do tempo e anota o que o moveu &mdash; para você ver quais decisões funcionaram, em vez de adivinhar.",
+          "timeline.problemH2": "Quase toda ferramenta de segurança só mostra o <em>agora</em>",
+          "timeline.problem1": "Findings abertos hoje. Críticos hoje. Um número que não significa nada sem algo com que comparar.",
+          "timeline.problem2": "Aí as perguntas que realmente aparecem numa reunião de planejamento ficam sem resposta:",
+          "timeline.problem3": "O trabalho do trimestre passado reduziu alguma coisa?",
+          "timeline.problem4": "Quando este serviço virou nossa maior exposição?",
+          "timeline.problem5": "Gastamos três sprints em remediação &mdash; o que mudou?",
+          "timeline.problem6": "Quais das nossas práticas realmente movem o ponteiro?",
+          "timeline.problem7": "Os times acabam discutindo por anedota. E AppSec, uma das poucas áreas que consegue genuinamente provar valor com número, acaba defendendo orçamento com sensação.",
+          "timeline.solutionH2": "Um registro contínuo, com as causas anexadas",
+          "timeline.solution1": "M.A.R.I.A. mantém um histórico de risco por aplicação e do portfólio inteiro, anotado com os eventos que o mudaram:",
+          "timeline.solution2": "<strong>Risco ao longo do tempo</strong> &mdash; por aplicação, por time, ou em tudo",
+          "timeline.solution3": "<strong>Eventos anotados</strong> &mdash; releases, upgrades de dependência, findings novos, findings resolvidos, mudanças de ownership",
+          "timeline.solution4": "<strong>Atribuição de causa</strong> &mdash; toda subida e toda queda aponta para o que a produziu",
+          "timeline.solution5": "<strong>Tempo até a correção</strong> &mdash; por severidade e por time, medido em vez de estimado",
+          "timeline.solution6": "<strong>Envelhecimento</strong> &mdash; o que está aberto há mais tempo, ponderado pelo quanto realmente importa",
+          "timeline.solution7": "A timeline não é um gráfico para admirar. É o artefato que você leva para a reunião de planejamento quando precisa defender tempo.",
+          "timeline.whyH2": "Por que isso importa",
+          "timeline.why1": "Uma foto do momento diz onde você está. Uma tendência diz se o que você está fazendo funciona.",
+          "timeline.why2": "Um tech lead consegue mostrar que a sprint de upgrade derrubou o risco do portfólio, e pedir a próxima com evidência em vez de convicção.",
+          "timeline.why3": "Um engenheiro de AppSec consegue provar que o retorno em tempo de pull request reduziu o tempo médio de correção.",
+          "timeline.why4": "Um CTO consegue ver se o investimento em segurança produziu uma curva que desce.",
+          "timeline.why5": "E quando o risco sobe &mdash; e ele vai subir, porque você entrega &mdash; você sabe qual mudança fez isso, em vez de descobrir durante um incidente.",
+          "timeline.exampleH2": "Um exemplo prático",
+          "timeline.exampleIntro": "Seis meses de uma aplicação, com os eventos que moveram a linha:",
+          "timeline.exampleOutro": "\"Reduzimos o risco de aplicação em um terço em um trimestre, e foi exatamente isto que causou\" é uma frase que você pode dizer para um conselho. Essa frase é o produto.",
+          "timeline.ctaH2": "Explore uma timeline com seis meses de histórico.",
+          "timeline.ctaSub": "A organização de demonstração tem história, não só uma foto do momento.",
+          "timeline.next": "A seguir: a camada da qual todo o resto depende &rarr;"
+        }
+      }
+    },
+
+    /* ------------------------------------------------------- normalization */
+    "normalization": {
+      "pt-BR": {
+        "htmlLang": "pt-BR",
+        "title": "Findings Normalization — SARIF, CycloneDX e scanners unificados",
+        "meta": {
+          "description": "Várias ferramentas, vários formatos, três nomes para o mesmo bug. M.A.R.I.A. normaliza SARIF, CycloneDX e findings em um modelo só e elimina as duplicatas.",
+          "ogTitle": "Findings Normalization | M.A.R.I.A.",
+          "ogDescription": "Várias ferramentas, vários formatos, um modelo. Duplicatas eliminadas, findings correlacionados.",
+          "twitterTitle": "Findings Normalization | M.A.R.I.A.",
+          "twitterDescription": "Várias ferramentas, vários formatos, três nomes para o mesmo bug."
+        },
+        "strings": {
+          "norm.crumb": "Findings Normalization",
+          "norm.h1": "Várias ferramentas. Vários formatos. <span class=\"text-highlight\">Três nomes</span> para o mesmo bug.",
+          "norm.sub": "M.A.R.I.A. ingere SARIF, CycloneDX e saída bruta de scanner, deduplica entre ferramentas e entrega um modelo único do que realmente está errado.",
+          "norm.problemH2": "Cada scanner novo piora a visão",
+          "norm.problem1": "Um pipeline normal hoje: SAST, SCA, secrets, container, IaC, DAST. Seis categorias, muitas vezes mais de uma ferramenta por categoria, cada uma com seu formato, sua escala de severidade, seu esquema de identificador e sua própria ideia do que é um \"finding\".",
+          "norm.problem2": "O resultado:",
+          "norm.problem3": "A mesma dependência vulnerável reportada por três ferramentas, como três findings, com três severidades diferentes",
+          "norm.problem4": "Escalas de severidade que não se comparam &mdash; o \"high\" de uma é o \"medium\" da outra",
+          "norm.problem5": "Nenhuma correlação entre ferramentas: o endpoint exposto e a biblioteca vulnerável dentro dele são linhas sem relação em relatórios sem relação",
+          "norm.problem6": "Contagens que inflam toda vez que você adota um scanner, fazendo seu programa de segurança parecer pior quanto mais você investe nele",
+          "norm.problem7": "Os times resolvem isso com uma planilha, um script que alguém escreveu e deixou para trás, ou desistindo e olhando uma ferramenta só.",
+          "norm.solutionH2": "Um modelo só, a partir do que quer que suas ferramentas produzam",
+          "norm.solution1": "<strong>Ingerir</strong> &mdash; SARIF, CycloneDX e saída JSON dos scanners que você já roda",
+          "norm.solution2": "<strong>Normalizar</strong> &mdash; uma escala de severidade, um modelo de identidade, mapeado para CVE, CWE e coordenadas de pacote",
+          "norm.solution3": "<strong>Deduplicar</strong> &mdash; o mesmo problema vindo de quatro ferramentas vira um finding com quatro fontes de evidência, o que o torna <em>mais</em> confiável em vez de quatro vezes mais barulhento",
+          "norm.solution4": "<strong>Correlacionar</strong> &mdash; findings se ligam à aplicação, ao serviço, ao endpoint e ao dono",
+          "norm.solution5": "<strong>Rastrear identidade</strong> &mdash; findings mantêm identidade entre execuções, então \"continua aberto\", \"voltou\" e \"corrigido\" são fatos, não suposições",
+          "norm.solution6": "Adicionar um scanner deveria melhorar a sua visão. Hoje, na maioria das vezes, só aumenta a sua contagem.",
+          "norm.whyH2": "Por que isso importa",
+          "norm.why1": "Todo o resto do M.A.R.I.A. depende disto. Não dá para pontuar uma aplicação, avaliar um pull request ou desenhar uma timeline em cima de quatro relatórios contraditórios.",
+          "norm.why2": "É também a camada que os times mais constroem sozinhos &mdash; mal, uma vez, e depois mantêm para sempre. Se você tem um script que junta saída de scanner, você já construiu uma versão pior disto, e sabe exatamente quanto custa mantê-la viva.",
+          "norm.why3": "Tem um efeito de segunda ordem também: quando as duplicatas colapsam, o número <em>cai</em>. Um time que confia na contagem volta a ler a contagem.",
+          "norm.exampleH2": "Um exemplo prático",
+          "norm.exampleIntro": "Uma dependência vulnerável, como três ferramentas a enxergam &mdash; e como M.A.R.I.A. resolve:",
+          "norm.exampleOutro": "Três linhas viraram uma, e a que sobrou carrega mais informação do que as três: quem é o dono, onde ela vive, se é alcançável e quanto vale corrigir.",
+          "norm.ctaH2": "Ainda sem scanner? Comece por aí, de graça.",
+          "norm.ctaSub": "O Open Scan Pack gera templates de CI para uma stack de scanners open-source. Sem login, sem acesso ao repositório &mdash; tudo roda no seu próprio pipeline.",
+          "norm.next": "A seguir: por que isso só funciona se o desenvolvedor usar &rarr;"
+        }
+      }
+    },
+
+    /* -------------------------------------------------------- for developers */
+    "forDevelopers": {
+      "pt-BR": {
+        "htmlLang": "pt-BR",
+        "title": "Developer-Focused AppSec — segurança que cabe na engenharia",
+        "meta": {
+          "description": "Desenvolvedor não ignora segurança, ignora lista na qual não dá para agir. M.A.R.I.A. entrega risco onde o time já trabalha, com motivo e próximo passo.",
+          "ogTitle": "Developer-Focused AppSec | M.A.R.I.A.",
+          "ogDescription": "Desenvolvedor não ignora segurança. Ignora lista na qual não dá para agir.",
+          "twitterTitle": "Developer-Focused AppSec | M.A.R.I.A.",
+          "twitterDescription": "Segurança onde o time já trabalha, com o motivo junto."
+        },
+        "strings": {
+          "dev.crumb": "Developer-Focused AppSec",
+          "dev.h1": "Desenvolvedor não ignora segurança. Ele ignora <span class=\"text-highlight\">lista na qual não dá para agir</span>.",
+          "dev.sub": "Segurança que chega no pull request, aponta uma coisa para fazer e explica por que importa &mdash; em vez de um painel que ninguém tem motivo para abrir.",
+          "dev.problemH2": "A história do \"desenvolvedor não se importa\" está errada",
+          "dev.problem1": "E é uma desculpa conveniente para ferramentas que nunca foram desenhadas para ele. Olhe o que um desenvolvedor de fato recebe:",
+          "dev.problem2": "Uma lista de 400 itens sem ordem, sem dono e sem contexto",
+          "dev.problem3": "Um ticket sobre um serviço que ele nunca tocou",
+          "dev.problem4": "Um \"crítico\" que acaba sendo inalcançável, duas vezes seguidas &mdash; e depois disso todo crítico vira ruído",
+          "dev.problem5": "Um painel em outra plataforma, atrás de outro login, que ele teria que lembrar de visitar",
+          "dev.problem6": "Um portão que bloqueia um release na sexta-feira sem explicação",
+          "dev.problem7": "Qualquer engenheiro otimiza da mesma forma nessas condições: ignorar o canal com a pior relação sinal-ruído. Isso não é desinteresse. Dadas essas entradas, é comportamento correto.",
+          "dev.problem8": "Enquanto isso o engenheiro de AppSec &mdash; muitas vezes uma pessoa para oitenta desenvolvedores &mdash; vira gargalo e portador de má notícia ao mesmo tempo, o que é uma forma eficiente de queimar um papel que já é difícil de contratar.",
+          "dev.solutionH2": "Mude o que o desenvolvedor recebe",
+          "dev.solution1": "<strong>No pull request, não num portal.</strong> O retorno de risco chega como comentário, no review que ele já está lendo.",
+          "dev.solution2": "<strong>Uma coisa, não quatrocentas.</strong> Ordenadas pela contribuição real ao risco, então o topo da lista é genuinamente o topo.",
+          "dev.solution3": "<strong>Com um motivo.</strong> \"Alcançável pelo seu endpoint público de checkout\" dá para agir. \"CVSS 9.8\" é curiosidade.",
+          "dev.solution4": "<strong>Com a correção e o efeito dela.</strong> O upgrade a aplicar, e o que ele faz com o score.",
+          "dev.solution5": "<strong>Sem virar portão no primeiro dia.</strong> Informar primeiro, impor depois, e só onde já mereceu esse direito.",
+          "dev.solution6": "<strong>Com o dono certo.</strong> Findings se mapeiam a serviços e donos, então ninguém tria o código de outra pessoa.",
+          "dev.solution7": "Para Security Champions e engenheiros de AppSec a virada é maior: em vez de perseguir findings individuais, você define o modelo de risco e deixa ele distribuir o trabalho. Você sai de fazer triagem para desenhar como a triagem acontece.",
+          "dev.whyH2": "Por que isso importa",
+          "dev.why1": "AppSec não escala adicionando scanner. Escala quando quem escreve o código toma decisões um pouco melhores, continuamente &mdash; e isso só acontece se a informação chegar no momento da decisão, num formato no qual dê para agir.",
+          "dev.why2": "Toda ferramenta ignorada também custa algo que nunca aparece na fatura: ela ensina ao seu time que alerta de segurança pode ser pulado com segurança. Esse hábito é caro, e é difícil de desfazer.",
+          "dev.why3": "O teste honesto de uma ferramenta de segurança não é cobertura. É se o desenvolvedor abre ela uma segunda vez sem ninguém pedir.",
+          "dev.exampleH2": "Um exemplo prático",
+          "dev.exampleIntro": "A mesma informação, entregue de duas formas:",
+          "dev.exampleOutro": "É essa a tese inteira. Não mais findings &mdash; findings num momento em que agir é barato, com contexto suficiente para valer oito segundos.",
+          "dev.ctaH2": "Veja o que seu time veria de verdade.",
+          "dev.ctaSub": "Se este é o argumento que você vem fazendo internamente, esta página foi escrita para ser encaminhada.",
+          "dev.next": "Ver quanto custa &rarr;"
+        }
+      }
+    },
+
+    /* ------------------------------------------------------------- pricing */
+    "pricing": {
+      "pt-BR": {
+        "htmlLang": "pt-BR",
+        "title": "Preços — por repositório, nunca por desenvolvedor | M.A.R.I.A.",
+        "meta": {
+          "description": "Produto completo a partir de $9,99/mês, cobrado por repositório. Planos vitalícios a partir de $199. Todas as funcionalidades em todos os planos, sem cobrança por assento.",
+          "ogTitle": "Preços | M.A.R.I.A.",
+          "ogDescription": "Produto completo. Pague só pela escala. Por repositório, nunca por desenvolvedor.",
+          "twitterTitle": "Preços | M.A.R.I.A.",
+          "twitterDescription": "Por repositório, nunca por desenvolvedor."
+        },
+        "strings": {
+          "pricingPage.h1": "Produto completo. Pague só pela <span class=\"text-highlight\">escala</span>.",
+          "pricingPage.sub": "Todas as funcionalidades em todos os planos. Sem cobrança por assento. Sem \"fale conosco\" para ver um número.",
+          "pricingPage.mathH2": "Quanto custa, com a conta feita",
+          "pricingPage.mathIntro": "Preço por repositório é simples, mas ninguém deveria precisar fazer aritmética para descobrir quanto custa um produto:",
+          "pricingPage.mathNote": "O mínimo de $9,99 é o motivo de times bem pequenos pagarem $9,99 em vez de $0,99 &times; a quantidade de repositórios. É o piso, não uma pegadinha.",
+          "pricingPage.faqEyebrow": "DÚVIDAS COMERCIAIS",
+          "pricingPage.faqH2": "Antes de você perguntar",
+          "pricingPage.q1": "Por que cobrar por repositório em vez de por desenvolvedor?",
+          "pricingPage.a1": "Porque cobrar por desenvolvedor te pune por crescer o time, e seu risco não escala com headcount &mdash; escala com o código que você mantém. Dez engenheiros em doze repositórios carregam mais ou menos o mesmo risco de aplicação que três engenheiros nos mesmos doze.",
+          "pricingPage.q2": "Alguma funcionalidade fica de fora nos planos mais baratos?",
+          "pricingPage.a2": "Nenhuma. Score de risco, análise de pull request, timeline e normalização estão em todos os planos. O preço muda com quantos repositórios você conecta, e nada mais.",
+          "pricingPage.q3": "E se a minha quantidade de repositórios mudar?",
+          "pricingPage.a3": "A faixa acompanha os repositórios que você tem conectados. Conectou mais, sobe de faixa; desconectou, volta. Nos planos vitalícios, o teto de repositórios é o limite que você comprou.",
+          "pricingPage.q4": "Por que o plano founding é mais barato que o vitalício?",
+          "pricingPage.a4": "Porque founding teams pagam com outra coisa além de dinheiro: retorno direto e desconfortável enquanto o produto ainda é barato de mudar. Isso vale mais para mim agora do que $50. Quando as 50 vagas acabarem, o vitalício será a única opção de pagamento único.",
+          "pricingPage.q5": "Eu tenho centenas ou milhares de repositórios.",
+          "pricingPage.a5": "Então preço de tabela por repositório deixa de ser a conversa certa. <a href=\"/enterprise/\">Veja como funciona em escala enterprise &rarr;</a>",
+          "pricingPage.ctaH2": "Veja antes de gastar qualquer coisa.",
+          "pricingPage.ctaSub": "A demo roda numa organização de exemplo, e o Open Scan Pack é gratuito para sempre."
+        }
+      }
+    },
+
+    /* ---------------------------------------------------------- enterprise */
+    "enterprise": {
+      "pt-BR": {
+        "htmlLang": "pt-BR",
+        "title": "Enterprise — inteligência de risco em milhares de repositórios",
+        "meta": {
+          "description": "Para organizações com centenas ou milhares de repositórios. Preço por repositório ativo e relevante — não por inventário arquivado. Veja o que conta e o que não conta.",
+          "ogTitle": "Enterprise | M.A.R.I.A.",
+          "ogDescription": "Preço por repositório ativo e relevante, não por cemitério digital.",
+          "twitterTitle": "Enterprise | M.A.R.I.A.",
+          "twitterDescription": "Inteligência de risco em milhares de repositórios."
+        },
+        "strings": {
+          "enterprise.eyebrow": "ENTERPRISE",
+          "enterprise.h1": "Feito para <span class=\"text-highlight\">escala de verdade</span>.",
+          "enterprise.sub": "Para organizações com centenas ou milhares de repositórios, M.A.R.I.A. é precificada por repositórios ativos e relevantes &mdash; não por tudo que um dia foi empurrado para o seu SCM.",
+          "enterprise.tier1.title": "Até 1.000 repos ativos",
+          "enterprise.tier1.body": "Para times saindo de scanners barulhentos para uma operação de AppSec baseada em risco.",
+          "enterprise.tier2.title": "Até 3.000 repos ativos",
+          "enterprise.tier2.body": "Para organizações de engenharia maduras padronizando inteligência de risco.",
+          "enterprise.tier3.title": "Até 7.500 repos ativos",
+          "enterprise.tier3.body": "Melhor encaixe para ambientes grandes com milhares de repositórios.",
+          "enterprise.tier4.title": "Mais de 7.500 repos ativos",
+          "enterprise.tier4.body": "Para ambientes complexos, suporte dedicado e onboarding customizado.",
+          "enterprise.custom": "Sob medida",
+          "enterprise.countsH3": "O que conta como repositório ativo?",
+          "enterprise.countsBody": "Um repositório faturável é um repositório de código ativo e relevante, conectado ao M.A.R.I.A. e usado na análise de risco. Se ele não está produzindo sinal no qual você age, não deveria estar na fatura.",
+          "enterprise.notCountsH3": "O que não conta?",
+          "enterprise.not1": "Repositórios arquivados",
+          "enterprise.not2": "Forks, mirrors, templates e repositórios só de documentação",
+          "enterprise.not3": "Provas de conceito sem dono ativo",
+          "enterprise.not4": "Repositórios sem sinal de segurança relevante",
+          "enterprise.includesH3": "Enterprise inclui",
+          "enterprise.inc1": "Integração com SCM",
+          "enterprise.inc2": "Normalização SARIF e CycloneDX",
+          "enterprise.inc3": "Score de risco por aplicação",
+          "enterprise.inc4": "Motor de priorização por risco",
+          "enterprise.inc5": "Relatórios executivos",
+          "enterprise.inc6": "Suporte e onboarding",
+          "enterprise.ctaH2": "Nesse tamanho, o número depende do seu parque.",
+          "enterprise.ctaSub": "Me diga quantos repositórios estão de fato ativos, quais scanners você roda e no que seu time está se afogando. Eu digo com franqueza se M.A.R.I.A. encaixa."
+        }
+      }
+    },
+
+    /* -------------------------------------------------------------- thanks */
+    "thanks": {
+      "pt-BR": {
+        "htmlLang": "pt-BR",
+        "title": "Você está dentro | M.A.R.I.A.",
+        "meta": {
+          "description": "Você entrou na waitlist do M.A.R.I.A."
+        },
+        "strings": {
+          "thanks.eyebrow": "WAITLIST",
+          "thanks.h1": "Você está <span class=\"text-highlight\">dentro</span>.",
+          "thanks.sub": "Você vai receber notícia minha &mdash; de um endereço real, não de um no-reply.",
+          "thanks.meanwhileH2": "Duas coisas enquanto espera",
+          "thanks.card1Kicker": "VER",
+          "thanks.card1Title": "Teste a demo numa organização de exemplo.",
+          "thanks.card1Body": "Uma dúzia de aplicações com saída real de scanner por trás. Comece por <code>payments-api</code> &mdash; é a que carrega mais risco.",
+          "thanks.card1Link": "Abrir a demo &rarr;",
+          "thanks.card2Kicker": "RODAR",
+          "thanks.card2Title": "Rode o Open Scan Pack gratuito nos seus repositórios.",
+          "thanks.card2Body": "Escolha uma stack, baixe os templates de CI, rode no seu pipeline. Sem login, sem acesso ao repositório. Quando M.A.R.I.A. abrir, você já vai ter a entrada de que ela precisa.",
+          "thanks.card2Link": "Baixar o pacote &rarr;",
+          "thanks.skipH2": "Quer furar a fila?",
+          "thanks.skipBody": "Responda o e-mail de confirmação com duas coisas: quantos repositórios você tem e o que está deixando seu time louco hoje. Eu leio todas pessoalmente, e founding teams entram primeiro.",
+          "thanks.skipCta": "Falar comigo direto"
+        }
+      }
+    },
+
+    /* ----------------------------------------------------------------- why */
     "why": {
       "pt-BR": {
         "htmlLang": "pt-BR",
-        "title": "Por que M.A.R.I.A. | A historia por tras do nome",
+        "title": "Por que M.A.R.I.A. | A história por trás do nome",
         "meta": {
-          "description": "A historia do nome M.A.R.I.A. e por que o produto existe: homenagem, cuidado e compromisso com risco real.",
+          "description": "A história do nome M.A.R.I.A.: uma homenagem a Maria Jeane Pereira, e o que cuidar de software realmente significa dentro de um produto de AppSec.",
           "ogTitle": "Por que M.A.R.I.A.",
-          "ogDescription": "A historia do nome e o compromisso por tras da plataforma.",
+          "ogDescription": "Esta plataforma nasceu como homenagem e compromisso: cuidar melhor do software e das pessoas por trás dele.",
           "twitterTitle": "Por que M.A.R.I.A.",
-          "twitterDescription": "Homenagem, cuidado e missao real em AppSec."
+          "twitterDescription": "A história por trás do nome e o compromisso por trás da plataforma."
         },
-        "entries": [
-          { "selector": ".brand-copy", "text": "Cuidar de software acima de teatro de seguranca" },
-          { "selector": ".site-nav a:nth-child(1)", "text": "Home" },
-          { "selector": ".site-nav a:nth-child(2)", "text": "Open Scan" },
-          { "selector": ".site-nav a:nth-child(3)", "text": "Precos" },
-          { "selector": ".site-nav a:nth-child(4)", "text": "Historia" },
-          { "selector": ".site-nav a:nth-child(5)", "text": "Entrar" },
-          { "selector": ".site-nav a:nth-child(6)", "text": "Demo" },
-          { "selector": ".why-hero .eyebrow", "text": "POR QUE EXISTIMOS" },
-          { "selector": ".why-hero h1", "html": "O nome <span class=\"text-highlight\">M.A.R.I.A.</span> é uma homenagem a minha querida mãe." },
-          { "selector": ".why-hero .section-copy", "text": "Antes de ser produto, marca ou estrategia, M.A.R.I.A. é memória, respeito e cuidado de mãe." },
-          { "selector": ".why-content p:nth-of-type(1)", "html": "Maria Jeane Pereira (<time datetime=\"1956\">&ast; 1956</time> – <time datetime=\"2020\">&#10013; 2020</time>), dedicou a vida a cuidar de pessoas, especialmente dos mais necessitados. Esse exemplo me inspira como filho e me inspirou a criar esta plataforma." },
-          { "selector": ".why-content p:nth-of-type(2)", "text": "No mundo de AppSec, existe muito barulho e pouca direção. Eu não quis criar mais uma vitrine de recursos e features. Eu quis criar utilidade real para problema real." },
-          { "selector": ".why-content p:nth-of-type(3)", "html": "Por isso M.A.R.I.A. significa <strong>Management Application Risk Integrated Analysis</strong>. Não só uma sigla, mas algo que representa uma escolha: cuidar." },
-          { "selector": ".why-principles h2", "text": "O que isso significa na prática?" },
-          { "selector": ".why-list li:nth-child(1)", "text": "Resolver dor séria do dia a dia antes de adicionar novas features." },
-          { "selector": ".why-list li:nth-child(2)", "text": "Ajudar times a priorizar o que de fato reduz risco." },
-          { "selector": ".why-list li:nth-child(3)", "text": "Construir um produto que dev quer usar, e não evitar." },
-          { "selector": ".why-list li:nth-child(4)", "text": "Medir sucesso por impacto real, não por buzzword." },
-          { "selector": ".why-cta h2", "text": "Cuidar do software também é cuidar melhor das pessoas." },
-          { "selector": ".why-cta .section-copy", "text": "Se essa visão faz sentido para você, entre cedo e construa isso comigo." },
-          { "selector": ".why-cta .button", "text": "Entrar na waitlist" },
-          { "selector": ".footer-inner a:nth-child(1)", "text": "GitHub" },
-          { "selector": ".footer-inner a:nth-child(2)", "text": "Contato" }
-        ],
-        "sendingText": "Enviando..."
-      },
-      "en-US": {
-        "htmlLang": "en-US",
-        "title": "Why M.A.R.I.A. | The story behind the name",
-        "meta": {
-          "description": "The story behind M.A.R.I.A.: tribute, care, and a clear commitment to solving real AppSec risk.",
-          "ogTitle": "Why M.A.R.I.A.",
-          "ogDescription": "The story behind the name and the commitment behind the platform.",
-          "twitterTitle": "Why M.A.R.I.A.",
-          "twitterDescription": "Tribute, care, and a real AppSec mission."
-        },
-        "entries": [
-          { "selector": ".brand-copy", "text": "Software care over security theater" },
-          { "selector": ".site-nav a:nth-child(1)", "text": "Home" },
-          { "selector": ".site-nav a:nth-child(2)", "text": "Open Scan" },
-          { "selector": ".site-nav a:nth-child(3)", "text": "Pricing" },
-          { "selector": ".site-nav a:nth-child(4)", "text": "Story" },
-          { "selector": ".site-nav a:nth-child(5)", "text": "Join" },
-          { "selector": ".site-nav a:nth-child(6)", "text": "Demo" },
-          { "selector": ".why-hero .eyebrow", "text": "WHY WE EXIST" },
-          { "selector": ".why-hero h1", "html": "The name <span class=\"text-highlight\">M.A.R.I.A.</span> is a tribute to my beloved mother." },
-          { "selector": ".why-hero .section-copy", "text": "Before product, brand, or strategy, M.A.R.I.A. is memory, respect, and a mother's care." },
-          { "selector": ".why-content p:nth-of-type(1)", "html": "Maria Jeane Pereira (<time datetime=\"1956\">&ast; 1956</time> - <time datetime=\"2020\">&#10013; 2020</time>) dedicated her life to caring for people, especially those in greatest need. Her example inspires me as a son, and it inspired me to build this platform." },
-          { "selector": ".why-content p:nth-of-type(2)", "text": "In AppSec, there is too much noise and too little direction. I did not want to build another feature showcase. I wanted practical value for serious day-to-day problems." },
-          { "selector": ".why-content p:nth-of-type(3)", "html": "That is why M.A.R.I.A. stands for <strong>Management Application Risk Integrated Analysis</strong>. Not just an acronym, but a choice: to care." },
-          { "selector": ".why-principles h2", "text": "What does this mean in practice?" },
-          { "selector": ".why-list li:nth-child(1)", "text": "Solve serious day-to-day pain before adding new features." },
-          { "selector": ".why-list li:nth-child(2)", "text": "Help teams prioritize what actually reduces risk." },
-          { "selector": ".why-list li:nth-child(3)", "text": "Build a product developers want to use, not avoid." },
-          { "selector": ".why-list li:nth-child(4)", "text": "Measure success by real impact, not by buzzwords." },
-          { "selector": ".why-cta h2", "text": "Caring better for software also means caring better for people." },
-          { "selector": ".why-cta .section-copy", "text": "If this resonates with you, join early and help me build this the right way." },
-          { "selector": ".why-cta .button", "text": "Join the waitlist" },
-          { "selector": ".footer-inner a:nth-child(1)", "text": "GitHub" },
-          { "selector": ".footer-inner a:nth-child(2)", "text": "Contact" }
-        ],
-        "sendingText": "Sending..."
+        "strings": {
+          "why.eyebrow": "POR QUE ISTO EXISTE",
+          "why.h1": "O nome <span class=\"text-highlight\">M.A.R.I.A.</span> é uma homenagem à minha mãe.",
+          "why.sub": "Antes de ser produto, marca ou estratégia, M.A.R.I.A. é memória, respeito e cuidado.",
+          "why.p1": "Maria Jeane Pereira (<time datetime=\"1956\">&ast; 1956</time> &ndash; <time datetime=\"2020\">&#10013; 2020</time>) passou a vida cuidando de pessoas, principalmente das que ninguém mais estava cuidando. Esse exemplo me forma como filho, e foi o que me empurrou a construir esta plataforma.",
+          "why.p2": "No mundo de AppSec existe muito barulho, muita ferramenta e pouquíssima clareza. Eu não quis criar mais uma vitrine de features. Eu quis criar cuidado real para software real.",
+          "why.p3": "Por isso M.A.R.I.A. significa <strong>Management Application Risk Integrated Analysis</strong>. Mas, acima da sigla, ela carrega uma ideia mais simples: tecnologia também pode cuidar.",
+          "why.principlesH2": "O que isso significa na prática",
+          "why.principle1": "Resolver problemas sérios do dia a dia antes de adicionar features novas.",
+          "why.principle2": "Ajudar times a priorizar o que realmente reduz risco.",
+          "why.principle3": "Construir um produto que desenvolvedor genuinamente queira usar.",
+          "why.principle4": "Medir sucesso por impacto real, não por buzzword ou quadrante.",
+          "why.founderH2": "Quem constrói isso",
+          "why.founderBody": "Eu sou Cássio Pereira. M.A.R.I.A. é uma iniciativa independente, de uma pessoa só, e isso é escolha deliberada: significa que eu respondo seu e-mail pessoalmente, que consigo mudar de direção em uma semana quando o produto está errado, e que prefiro resolver o que dói nos times hoje a lançar features que ficam bonitas em demo. Significa também que eu sou honesto sobre o custo dessa escolha &mdash; você vai encontrar aqui capacidades que plataformas maiores não têm, e lá checkboxes de enterprise que aqui ainda não existem.",
+          "why.founderLink": "Mais sobre mim",
+          "why.ctaH2": "Cuidar melhor do software é cuidar melhor das pessoas.",
+          "why.ctaSub": "Se isso faz sentido para você, venha construir comigo desde o começo.",
+          "why.productLink": "Ver o que ela faz"
+        }
       }
     }
   }

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Timeline — how your application risk changed, and why | M.A.R.I.A.</title>
+    <meta name="description" content="See risk over time with the events that moved it: the release that raised it, the upgrade that dropped it, the finding that sat open for 90 days. Evidence instead of a snapshot.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mariaappsec.com/product/risk-timeline/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Risk Timeline | M.A.R.I.A.">
+    <meta property="og:description" content="Are we better than last quarter? You should be able to answer that.">
+    <meta property="og:url" content="https://mariaappsec.com/product/risk-timeline/">
+    <meta property="og:site_name" content="M.A.R.I.A.">
+    <meta property="og:image" content="https://mariaappsec.com/img/maria.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Risk Timeline | M.A.R.I.A.">
+    <meta name="twitter:description" content="Risk over time, with the events that moved it.">
+    <meta name="twitter:image" content="https://mariaappsec.com/img/maria.png">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <script>document.documentElement.classList.add('i18n-pending');</script>
+    <script src="../../i18n/translations.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-09VC70Q0TF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-09VC70Q0TF');
+    </script>
+</head>
+<body data-page="timeline">
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/" data-i18n-aria="nav.homeAria" aria-label="M.A.R.I.A. home">
+                <span class="brand-mark">M.A.R.I.A.</span>
+                <span class="brand-copy" data-i18n="brand.copy">Application risk intelligence</span>
+            </a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="/product/" class="is-current" data-i18n="nav.product">Product</a>
+                <a href="/openscan/" data-i18n="nav.openscan">Open Scan</a>
+                <a href="/pricing/" data-i18n="nav.pricing">Pricing</a>
+                <a href="/why/" data-i18n="nav.why">Why</a>
+            </nav>
+            <div class="header-actions">
+                <a class="button button-primary button-compact" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="nav_top" data-i18n="cta.demoShort">See the demo</a>
+                <div class="lang-toggle" role="group" aria-label="Language selector" data-active-lang="en-US">
+                    <button type="button" data-lang="en-US" aria-pressed="true"><span class="lang-flag" aria-hidden="true">🇺🇸</span><span class="lang-label">EN</span></button>
+                    <button type="button" data-lang="pt-BR" aria-pressed="false"><span class="lang-flag" aria-hidden="true">🇧🇷</span><span class="lang-label">PT</span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="page-hero section">
+            <div class="container narrow">
+                <p class="breadcrumb"><a href="/product/" data-i18n="nav.product">Product</a> <span aria-hidden="true">/</span> <span data-i18n="timeline.crumb">Risk Timeline</span></p>
+                <h1 data-i18n="timeline.h1">"Are we better than last quarter?" You should be able to <span class="text-highlight">answer that</span>.</h1>
+                <p class="section-copy" data-i18n="timeline.sub">M.A.R.I.A. records risk over time and annotates what moved it &mdash; so you can see which decisions worked instead of guessing.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section">
+            <div class="container narrow">
+                <h2 data-i18n="timeline.problemH2">Almost every security tool only shows you <em>now</em></h2>
+                <p data-i18n="timeline.problem1">Open findings today. Criticals today. A number that means nothing without something to compare it against.</p>
+                <p data-i18n="timeline.problem2">So the questions that actually get asked in a planning meeting have no answer:</p>
+                <ul class="feature-list">
+                    <li data-i18n="timeline.problem3">Did the work we did last quarter reduce anything?</li>
+                    <li data-i18n="timeline.problem4">When did this service become our biggest exposure?</li>
+                    <li data-i18n="timeline.problem5">We spent three sprints on remediation &mdash; what changed?</li>
+                    <li data-i18n="timeline.problem6">Which of our practices actually moves the needle?</li>
+                </ul>
+                <p data-i18n="timeline.problem7">Teams end up arguing from anecdote. And AppSec, one of the few functions that can genuinely prove its value with numbers, ends up defending its budget with feelings.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section alt-band">
+            <div class="container narrow">
+                <h2 data-i18n="timeline.solutionH2">A continuous record, with causes attached</h2>
+                <p data-i18n="timeline.solution1">M.A.R.I.A. keeps a history of risk per application and across the portfolio, annotated with the events that changed it:</p>
+                <ul class="feature-list">
+                    <li data-i18n="timeline.solution2"><strong>Risk over time</strong> &mdash; per application, per team, or across everything</li>
+                    <li data-i18n="timeline.solution3"><strong>Annotated events</strong> &mdash; releases, dependency upgrades, new findings, resolved findings, ownership changes</li>
+                    <li data-i18n="timeline.solution4"><strong>Cause attribution</strong> &mdash; every rise and every drop points to what produced it</li>
+                    <li data-i18n="timeline.solution5"><strong>Time to fix</strong> &mdash; by severity and by team, measured rather than estimated</li>
+                    <li data-i18n="timeline.solution6"><strong>Aging</strong> &mdash; what has been open longest, weighted by how much it actually matters</li>
+                </ul>
+                <p data-i18n="timeline.solution7">The timeline isn't a chart to admire. It's the artifact you take into a planning meeting when you need to argue for time.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section">
+            <div class="container narrow">
+                <h2 data-i18n="timeline.whyH2">Why it matters</h2>
+                <p data-i18n="timeline.why1">A snapshot tells you where you are. A trend tells you whether what you're doing works.</p>
+                <ul class="feature-list">
+                    <li data-i18n="timeline.why2">A tech lead can show that the upgrade sprint dropped portfolio risk, and ask for the next one with evidence instead of conviction.</li>
+                    <li data-i18n="timeline.why3">An AppSec engineer can prove that feedback at pull-request time cut mean time to fix.</li>
+                    <li data-i18n="timeline.why4">A CTO can see whether the security investment produced a curve that goes down.</li>
+                </ul>
+                <p data-i18n="timeline.why5">And when risk goes up &mdash; which it will, because you ship &mdash; you know which change did it, instead of discovering it during an incident.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section alt-band">
+            <div class="container narrow">
+                <h2 data-i18n="timeline.exampleH2">A practical example</h2>
+                <p data-i18n="timeline.exampleIntro">Six months of one application, with the events that moved the line:</p>
+                <pre class="code-block" aria-label="Example risk timeline"><code>payments-api · risk, last 6 months
+
+100 ┤
+ 84 ┤                    ╭────╮
+ 70 ┤        ╭───────────╯    ╰──╮
+ 56 ┤   ╭────╯                   ╰──────╮
+ 42 ┤───╯                               ╰────────
+    └────┬──────┬───────┬────────┬───────┬───────
+       Feb    Mar     Apr      May     Jun     Jul
+
+Mar 04  +18  New payment provider SDK — 3 vulnerable transitive deps
+Apr 22  +12  /internal/debug exposed through new ingress rule
+Jun 09  −31  Dependency upgrade sprint — 47 findings closed
+Jul 02  −11  Secret rotation + Gitleaks added to CI
+
+Q2 → Q3: risk down 34%. Mean time to fix: 34 days → 6 days.</code></pre>
+                <p class="evidence-tag" data-i18n="common.illustrative">Illustrative example</p>
+                <p data-i18n="timeline.exampleOutro">"We reduced application risk by a third in a quarter, and here is exactly what did it" is a sentence you can say to a board. That sentence is the product.</p>
+            </div>
+        </section>
+
+        <section class="final-cta section">
+            <div class="container narrow center">
+                <h2 data-i18n="timeline.ctaH2">Explore a timeline with six months behind it.</h2>
+                <p class="section-copy" data-i18n="timeline.ctaSub">The demo organization has history, not just a snapshot.</p>
+                <div class="section-actions">
+                    <a class="button button-primary" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="timeline_cta" data-i18n="cta.demo">See it on real data</a>
+                    <a class="button button-secondary" href="/#join" data-track-event="waitlist_cta_click" data-track-location="timeline_cta" data-i18n="cta.waitlist">Join the waitlist</a>
+                </div>
+                <p class="next-link"><a href="/product/normalization/" data-i18n="timeline.next">Next: the layer everything else depends on &rarr;</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="/product/" data-i18n="nav.product">Product</a>
+                <a href="/pricing/" data-i18n="nav.pricing">Pricing</a>
+                <a href="/openscan/" data-i18n="nav.openscan">Open Scan</a>
+                <a href="/why/" data-i18n="nav.why">Why</a>
+                <a href="/enterprise/" data-i18n="nav.enterprise">Enterprise</a>
+                <a href="mailto:contact@mariaappsec.com" class="footer-link" data-i18n="nav.contact">Contact</a>
+            </nav>
+            <p class="footer-copy" data-i18n="footer.copy">Built for developers and AppSec teams who want less noise and better decisions.</p>
+            <p class="footer-note">Management Application Risk Integrated Analysis</p>
+            <p>&copy; 2026 M.A.R.I.A.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+</body>
+</html>

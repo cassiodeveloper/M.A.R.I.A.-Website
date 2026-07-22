@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're in | M.A.R.I.A.</title>
+    <meta name="description" content="You joined the M.A.R.I.A. waitlist.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://mariaappsec.com/thanks/">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script>document.documentElement.classList.add('i18n-pending');</script>
+    <script src="../i18n/translations.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-09VC70Q0TF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-09VC70Q0TF');
+        // The conversion itself. Formspree redirects here on a successful submit,
+        // so this fires once per real signup — the landing-page click event is
+        // intent, this is the outcome.
+        gtag('event', 'waitlist_signup', {
+            event_category: 'conversion',
+            page_key: 'thanks'
+        });
+    </script>
+</head>
+<body data-page="thanks">
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/" data-i18n-aria="nav.homeAria" aria-label="M.A.R.I.A. home">
+                <span class="brand-mark">M.A.R.I.A.</span>
+                <span class="brand-copy" data-i18n="brand.copy">Application risk intelligence</span>
+            </a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="/product/" data-i18n="nav.product">Product</a>
+                <a href="/openscan/" data-i18n="nav.openscan">Open Scan</a>
+                <a href="/pricing/" data-i18n="nav.pricing">Pricing</a>
+                <a href="/why/" data-i18n="nav.why">Why</a>
+            </nav>
+            <div class="header-actions">
+                <div class="lang-toggle" role="group" aria-label="Language selector" data-active-lang="en-US">
+                    <button type="button" data-lang="en-US" aria-pressed="true"><span class="lang-flag" aria-hidden="true">🇺🇸</span><span class="lang-label">EN</span></button>
+                    <button type="button" data-lang="pt-BR" aria-pressed="false"><span class="lang-flag" aria-hidden="true">🇧🇷</span><span class="lang-label">PT</span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="page-hero section">
+            <div class="container narrow">
+                <p class="eyebrow" data-i18n="thanks.eyebrow">WAITLIST</p>
+                <h1 data-i18n="thanks.h1">You're <span class="text-highlight">in</span>.</h1>
+                <p class="section-copy" data-i18n="thanks.sub">You'll hear from me &mdash; from a real address, not a no-reply.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section">
+            <div class="container narrow">
+                <h2 data-i18n="thanks.meanwhileH2">Two things while you wait</h2>
+                <div class="thanks-actions">
+                    <article class="value-card">
+                        <p class="card-kicker" data-i18n="thanks.card1Kicker">SEE IT</p>
+                        <h3 data-i18n="thanks.card1Title">Try the demo on a sample organization.</h3>
+                        <p data-i18n="thanks.card1Body">A dozen applications with real scanner output behind them. Start with <code>payments-api</code> &mdash; it's the one carrying the most risk.</p>
+                        <a class="card-link" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="thanks_page" data-i18n="thanks.card1Link">Open the demo &rarr;</a>
+                    </article>
+                    <article class="value-card">
+                        <p class="card-kicker" data-i18n="thanks.card2Kicker">RUN IT</p>
+                        <h3 data-i18n="thanks.card2Title">Run the free Open Scan Pack on your own repos.</h3>
+                        <p data-i18n="thanks.card2Body">Pick a stack, download the CI templates, run them in your pipeline. No login, no repository access. When M.A.R.I.A. opens up, you'll already have the input it needs.</p>
+                        <a class="card-link" href="/openscan/" data-track-event="openscan_click" data-track-location="thanks_page" data-i18n="thanks.card2Link">Get the pack &rarr;</a>
+                    </article>
+                </div>
+
+                <div class="thanks-note">
+                    <h2 data-i18n="thanks.skipH2">Want to skip the line?</h2>
+                    <p data-i18n="thanks.skipBody">Reply to the confirmation email with two things: how many repositories you have, and what's currently driving your team crazy. I read every one of them personally, and founding teams get set up first.</p>
+                    <p><a class="button button-secondary" href="mailto:contact@mariaappsec.com?subject=Founding%20team%20-%20M.A.R.I.A." data-track-event="founder_contact_click" data-track-location="thanks_page" data-i18n="thanks.skipCta">Email me directly</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="/product/" data-i18n="nav.product">Product</a>
+                <a href="/pricing/" data-i18n="nav.pricing">Pricing</a>
+                <a href="/openscan/" data-i18n="nav.openscan">Open Scan</a>
+                <a href="/why/" data-i18n="nav.why">Why</a>
+                <a href="/enterprise/" data-i18n="nav.enterprise">Enterprise</a>
+                <a href="mailto:contact@mariaappsec.com" class="footer-link" data-i18n="nav.contact">Contact</a>
+            </nav>
+            <p class="footer-copy" data-i18n="footer.copy">Built for developers and AppSec teams who want less noise and better decisions.</p>
+            <p class="footer-note">Management Application Risk Integrated Analysis</p>
+            <p>&copy; 2026 M.A.R.I.A.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

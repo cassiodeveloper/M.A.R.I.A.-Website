@@ -10,7 +10,7 @@
     --accent-strong: #ffd34d;
     --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
     --radius: 24px;
-    --container: 1180px;
+    --container: 1320px;
 }
 
 * {
@@ -356,12 +356,21 @@ h3,
 }
 
 h1 {
-    font-size: 113px;
+    /* Was a fixed 113px, which overflowed every phone. The lower bound has to
+       clear the longest unbreakable word on the page ("vulnerabilidades.") at
+       375px, so it is deliberately small. */
+    font-size: clamp(1.95rem, 7.4vw, 6.5rem);
+}
+
+h1,
+h2,
+h3 {
+    overflow-wrap: break-word;
 }
 
 h2 {
     font-size: clamp(2.4rem, 9vw, 4.6rem);
-    max-width: 16ch;
+    max-width: 24ch;
 }
 
 h3 {
@@ -370,9 +379,23 @@ h3 {
     letter-spacing: -0.01em;
 }
 
-.hero-copy h1 {
+.hero-head {
+    min-width: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-head h1 {
+    /* Keep the longest word ("vulnerabilidades." in pt-BR) atomic: without a
+       forced break the line box grows to fit the whole word (up to max-width),
+       instead of balance keeping the box narrow and splitting mid-word. The cap
+       is wide enough to hold that word at the largest font size. */
+    max-width: 30ch;
     line-height: 1;
     text-wrap: balance;
+    overflow-wrap: normal;
+    word-break: keep-all;
+    hyphens: manual;
 }
 
 .flow h2,
@@ -385,11 +408,11 @@ h3 {
 }
 
 .solution h2 {
-    max-width: 12ch;
+    max-width: 16ch;
 }
 
 .flow h2 {
-    max-width: 20ch;
+    max-width: 28ch;
     line-height: 1.05;
 }
 
@@ -941,10 +964,6 @@ h3 {
         align-items: center;
     }
 
-    .split {
-        grid-template-columns: 1fr 1fr;
-    }
-
     .card-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -1344,3 +1363,760 @@ h3 {
         justify-self: start;
     }
 }
+
+/* =========================================================================
+   Layout, components and pages added in the 2026 site rebuild.
+   Uses the tokens declared in :root above â€” no new colors introduced.
+   ========================================================================= */
+
+/* --- i18n paint guard --------------------------------------------------- */
+/* Set by an inline script in <head>, removed by script.js once strings are
+   applied, so a pt-BR visitor never sees the English source flash past.
+   No-JS visitors never get the class, so they never get a hidden page. */
+.i18n-pending body {
+    visibility: hidden;
+}
+
+/* --- accessibility ------------------------------------------------------ */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    padding: 0.85rem 1.25rem;
+    background: var(--accent);
+    color: #111;
+    font-weight: 800;
+    border-radius: 0 0 12px 0;
+}
+
+.skip-link:focus {
+    left: 0;
+}
+
+:where(a, button, summary, input):focus-visible {
+    outline: 2px solid var(--accent-strong);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* --- header ------------------------------------------------------------- */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.button-compact {
+    min-height: 42px;
+    padding: 0.5rem 1.1rem;
+    font-size: 0.78rem;
+}
+
+.site-nav a.is-current {
+    color: var(--text);
+}
+
+@media (max-width: 920px) {
+    .header-actions {
+        margin-left: auto;
+    }
+
+    .site-nav {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 0.35rem;
+    }
+}
+
+/* --- generic section helpers -------------------------------------------- */
+.section-tight {
+    padding: 2.5rem 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.center h2,
+.center .section-copy {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alt-band {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.section-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 2rem;
+}
+
+.center .section-actions {
+    justify-content: center;
+}
+
+.page-hero {
+    padding-top: 8rem;
+}
+
+.page-hero h1 {
+    max-width: 24ch;
+    text-wrap: balance;
+}
+
+.center h2,
+.page-hero .section-copy {
+    max-width: 46rem;
+}
+
+.breadcrumb {
+    margin: 0 0 1.25rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.breadcrumb a:hover {
+    color: var(--text);
+}
+
+.next-link {
+    margin-top: 2rem;
+    font-weight: 700;
+}
+
+.next-link a {
+    color: var(--accent-strong);
+}
+
+/* --- long-form copy ----------------------------------------------------- */
+.prose-section h2 {
+    max-width: 30ch;
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.9rem, 5vw, 3rem);
+}
+
+.prose-section p {
+    margin: 0 0 1.1rem;
+    font-size: clamp(1.02rem, 2.2vw, 1.2rem);
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 68ch;
+}
+
+.prose-section p strong,
+.prose-section li strong {
+    color: var(--text);
+}
+
+.prose-section code,
+.evidence-facts code {
+    padding: 0.1em 0.4em;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.07);
+    font-family: ui-monospace, SFMono-Regular, "Cascadia Mono", Consolas, monospace;
+    font-size: 0.9em;
+    color: var(--text);
+}
+
+.prose-section a:not(.button) {
+    color: var(--accent-strong);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.pull-quote {
+    margin: 2rem 0 0;
+    padding-left: 1.25rem;
+    border-left: 3px solid var(--accent);
+    font-size: clamp(1.2rem, 3vw, 1.6rem) !important;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--text) !important;
+}
+
+.feature-list {
+    display: grid;
+    gap: 0.9rem;
+    margin: 1.4rem 0 1.6rem;
+    padding: 0;
+    list-style: none;
+    max-width: 68ch;
+}
+
+.feature-list li {
+    position: relative;
+    padding-left: 1.6rem;
+    font-size: clamp(1rem, 2.1vw, 1.13rem);
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+.feature-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    background: var(--accent);
+}
+
+/* --- monospace evidence blocks ------------------------------------------ */
+/* Product output reads as product output. This is the site's main proof
+   device, so it deliberately looks like a terminal and not like marketing. */
+.code-block {
+    margin: 1.5rem 0 0.75rem;
+    padding: 1.25rem;
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.35);
+    font-family: ui-monospace, SFMono-Regular, "Cascadia Mono", Consolas, "Liberation Mono", monospace;
+    font-size: 0.86rem;
+    line-height: 1.65;
+    color: var(--text);
+    -webkit-overflow-scrolling: touch;
+}
+
+.code-block code {
+    display: block;
+    white-space: pre;
+    background: none;
+    padding: 0;
+    font: inherit;
+}
+
+.evidence-tag {
+    margin: 0 0 1.5rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8d857a;
+}
+
+.evidence h2 {
+    max-width: 30ch;
+}
+
+.evidence .section-copy {
+    max-width: 60ch;
+    margin-bottom: 0.5rem;
+}
+
+/* --- hero evidence card ------------------------------------------------- */
+.evidence-card {
+    display: grid;
+    gap: 0.9rem;
+}
+
+.evidence-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid var(--line);
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.evidence-app {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.evidence-score {
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.evidence-score.high {
+    color: #ff7043;
+}
+
+.evidence-context {
+    margin: 0;
+    font-size: 0.86rem;
+    color: var(--muted);
+}
+
+.evidence-facts {
+    display: grid;
+    gap: 0.9rem;
+    margin: 0;
+}
+
+.evidence-facts dt {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+}
+
+.evidence-facts dd {
+    margin: 0.3rem 0 0;
+    font-size: 0.98rem;
+    line-height: 1.45;
+}
+
+.evidence-footnote {
+    margin: 0;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.hero-panel .evidence-tag {
+    margin: 0;
+}
+
+/* --- integrations strip ------------------------------------------------- */
+.integrations {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.integrations-title {
+    margin: 0 0 1.5rem;
+    text-align: center;
+    font-size: clamp(1rem, 2.4vw, 1.2rem);
+    font-weight: 700;
+    color: var(--text);
+}
+
+.integrations-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem 2.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.integrations-strip img {
+    display: block;
+    width: auto;
+    height: 28px;
+    max-width: 130px;
+    object-fit: contain;
+    opacity: 0.72;
+    filter: grayscale(1);
+    transition: opacity 0.18s ease, filter 0.18s ease;
+}
+
+.integrations-strip li:hover img {
+    opacity: 1;
+    filter: grayscale(0);
+}
+
+.integrations-note {
+    margin: 1.5rem 0 0;
+    text-align: center;
+    font-size: 0.88rem;
+    color: var(--muted);
+}
+
+/* --- how it works ------------------------------------------------------- */
+.step-list {
+    display: grid;
+    gap: 1rem;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.step-list li {
+    padding: 1.6rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.012));
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #111;
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 1.1rem;
+}
+
+.step-list h3 {
+    font-size: clamp(1.35rem, 3vw, 1.7rem);
+    margin-bottom: 0.6rem;
+}
+
+.step-list p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.step-aside {
+    margin-top: 0.9rem !important;
+}
+
+.step-aside a {
+    color: var(--accent-strong);
+    font-weight: 700;
+}
+
+@media (min-width: 860px) {
+    .step-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* --- what M.A.R.I.A. is not --------------------------------------------- */
+.difference {
+    text-align: left;
+}
+
+.difference h2 {
+    max-width: 28ch;
+    margin: 0 0 2.5rem;
+}
+
+.not-grid {
+    display: grid;
+    gap: 1.75rem;
+}
+
+.not-grid h3 {
+    margin-bottom: 0.65rem;
+    font-size: clamp(1.3rem, 3vw, 1.7rem);
+    color: var(--accent-strong);
+}
+
+.not-grid p {
+    margin: 0;
+    max-width: 52ch;
+    font-size: 1.02rem;
+    line-height: 1.55;
+    color: var(--muted);
+}
+
+@media (min-width: 860px) {
+    .not-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2.5rem;
+    }
+}
+
+/* --- feature cards ------------------------------------------------------ */
+.value-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.value-card h3 {
+    font-size: clamp(1.25rem, 2.6vw, 1.5rem);
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+}
+
+.value-card p {
+    margin: 0 0 1.25rem;
+    font-size: 0.98rem;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+.card-link {
+    margin-top: auto;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+}
+
+.card-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* --- pricing ------------------------------------------------------------ */
+.pricing-headline {
+    margin: 0.75rem 0 0;
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: clamp(1.9rem, 4.5vw, 2.5rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--text);
+}
+
+.pricing-headline span {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: var(--muted);
+}
+
+.pricing-example {
+    margin: 1rem 0 0;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.pricing-card-founder {
+    border-color: rgba(255, 90, 54, 0.45);
+    background:
+        linear-gradient(180deg, rgba(255, 90, 54, 0.1), rgba(255, 255, 255, 0.015)),
+        var(--surface);
+}
+
+.pricing-card-founder .feature-list {
+    margin: 1.25rem 0;
+}
+
+.pricing-card-founder .feature-list li {
+    font-size: 0.95rem;
+}
+
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card .button-block {
+    margin-top: auto;
+}
+
+.pricing-footer-link {
+    margin: 2.5rem 0 0;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+.pricing-footer-link a {
+    color: var(--accent-strong);
+    font-weight: 700;
+}
+
+.pricing-footer-link span {
+    margin: 0 0.75rem;
+}
+
+.enterprise-price span {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+/* --- FAQ ---------------------------------------------------------------- */
+.faq-item {
+    border-bottom: 1px solid var(--line);
+}
+
+.faq-item summary {
+    padding: 1.4rem 2.5rem 1.4rem 0;
+    position: relative;
+    font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--accent);
+}
+
+.faq-item[open] summary::after {
+    content: '\2212';
+}
+
+.faq-item p {
+    margin: 0 0 1.5rem;
+    max-width: 68ch;
+    font-size: 1.02rem;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+.faq-item a {
+    color: var(--accent-strong);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.faq h2 {
+    margin-bottom: 2rem;
+}
+
+/* --- shift / split ------------------------------------------------------ */
+.shift-copy .section-copy {
+    margin: 0 0 1.25rem;
+    font-size: clamp(1.05rem, 2.3vw, 1.28rem);
+    line-height: 1.5;
+}
+
+.shift-copy strong {
+    color: var(--text);
+}
+
+/* --- thanks page -------------------------------------------------------- */
+.thanks-actions {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0 3rem;
+}
+
+.thanks-note {
+    padding: 1.75rem;
+    border: 1px solid rgba(255, 90, 54, 0.4);
+    border-radius: var(--radius);
+    background: rgba(255, 90, 54, 0.06);
+}
+
+.thanks-note h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 0.85rem;
+}
+
+.thanks-note p {
+    max-width: 60ch;
+}
+
+@media (min-width: 720px) {
+    .thanks-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* --- why page ----------------------------------------------------------- */
+.why-founder h2 {
+    max-width: 100%;
+    margin-bottom: 1.25rem;
+    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+}
+
+.why-founder p {
+    max-width: 68ch;
+    font-size: clamp(1.02rem, 2.2vw, 1.2rem);
+    line-height: 1.55;
+    color: var(--muted);
+}
+
+/* --- footer ------------------------------------------------------------- */
+.footer-inner {
+    grid-template-columns: 1fr;
+    justify-items: start;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem 1.25rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.footer-nav a {
+    color: var(--muted);
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus-visible {
+    color: var(--text);
+}
+
+@media (max-width: 760px) {
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- responsive grids --------------------------------------------------- */
+@media (min-width: 720px) {
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1080px) {
+    .card-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 880px) {
+    /* The shift headline's longest word ("Vulnerabilidade") needs a wider
+       column than the generic 720px split breakpoint gives it, so this split
+       goes two-up a little later to avoid a mid-word break. */
+    .split {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 980px) {
+    /* Headline spans the full width on its own row; the supporting copy and
+       the example card share the row beneath it. */
+    .hero-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        column-gap: 3rem;
+        row-gap: 2.5rem;
+        align-items: center;
+    }
+
+    .hero-head {
+        grid-column: 1 / -1;
+    }
+}
+

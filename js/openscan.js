@@ -92,7 +92,14 @@ const copy = {
         downloaded: 'ZIP gerado',
         recommended: 'Selecionar recomendado',
         clear: 'Limpar stack',
-        nav: ['Home', 'Open Scan', 'Preços', 'História', 'Demo'],
+        nav: {
+            '/product/': 'Produto',
+            '/openscan/': 'Open Scan',
+            '/pricing/': 'Preços',
+            '/why/': 'História',
+            '/enterprise/': 'Enterprise'
+        },
+        navDemo: 'Ver demo',
         brand: 'Scanners open-source. Inteligência de risco quando você estiver pronto.',
         heroEyebrow: 'FREE OPEN SCAN PACK',
         heroTitle: 'Comece AppSec sem esperar budget enterprise.',
@@ -125,7 +132,14 @@ const copy = {
         downloaded: 'ZIP generated',
         recommended: 'Select recommended',
         clear: 'Clear stack',
-        nav: ['Home', 'Open Scan', 'Pricing', 'Why', 'Demo'],
+        nav: {
+            '/product/': 'Product',
+            '/openscan/': 'Open Scan',
+            '/pricing/': 'Pricing',
+            '/why/': 'Why',
+            '/enterprise/': 'Enterprise'
+        },
+        navDemo: 'See the demo',
         brand: 'Open-source scanners. Risk intelligence when you are ready.',
         heroEyebrow: 'FREE OPEN SCAN PACK',
         heroTitle: 'Start AppSec without waiting for enterprise budget.',
@@ -174,9 +188,13 @@ function applyOpenScanLanguage() {
     document.title = currentLang() === 'en-US'
         ? 'MARIA Open Scan Pack Generator | Free AppSec templates'
         : 'MARIA Open Scan Pack Generator | Templates AppSec gratuitos';
-    document.querySelectorAll('.site-nav a').forEach((link, index) => {
-        if (lang.nav[index]) link.textContent = lang.nav[index];
+    // Keyed by href, not by position: adding or reordering a nav item must not
+    // silently relabel the others.
+    document.querySelectorAll('.site-nav a, .footer-nav a').forEach((link) => {
+        const label = lang.nav[link.getAttribute('href')];
+        if (label) link.textContent = label;
     });
+    setText('.header-actions .button', lang.navDemo);
     setText('.brand-copy', lang.brand);
     setText('.openscan-hero .eyebrow', lang.heroEyebrow);
     setText('.openscan-hero h1', lang.heroTitle);

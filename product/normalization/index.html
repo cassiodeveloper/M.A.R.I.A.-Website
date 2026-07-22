@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Findings Normalization — SARIF, CycloneDX and scanner output, unified | M.A.R.I.A.</title>
+    <meta name="description" content="Many tools, several formats, three names for the same bug. M.A.R.I.A. normalizes SARIF, CycloneDX and scanner findings into one model and collapses the duplicates.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mariaappsec.com/product/normalization/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Findings Normalization | M.A.R.I.A.">
+    <meta property="og:description" content="Many tools, several formats, one model. Duplicates collapsed, findings correlated.">
+    <meta property="og:url" content="https://mariaappsec.com/product/normalization/">
+    <meta property="og:site_name" content="M.A.R.I.A.">
+    <meta property="og:image" content="https://mariaappsec.com/img/maria.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Findings Normalization | M.A.R.I.A.">
+    <meta name="twitter:description" content="Many tools, several formats, three names for the same bug.">
+    <meta name="twitter:image" content="https://mariaappsec.com/img/maria.png">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <script>document.documentElement.classList.add('i18n-pending');</script>
+    <script src="../../i18n/translations.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-09VC70Q0TF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-09VC70Q0TF');
+    </script>
+</head>
+<body data-page="normalization">
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/" data-i18n-aria="nav.homeAria" aria-label="M.A.R.I.A. home">
+                <span class="brand-mark">M.A.R.I.A.</span>
+                <span class="brand-copy" data-i18n="brand.copy">Application risk intelligence</span>
+            </a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="/product/" class="is-current" data-i18n="nav.product">Product</a>
+                <a href="/openscan/" data-i18n="nav.openscan">Open Scan</a>
+                <a href="/pricing/" data-i18n="nav.pricing">Pricing</a>
+                <a href="/why/" data-i18n="nav.why">Why</a>
+            </nav>
+            <div class="header-actions">
+                <a class="button button-primary button-compact" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="nav_top" data-i18n="cta.demoShort">See the demo</a>
+                <div class="lang-toggle" role="group" aria-label="Language selector" data-active-lang="en-US">
+                    <button type="button" data-lang="en-US" aria-pressed="true"><span class="lang-flag" aria-hidden="true">🇺🇸</span><span class="lang-label">EN</span></button>
+                    <button type="button" data-lang="pt-BR" aria-pressed="false"><span class="lang-flag" aria-hidden="true">🇧🇷</span><span class="lang-label">PT</span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="page-hero section">
+            <div class="container narrow">
+                <p class="breadcrumb"><a href="/product/" data-i18n="nav.product">Product</a> <span aria-hidden="true">/</span> <span data-i18n="norm.crumb">Findings Normalization</span></p>
+                <h1 data-i18n="norm.h1">Many tools. Several formats. <span class="text-highlight">Three names</span> for the same bug.</h1>
+                <p class="section-copy" data-i18n="norm.sub">M.A.R.I.A. ingests SARIF, CycloneDX and raw scanner output, deduplicates across tools, and gives you one model of what is actually wrong.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section">
+            <div class="container narrow">
+                <h2 data-i18n="norm.problemH2">Every scanner you add makes the picture worse</h2>
+                <p data-i18n="norm.problem1">A normal pipeline today: SAST, SCA, secrets, container scanning, IaC, DAST. Six categories, often more than one tool per category, each with its own format, its own severity scale, its own identifier scheme, and its own idea of what a "finding" even is.</p>
+                <p data-i18n="norm.problem2">The result:</p>
+                <ul class="feature-list">
+                    <li data-i18n="norm.problem3">The same vulnerable dependency reported by three tools, as three findings, with three different severities</li>
+                    <li data-i18n="norm.problem4">Severity scales that don't compare &mdash; one tool's "high" is another's "medium"</li>
+                    <li data-i18n="norm.problem5">No cross-tool correlation: the exposed endpoint and the vulnerable library sitting inside it are unrelated rows in unrelated reports</li>
+                    <li data-i18n="norm.problem6">Counts that inflate every time you adopt a scanner, making your security program look like it's getting worse the more you invest in it</li>
+                </ul>
+                <p data-i18n="norm.problem7">Teams solve this with a spreadsheet, a script somebody wrote and left behind, or by giving up and looking at one tool.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section alt-band">
+            <div class="container narrow">
+                <h2 data-i18n="norm.solutionH2">One model, built from whatever your tools produce</h2>
+                <ul class="feature-list">
+                    <li data-i18n="norm.solution1"><strong>Ingest</strong> &mdash; SARIF, CycloneDX and JSON output from the scanners you already run</li>
+                    <li data-i18n="norm.solution2"><strong>Normalize</strong> &mdash; one severity scale, one identity model, mapped to CVE, CWE and package coordinates</li>
+                    <li data-i18n="norm.solution3"><strong>Deduplicate</strong> &mdash; the same issue from four tools becomes one finding with four sources of evidence, which makes it <em>more</em> trustworthy rather than four times louder</li>
+                    <li data-i18n="norm.solution4"><strong>Correlate</strong> &mdash; findings link to the application, the service, the endpoint and the owner</li>
+                    <li data-i18n="norm.solution5"><strong>Track identity</strong> &mdash; findings keep an identity across scans, so "still open", "reintroduced" and "fixed" are facts instead of guesses</li>
+                </ul>
+                <p data-i18n="norm.solution6">Adding a scanner should improve your picture. Today, mostly, it just increases your count.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section">
+            <div class="container narrow">
+                <h2 data-i18n="norm.whyH2">Why it matters</h2>
+                <p data-i18n="norm.why1">Everything else in M.A.R.I.A. depends on this. You can't score an application, evaluate a pull request, or draw a timeline on top of four contradictory reports.</p>
+                <p data-i18n="norm.why2">It's also the layer teams most often build themselves &mdash; badly, once, and then maintain forever. If you have a script that merges scanner output, you've already built a worse version of this, and you know exactly what it costs to keep alive.</p>
+                <p data-i18n="norm.why3">There's a second-order effect too: when duplicates collapse, the number goes <em>down</em>. A team that trusts the count starts reading it again.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section alt-band">
+            <div class="container narrow">
+                <h2 data-i18n="norm.exampleH2">A practical example</h2>
+                <p data-i18n="norm.exampleIntro">One vulnerable dependency, as three tools see it &mdash; and as M.A.R.I.A. resolves it:</p>
+                <pre class="code-block" aria-label="Example of findings before and after normalization"><code>Before — same dependency, three tools:
+
+  Trivy       CVE-2025-31324   spring-core 6.1.4   CRITICAL   pkg:maven/…
+  Grype       GHSA-4wrc-…      spring-core 6.1.4   High       maven:org.springframework
+  Dep-Check   CVE-2025-31324   spring-core-6.1.4   9.8        cpe:/a:vmware:…
+
+  → 3 findings, 3 severities, 3 identifiers, 1 actual problem.
+
+After — one finding, three sources agreeing:
+
+  CVE-2025-31324 · spring-core 6.1.4 → 6.1.6
+  Severity   Critical          Confirmed by  Trivy, Grype, Dependency-Check
+  Reachable  Yes — called from /api/v1/checkout
+  Present in payments-api, checkout-worker   ·   Owner: @team-payments
+  Risk contribution  +23 to payments-api
+
+  → 1 finding. One upgrade fixes 2 applications.</code></pre>
+                <p class="evidence-tag" data-i18n="common.illustrative">Illustrative example</p>
+                <p data-i18n="norm.exampleOutro">Three rows became one, and the one that remains carries more information than the three did: who owns it, where it lives, whether it's reachable, and what fixing it is worth.</p>
+            </div>
+        </section>
+
+        <section class="final-cta section">
+            <div class="container narrow center">
+                <h2 data-i18n="norm.ctaH2">No scanners yet? Start there, free.</h2>
+                <p class="section-copy" data-i18n="norm.ctaSub">The Open Scan Pack generates CI templates for a stack of open-source scanners. No login, no repository access &mdash; everything runs in your own pipeline.</p>
+                <div class="section-actions">
+                    <a class="button button-primary" href="/openscan/" data-track-event="openscan_click" data-track-location="normalization_cta" data-i18n="cta.openscan">Get the free Open Scan Pack</a>
+                    <a class="button button-secondary" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="normalization_cta" data-i18n="cta.demo">See it on real data</a>
+                </div>
+                <p class="next-link"><a href="/product/for-developers/" data-i18n="norm.next">Next: why this only works if developers use it &rarr;</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="/product/" data-i18n="nav.product">Product</a>
+                <a href="/pricing/" data-i18n="nav.pricing">Pricing</a>
+                <a href="/openscan/" data-i18n="nav.openscan">Open Scan</a>
+                <a href="/why/" data-i18n="nav.why">Why</a>
+                <a href="/enterprise/" data-i18n="nav.enterprise">Enterprise</a>
+                <a href="mailto:contact@mariaappsec.com" class="footer-link" data-i18n="nav.contact">Contact</a>
+            </nav>
+            <p class="footer-copy" data-i18n="footer.copy">Built for developers and AppSec teams who want less noise and better decisions.</p>
+            <p class="footer-note">Management Application Risk Integrated Analysis</p>
+            <p>&copy; 2026 M.A.R.I.A.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+</body>
+</html>

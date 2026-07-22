@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pull Request Risk Analysis — security impact before merge | M.A.R.I.A.</title>
+    <meta name="description" content="Every pull request changes your risk. M.A.R.I.A. comments the delta on the PR — what the change adds, what it removes, and what needs a decision — before it merges.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mariaappsec.com/product/pull-request-risk/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Pull Request Risk Analysis | M.A.R.I.A.">
+    <meta property="og:description" content="See the security impact of a change while the author still has the context in their head.">
+    <meta property="og:url" content="https://mariaappsec.com/product/pull-request-risk/">
+    <meta property="og:site_name" content="M.A.R.I.A.">
+    <meta property="og:image" content="https://mariaappsec.com/img/maria.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pull Request Risk Analysis | M.A.R.I.A.">
+    <meta name="twitter:description" content="Every pull request changes your risk. Most teams find out months later.">
+    <meta name="twitter:image" content="https://mariaappsec.com/img/maria.png">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <script>document.documentElement.classList.add('i18n-pending');</script>
+    <script src="../../i18n/translations.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-09VC70Q0TF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-09VC70Q0TF');
+    </script>
+</head>
+<body data-page="prRisk">
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/" data-i18n-aria="nav.homeAria" aria-label="M.A.R.I.A. home">
+                <span class="brand-mark">M.A.R.I.A.</span>
+                <span class="brand-copy" data-i18n="brand.copy">Application risk intelligence</span>
+            </a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="/product/" class="is-current" data-i18n="nav.product">Product</a>
+                <a href="/openscan/" data-i18n="nav.openscan">Open Scan</a>
+                <a href="/pricing/" data-i18n="nav.pricing">Pricing</a>
+                <a href="/why/" data-i18n="nav.why">Why</a>
+            </nav>
+            <div class="header-actions">
+                <a class="button button-primary button-compact" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="nav_top" data-i18n="cta.demoShort">See the demo</a>
+                <div class="lang-toggle" role="group" aria-label="Language selector" data-active-lang="en-US">
+                    <button type="button" data-lang="en-US" aria-pressed="true"><span class="lang-flag" aria-hidden="true">🇺🇸</span><span class="lang-label">EN</span></button>
+                    <button type="button" data-lang="pt-BR" aria-pressed="false"><span class="lang-flag" aria-hidden="true">🇧🇷</span><span class="lang-label">PT</span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="page-hero section">
+            <div class="container narrow">
+                <p class="breadcrumb"><a href="/product/" data-i18n="nav.product">Product</a> <span aria-hidden="true">/</span> <span data-i18n="pr.crumb">Pull Request Risk Analysis</span></p>
+                <h1 data-i18n="pr.h1">Every pull request changes your risk. Most teams find out <span class="text-highlight">months later</span>.</h1>
+                <p class="section-copy" data-i18n="pr.sub">M.A.R.I.A. comments on the PR with the risk delta: what the change introduces, what it removes, and what needs a decision &mdash; while the author still has the context in their head.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section">
+            <div class="container narrow">
+                <h2 data-i18n="pr.problemH2">Findings arrive long after the decision</h2>
+                <p data-i18n="pr.problem1">Security findings arrive on a schedule that has nothing to do with engineering. A dependency added on Monday shows up in a report three weeks later, assigned to whoever is on rotation, about code they didn't write, in a service they may not know.</p>
+                <p data-i18n="pr.problem2">By then the fix is archaeology. The author has moved on, the context is gone, and the change is buried under forty commits. The cheapest moment to fix a security problem &mdash; the five minutes before merge, while someone is already thinking about that exact code &mdash; is the one moment nobody uses.</p>
+                <p data-i18n="pr.problem3">The reverse is invisible too. When a team <em>does</em> remove risk, nothing records it. Security work looks like pure cost, because only the failures ever get reported.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section alt-band">
+            <div class="container narrow">
+                <h2 data-i18n="pr.solutionH2">Risk impact, on the pull request</h2>
+                <p data-i18n="pr.solution1">M.A.R.I.A. evaluates each pull request against the application's current risk baseline and comments directly on it:</p>
+                <ul class="feature-list">
+                    <li data-i18n="pr.solution2"><strong>What this PR adds</strong> &mdash; new dependencies with known vulnerabilities, new secrets, new exposed endpoints, new code in already-risky paths</li>
+                    <li data-i18n="pr.solution3"><strong>What this PR removes</strong> &mdash; upgrades, deletions, fixes, findings that close</li>
+                    <li data-i18n="pr.solution4"><strong>The net delta</strong> &mdash; one number: this change moves risk from X to Y</li>
+                    <li data-i18n="pr.solution5"><strong>What needs a human</strong> &mdash; the two or three items worth a reviewer's attention, not the full list</li>
+                </ul>
+                <p data-i18n="pr.solution6">It's a comment, not a gate. A security tool that starts blocking merges on day one is a security tool that gets disabled in week two.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section">
+            <div class="container narrow">
+                <h2 data-i18n="pr.whyH2">Why it matters</h2>
+                <p data-i18n="pr.why1">This is the point where AppSec either enters engineering culture or doesn't.</p>
+                <ul class="feature-list">
+                    <li data-i18n="pr.why2">The developer gets feedback in the tool they're already in, about code they wrote ten minutes ago, in the review they're already reading.</li>
+                    <li data-i18n="pr.why3">The reviewer gets a security opinion without having to be a security specialist.</li>
+                    <li data-i18n="pr.why4">The AppSec engineer stops being the person who shows up afterwards with bad news.</li>
+                    <li data-i18n="pr.why5">Risk stops being a monthly report and becomes a property of the change.</li>
+                </ul>
+                <p class="pull-quote" data-i18n="pr.why6">The point isn't to catch more. It's to catch it when fixing costs five minutes instead of five days.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section alt-band">
+            <div class="container narrow">
+                <h2 data-i18n="pr.exampleH2">A practical example</h2>
+                <p data-i18n="pr.exampleIntro">A pull request that adds a feature, upgrades one dependency, and quietly introduces a bigger problem than it solves:</p>
+                <pre class="code-block" aria-label="Example pull request comment"><code>🔎 M.A.R.I.A. — risk impact of this pull request
+
+payments-api      Risk 41 → 58   (+17, High)
+
+▲ Added
+  · jsonwebtoken 8.5.1 — CVE-2022-23529, critical, fix in 9.0.0
+  · New public route POST /api/v1/refund — no rate limiting detected
+
+▼ Removed
+  · spring-core upgraded 6.1.4 → 6.1.6 — closes CVE-2025-31324  (−23)
+
+⚑ Needs a decision
+  jsonwebtoken 8.5.1 is 3 major versions behind and sits in the auth path.
+  Upgrading to 9.0.0 would make this PR a net −6 instead of +17.
+
+Not blocking. Baseline updates on merge.</code></pre>
+                <p class="evidence-tag" data-i18n="common.illustrative">Illustrative example</p>
+                <p data-i18n="pr.exampleOutro">Note what the developer receives: a number, a reason, a specific action, and the outcome of taking it &mdash; in the place they already are. Nobody had to open a dashboard, and the upgrade this PR <em>did</em> ship gets credited instead of ignored.</p>
+            </div>
+        </section>
+
+        <section class="final-cta section">
+            <div class="container narrow center">
+                <h2 data-i18n="pr.ctaH2">See what your team would actually receive.</h2>
+                <p class="section-copy" data-i18n="pr.ctaSub">The demo organization has pull requests with real deltas behind them.</p>
+                <div class="section-actions">
+                    <a class="button button-primary" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="pr_risk_cta" data-i18n="cta.demo">See it on real data</a>
+                    <a class="button button-secondary" href="/#join" data-track-event="waitlist_cta_click" data-track-location="pr_risk_cta" data-i18n="cta.waitlist">Join the waitlist</a>
+                </div>
+                <p class="next-link"><a href="/product/risk-timeline/" data-i18n="pr.next">Next: how those deltas add up over time &rarr;</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="/product/" data-i18n="nav.product">Product</a>
+                <a href="/pricing/" data-i18n="nav.pricing">Pricing</a>
+                <a href="/openscan/" data-i18n="nav.openscan">Open Scan</a>
+                <a href="/why/" data-i18n="nav.why">Why</a>
+                <a href="/enterprise/" data-i18n="nav.enterprise">Enterprise</a>
+                <a href="mailto:contact@mariaappsec.com" class="footer-link" data-i18n="nav.contact">Contact</a>
+            </nav>
+            <p class="footer-copy" data-i18n="footer.copy">Built for developers and AppSec teams who want less noise and better decisions.</p>
+            <p class="footer-note">Management Application Risk Integrated Analysis</p>
+            <p>&copy; 2026 M.A.R.I.A.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+</body>
+</html>

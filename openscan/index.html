@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MARIA Open Scan Pack Generator | Templates AppSec gratuitos</title>
     <meta name="description" content="Gere gratuitamente templates de CI com scanners open-source para SAST, Secrets, SCA, Container, IaC, DAST, Malware e SBOM. Sem login e sem conectar seu repositório.">
-    <meta name="keywords" content="Open Scan Pack, AppSec open source, Semgrep, Gitleaks, OSV Scanner, Trivy, KICS, ZAP, SBOM, SARIF">
     <meta name="robots" content="index, follow">
     <meta name="author" content="M.A.R.I.A.">
     <link rel="canonical" href="https://mariaappsec.com/openscan/">
@@ -14,13 +13,16 @@
     <meta property="og:description" content="Escolha sua stack AppSec open-source e baixe templates de CI prontos para rodar.">
     <meta property="og:url" content="https://mariaappsec.com/openscan/">
     <meta property="og:site_name" content="M.A.R.I.A.">
-    <meta property="og:locale" content="en_US">
+    <meta property="og:locale" content="pt_BR">
     <meta property="og:image" content="https://mariaappsec.com/img/maria.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MARIA Open Scan Pack Generator">
     <meta name="twitter:description" content="Templates AppSec gratuitos com scanners open-source.">
     <meta name="twitter:image" content="https://mariaappsec.com/img/maria.png">
     <link rel="stylesheet" href="../css/styles.css">
+    <!-- Needed for the shared language toggle to wire itself up. This page's own
+         copy is translated by js/openscan.js, which reacts to the same click. -->
+    <script src="../i18n/translations.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-09VC70Q0TF"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -30,23 +32,31 @@
     </script>
 </head>
 <body class="openscan-page" data-page="openscan">
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
     <header class="site-header" id="top">
         <div class="container header-inner">
             <a class="brand" href="/" aria-label="M.A.R.I.A. home">
                 <span class="brand-mark">M.A.R.I.A.</span>
-                <span class="brand-copy">Open-source scanners. Risk intelligence when you are ready.</span>
+                <span class="brand-copy">Scanners open-source. Inteligência de risco quando você quiser.</span>
             </a>
             <nav class="site-nav" aria-label="Primary">
-                <a href="/">Home</a>
-                <a href="/openscan/">Open Scan</a>
-                <a href="/#pricing">Pricing</a>
-                <a href="/why/">Why</a>
-                <a href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="openscan_nav">Demo</a>
+                <a href="/product/">Produto</a>
+                <a href="/openscan/" class="is-current">Open Scan</a>
+                <a href="/pricing/">Preços</a>
+                <a href="/why/">História</a>
             </nav>
+            <div class="header-actions">
+                <a class="button button-primary button-compact" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="openscan_nav">Ver demo</a>
+                <div class="lang-toggle" role="group" aria-label="Language selector" data-active-lang="pt-BR">
+                    <button type="button" data-lang="en-US" aria-pressed="false"><span class="lang-flag" aria-hidden="true">🇺🇸</span><span class="lang-label">EN</span></button>
+                    <button type="button" data-lang="pt-BR" aria-pressed="true"><span class="lang-flag" aria-hidden="true">🇧🇷</span><span class="lang-label">PT</span></button>
+                </div>
+            </div>
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <section class="openscan-hero section">
             <div class="container openscan-hero-grid">
                 <div class="openscan-hero-copy">
@@ -108,9 +118,15 @@
 
     <footer class="site-footer">
         <div class="container footer-inner">
-            <a href="mailto:contact@mariaappsec.com" class="footer-link">Contact</a>
-            <a href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" class="footer-link" data-track-event="demo_click" data-track-location="openscan_footer">Demo</a>
-            <p class="footer-copy">Free templates get you started. MARIA turns scanner outputs into application risk intelligence.</p>
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="/product/">Produto</a>
+                <a href="/pricing/">Preços</a>
+                <a href="/openscan/">Open Scan</a>
+                <a href="/why/">História</a>
+                <a href="/enterprise/">Enterprise</a>
+                <a href="mailto:contact@mariaappsec.com" class="footer-link">Contato</a>
+            </nav>
+            <p class="footer-copy">Os templates gratuitos são o começo. M.A.R.I.A. transforma a saída dos scanners em inteligência de risco.</p>
             <p class="footer-note">Management Application Risk Integrated Analysis</p>
             <p>&copy; 2026 M.A.R.I.A.</p>
         </div>
