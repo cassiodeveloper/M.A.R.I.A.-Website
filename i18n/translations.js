@@ -37,12 +37,11 @@ window.MARIA_TRANSLATIONS = {
       "cta.demo": "Ver funcionando com dados reais",
       "cta.demoShort": "Ver demo",
       "cta.demoTry": "Testar numa organização de exemplo",
-      "cta.waitlist": "Entrar na waitlist",
-      "cta.reserve": "Reservar minha vaga",
-      "cta.founder": "Quero ser founding team",
+      "cta.demoNow": "Veja a demo agora",
       "cta.openscan": "Baixar o Open Scan Pack grátis",
       "cta.talk": "Falar comigo",
       "cta.talkEnterprise": "Falar sobre Enterprise",
+      "cta.seeEnterprise": "Ver preços Enterprise",
 
       "common.illustrative": "Exemplo ilustrativo",
       "footer.copy": "Feito para desenvolvedores e times de AppSec que querem menos ruído e decisões melhores.",
@@ -57,34 +56,31 @@ window.MARIA_TRANSLATIONS = {
       "features.norm.link": "Como a normalização funciona &rarr;",
       "features.dev.title": "Segurança onde o time de engenharia já trabalha.",
       "features.dev.link": "Por que isso importa &rarr;",
+      "features.champ.title": "O loop de correção que ninguém mais fecha.",
+      "features.champ.body": "Cutucar, corrigir, confirmar, reconhecer &mdash; construído sobre ciência comportamental, com a ética escrita no código.",
+      "features.champ.link": "Ver a ciência &rarr;",
+      "features.fd.title": "O que sabemos, inferimos e não conseguimos ver.",
+      "features.fd.body": "Todo finding separado em fato, inferência e desconhecido &mdash; cada linha com sua fonte, data e confiança.",
+      "features.fd.link": "Como a honestidade funciona &rarr;",
 
       "pricing.eyebrow": "PREÇOS",
       "pricing.repos": "repos",
       "pricing.talk": "Vamos conversar",
       "pricing.allIncluded": "Todas as funcionalidades inclusas. Sem plano escondido.",
-      "pricing.monthly.title": "Mensal",
+      "pricing.monthly.title": "Assinatura",
       "pricing.monthly.headline": "a partir de $9,99<span>/mês</span>",
       "pricing.monthly.unit": "Por repositório, por mês:",
       "pricing.monthly.example": "Exemplo: 30 repositórios = <strong>$60/mês</strong>. Só isso.",
-      "pricing.lifetime.title": "Vitalício",
-      "pricing.lifetime.headline": "pagamento único",
-      "pricing.lifetime.unit": "Pague uma vez, use para sempre:",
-      "pricing.lifetime.example": "Pagamento único. Sem renovação, sem fatura surpresa.",
-      "pricing.upto25": "Até 25 repos",
-      "pricing.upto50": "Até 50 repos",
-      "pricing.upto100": "Até 100 repos",
-      "pricing.over100": "Mais de 100 repos",
 
-      "founder.kicker": "FOUNDING TEAMS",
-      "founder.title": "50 times. Depois, nunca mais.",
-      "founder.unit": "Acesso vitalício, até 50 repositórios",
-      "founder.item1": "Acesso vitalício, até 50 repositórios",
-      "founder.item2": "Badge de founding user",
-      "founder.item3": "Acesso antecipado a tudo que for novo",
-      "founder.item4": "Um canal direto comigo, não uma fila de suporte",
-      "founder.item5": "Onboarding prioritário, feito junto com você",
-      "founder.why": "Isto não é desconto. É mais barato que o plano vitalício de $299 porque founding teams pagam com outra coisa: me dizer o que está errado no produto enquanto ainda é barato mudar.",
-      "founder.choose": "Se você só quer a ferramenta, pegue o plano vitalício. Se você quer moldá-la, pegue este."
+      "pricing.ent.kicker": "ENTERPRISE",
+      "pricing.ent.title": "Centenas ou milhares de repos",
+      "pricing.ent.headline": "sob medida",
+      "pricing.ent.unit": "Para escala de verdade:",
+      "pricing.ent.item1": "Preço por repositórios ativos e relevantes, não por cemitério digital",
+      "pricing.ent.item2": "Integração com SCM e normalização SARIF/CycloneDX",
+      "pricing.ent.item3": "Motor de priorização por risco e relatórios executivos",
+      "pricing.ent.item4": "Suporte e onboarding dedicados",
+      "pricing.ent.body": "Nesse tamanho, o número depende do seu parque. A gente conversa e vê se encaixa &mdash; com franqueza."
     }
   },
 
@@ -145,7 +141,7 @@ window.MARIA_TRANSLATIONS = {
           "evidence.link": "Como funciona a análise de PR",
 
           "features.eyebrow": "O QUE TEM DENTRO",
-          "features.h2": "Cinco coisas, bem feitas.",
+          "features.h2": "Sete coisas, bem feitas.",
           "features.score.body": "Exposição, sensibilidade dos dados, explorabilidade e velocidade de mudança &mdash; com os pesos do seu jeito, nunca uma caixa-preta.",
           "features.pr.body": "Um comentário no PR com o delta, a causa e a correção que inverteria o resultado.",
           "features.timeline.body": "Responda \"estamos melhores que no trimestre passado?\" com evidência em vez de opinião.",
@@ -188,12 +184,10 @@ window.MARIA_TRANSLATIONS = {
           "faq.q5": "Por que cobrar por repositório em vez de por desenvolvedor?",
           "faq.a5": "Porque cobrar por desenvolvedor te pune por crescer o time, e seu risco não escala com headcount &mdash; escala com o código que você mantém. Dez engenheiros em doze repositórios carregam mais ou menos o mesmo risco de aplicação que três engenheiros em doze repositórios.",
 
-          "join.eyebrow": "ACESSO ANTECIPADO",
+          "join.eyebrow": "VEJA AO VIVO",
           "join.h2": "Descubra como é o seu risco de verdade.",
-          "join.sub": "Entre na waitlist e eu falo com você pessoalmente quando sua vaga abrir. Founding teams primeiro.",
-          "join.label": "E-mail",
-          "join.placeholder": "voce@empresa.com",
-          "join.note": "Um campo. Sem senha. Sem sequência de vendas. Eu leio todas as respostas."
+          "join.sub": "Crie uma conta grátis na demo e explore uma organização de exemplo &mdash; sem configurar scanner, sem call de vendas.",
+          "join.note": "Grátis para testar. Sem cartão de crédito. Eu leio todas as mensagens."
         }
       }
     },
@@ -219,6 +213,8 @@ window.MARIA_TRANSLATIONS = {
           "product.timeline.body": "Quando subiu, quando caiu, o que causou cada movimento e quais decisões realmente funcionaram.",
           "product.norm.body": "SARIF, CycloneDX e saída bruta de scanner, deduplicados e correlacionados em uma única visão do que está errado.",
           "product.dev.body": "Desenvolvedor não ignora segurança. Ele ignora lista na qual não dá para agir. É essa a diferença.",
+          "product.champ.body": "Cutucar, corrigir, confirmar, reconhecer &mdash; construído sobre ciência comportamental, com a ética escrita no código.",
+          "product.fd.body": "Todo finding separado em fato, inferência e desconhecido &mdash; cada linha com sua fonte, data e confiança.",
           "product.ctaH2": "Mais fácil de ver do que de descrever.",
           "product.ctaSub": "A demo roda numa organização de exemplo. Nada para instalar, nada para conectar."
         }
@@ -255,6 +251,13 @@ window.MARIA_TRANSLATIONS = {
           "score.factor6": "<strong>Severidade e densidade dos findings</strong> &mdash; o sinal bruto dos seus scanners, como uma entrada entre várias e não como a resposta inteira",
           "score.solution2": "Todo score abre. Você vê os fatores, os pesos e quais findings puxam o número. Nada é caixa-preta &mdash; um score que ninguém consegue explicar é ignorado exatamente como os alertas que ele substituiu.",
           "score.solution3": "E os pesos são seus. Uma fintech e um time de ferramentas internas não têm o mesmo modelo de risco, e M.A.R.I.A. não finge que têm.",
+          "score.honestH2": "O motor de honestidade por baixo do número",
+          "score.honest1": "Um score de risco só é útil se puder <em>cair</em>. Parece óbvio, e é onde a maioria das ferramentas falha em silêncio: elas contam todo finding que o repositório já teve, então corrigir nunca move o número. O score do M.A.R.I.A. conta <strong>risco aberto</strong> &mdash; e a política de contagem é pura, versionada e deliberadamente difícil de burlar:",
+          "score.honest2": "<strong>Corrigir reduz o score; aceitar risco não.</strong> Risco aceito continua contando &mdash; porque se silenciar um finding melhorasse sua postura, o caminho mais barato para \"ficar seguro\" seria desviar o olhar em vez de corrigir.",
+          "score.honest3": "<strong>Um crítico nunca é silenciado sem responsabilidade.</strong> Findings high e critical continuam visíveis independente de gate, contexto ou config; um scanner que declara um crítico \"suprimido\" é recusado &mdash; a alegação vira evidência atribuída e o finding aparece mesmo assim.",
+          "score.honest4": "<strong>Desconhecido nunca vira \"não\".</strong> Todo sinal tri-estado mantém o valor do meio; dado faltando é dito, não assumido como seguro.",
+          "score.honest5": "<strong>A régua é versionada.</strong> Mudar a metodologia nunca produz um falso \"risco melhorou\" &mdash; um score só pode ser comparado com outro construído do mesmo jeito.",
+          "score.honest6": "Provado em produção: um repositório caiu de 92 para 84 no momento em que seis críticos foram marcados como corrigidos. Antes deste motor existir, aquele número não se movia.",
           "score.whyH2": "Por que isso importa",
           "score.why1": "Porque um número em que todo mundo confia muda a conversa.",
           "score.why2": "O desenvolvedor para de perguntar \"qual destes 212 findings eu faço primeiro?\"",
@@ -441,6 +444,10 @@ window.MARIA_TRANSLATIONS = {
           "dev.solution5": "<strong>Sem virar portão no primeiro dia.</strong> Informar primeiro, impor depois, e só onde já mereceu esse direito.",
           "dev.solution6": "<strong>Com o dono certo.</strong> Findings se mapeiam a serviços e donos, então ninguém tria o código de outra pessoa.",
           "dev.solution7": "Para Security Champions e engenheiros de AppSec a virada é maior: em vez de perseguir findings individuais, você define o modelo de risco e deixa ele distribuir o trabalho. Você sai de fazer triagem para desenhar como a triagem acontece.",
+          "dev.sciH2": "Existe uma ciência nisso, e é o ponto inteiro",
+          "dev.sci1": "Fazer um desenvolvedor agir não é questão de força de vontade. A ciência comportamental modela isso como <strong>motivação + capacidade + um gatilho na hora certa</strong>, e hábitos se formam num loop: cue, resposta e &mdash; a parte que toda ferramenta de segurança esquece &mdash; uma <strong>recompensa</strong>. Um scanner te dá um cue e espera uma resposta que ele nunca reconhece. Isso produz atividade, não hábito.",
+          "dev.sci2": "M.A.R.I.A. fecha o loop: cutuca uma vez, o desenvolvedor corrige, o mesmo scanner confirma, o score de risco cai, e a pessoa é creditada &mdash; enquanto ainda lembra de ter feito. E porque desenhar comportamento pode escorregar para manipulação, a ética está escrita no código: sem escassez falsa, sem ranking individual, discordar nunca tem penalidade, e só se afirma queda de risco quando a queda é real.",
+          "dev.sciLink": "Ler a ciência comportamental por trás do M.A.R.I.A. &rarr;",
           "dev.whyH2": "Por que isso importa",
           "dev.why1": "AppSec não escala adicionando scanner. Escala quando quem escreve o código toma decisões um pouco melhores, continuamente &mdash; e isso só acontece se a informação chegar no momento da decisão, num formato no qual dê para agir.",
           "dev.why2": "Toda ferramenta ignorada também custa algo que nunca aparece na fatura: ela ensina ao seu time que alerta de segurança pode ser pulado com segurança. Esse hábito é caro, e é difícil de desfazer.",
@@ -455,13 +462,119 @@ window.MARIA_TRANSLATIONS = {
       }
     },
 
+    /* ---------------------------------------------------- security champions */
+    "champions": {
+      "pt-BR": {
+        "htmlLang": "pt-BR",
+        "title": "Behavioral AppSec — o loop de correção que ninguém mais fecha | M.A.R.I.A.",
+        "meta": {
+          "description": "Ferramentas de segurança geram atividade. Comportamento gera segurança. M.A.R.I.A. fecha o loop de hábito — cutucar, corrigir, confirmar, reconhecer — com ciência comportamental, de forma ética e determinística.",
+          "ogTitle": "Behavioral AppSec | M.A.R.I.A.",
+          "ogDescription": "O loop que toda outra ferramenta deixa aberto: cutucar, corrigir, confirmar — e de fato reconhecer quem corrigiu.",
+          "twitterTitle": "Behavioral AppSec | M.A.R.I.A.",
+          "twitterDescription": "Ferramentas de segurança geram atividade. Comportamento gera segurança."
+        },
+        "strings": {
+          "champ.crumb": "Behavioral AppSec",
+          "champ.h1": "Ferramentas de segurança geram atividade. <span class=\"text-highlight\">Comportamento</span> gera segurança.",
+          "champ.sub": "Um scanner alerta, alguém eventualmente corrige, e o sistema nunca diz uma palavra. Isso é atividade, não hábito. M.A.R.I.A. é construído sobre a ciência comportamental de fechar esse loop &mdash; de forma ética, determinística e em voz alta.",
+          "champ.problemH2": "O loop que toda ferramenta de segurança deixa aberto",
+          "champ.problem1": "A ciência comportamental tem um modelo simples de por que as pessoas agem: <strong>B = Motivação + Capacidade + Prompt</strong> (BJ Fogg). Uma ação acontece quando há motivação suficiente, capacidade real e um gatilho na hora certa. Hábitos se formam num ciclo: <strong>cue &rarr; desejo &rarr; resposta &rarr; recompensa</strong>.",
+          "champ.problem2": "Quase toda ferramenta de segurança tem o cue e a resposta, e nunca fecha a recompensa. O scanner dispara um alerta. Alguém, eventualmente, corrige algo. E o sistema não diz nada &mdash; nunca confirma que a correção funcionou, nunca mostra o risco cair, nunca reconhece quem fez o trabalho.",
+          "champ.problem3": "Um cue e uma resposta sem recompensa produzem atividade. Nunca produzem um hábito.",
+          "champ.problem4": "M.A.R.I.A. fazia exatamente isso, um dia. Corrigir isso &mdash; e provar a correção em produção &mdash; é o que este módulo é.",
+          "champ.solutionH2": "O loop, fechado e em voz alta",
+          "champ.solution1": "M.A.R.I.A. completa o ciclo do jeito que o comportamento de fato se forma: <strong>cutucar &rarr; corrigir &rarr; confirmar &rarr; reconhecer.</strong>",
+          "champ.solution2": "<strong>Cutucar</strong> &mdash; uma única ação recomendada na hora certa, sob um teto duro de atenção. Não a lista inteira; a única coisa que vale a pena fazer agora.",
+          "champ.solution3": "<strong>Corrigir</strong> &mdash; o desenvolvedor faz o trabalho, no fluxo dele.",
+          "champ.solution4": "<strong>Confirmar</strong> &mdash; o mesmo scanner roda de novo e o finding sumiu. Sumir é evidência, então uma guarda anti-cliff descarta um scan que simplesmente não rodou.",
+          "champ.solution5": "<strong>Reconhecer</strong> &mdash; a recompensa chega em dois tempos: no merge, enquanto a pessoa ainda lembra do que fez, e de novo quando o re-scan confirma de verdade.",
+          "champ.solution6": "Este é o demo de sessenta segundos que nenhuma outra ferramenta consegue dar: um desenvolvedor corrige um problema, o scanner confirma, o score de risco da aplicação cai, e a pessoa é creditada &mdash; ao vivo, com dado real.",
+          "champ.ethicsH2": "Desenho comportamental tem uma versão sombria. Estas são as linhas vermelhas.",
+          "champ.ethics1": "No momento em que você desenha comportamento, você pode manipulá-lo. M.A.R.I.A. é uma homenagem a uma mãe que cuidava de pessoas &mdash; e uma mãe que <em>manipula</em> é pior que uma ferramenta neutra. Então a ética não é uma página de política; está escrita no código, cada linha com um teste que quebra se for violada:",
+          "champ.ethics2": "<strong>Invisível por fluidez, jamais por ocultação.</strong> A camada fica fora do seu caminho, mas nunca esconde um risco real para te cutucar.",
+          "champ.ethics3": "<strong>Sem escassez, sem imprevisibilidade, sem ranking individual.</strong> Os dark patterns manipulativos do design de engajamento são <em>inexpressáveis no schema</em>, não meramente desencorajados.",
+          "champ.ethics4": "<strong>Discordar é de graça.</strong> Contestar um finding leva um clique, nunca carrega penalidade e nunca é lido pelo sistema de reconhecimento nem usado para avaliar uma pessoa.",
+          "champ.ethics5": "<strong>Reconhecer o fato, nunca inventar o impacto.</strong> A recompensa afirma uma queda de risco só quando ela é real. Num repo saturado, reconhece a correção e diz claramente que o número não moveu.",
+          "champ.ethics6": "<strong>O silêncio é ganho com evidência, não com ignorância.</strong> M.A.R.I.A. só se cala sobre um risco quando tem evidência positiva de que o risco é baixo &mdash; nunca porque um sinal está faltando.",
+          "champ.raciH2": "Um champion é uma ponte, não um gargalo",
+          "champ.raci1": "Programas de champion falham do mesmo jeito: o champion vira aos poucos um time de AppSec de meio período, um ponto único de falha com um trabalho paralelo. M.A.R.I.A. codifica os papéis para que isso não aconteça em silêncio.",
+          "champ.raci2": "<strong>O champion facilita</strong> &mdash; interpreta contexto, traduz, conecta. Aceita risco baixo/médio e escala. É esse o mandato inteiro.",
+          "champ.raci3": "<strong>O champion nunca é o responsável pela correção</strong> &mdash; isso é do desenvolvedor &mdash; e nunca aceita risco high/critical &mdash; isso exige autoridade dedicada. O papel fica fora da cadeia de responsabilidade por garantia de um teste, não de uma diretriz.",
+          "champ.raci4": "<strong>Ser champion é opt-in.</strong> Sem auto-inscrição. E contribuição é medida como ajuda dada, nunca como bugs possuídos &mdash; porque um bug é do código, não da pessoa.",
+          "champ.whyH2": "Por que isso importa &mdash; e por que vende",
+          "champ.why1": "Todo ASPM termina em \"aqui está sua lista priorizada\" ou \"criamos o ticket\". Nenhum prova que o trabalho reduziu risco, e nenhum fecha o loop de volta para quem fez. Essa camada &mdash; julgamento, responsabilidade e prova de resultado &mdash; não tem dono neste mercado.",
+          "champ.why2": "Priorização é table-stakes com dez fornecedores brigando por paridade. O loop fechado não é. É a diferença entre uma ferramenta que seu time tolera e uma que muda silenciosamente como ele se comporta.",
+          "champ.why3": "O teste honesto de uma ferramenta de segurança não é cobertura. É se o comportamento sobrevive quando você remove o prompt.",
+          "champ.exampleH2": "A recompensa, em dois tempos",
+          "champ.exampleIntro": "O reconhecimento chega no momento do hábito, não num relatório mensal:",
+          "champ.exampleOutro": "Provado em produção: um repositório foi de score de risco 92 para 84 no momento em que seis críticos foram marcados como corrigidos. Antes da correção de scoring honesto que tornou isso possível, o número não podia se mover &mdash; então a recompensa não tinha nada de verdadeiro para dizer.",
+          "champ.ctaH2": "Veja o loop fechar com dado real.",
+          "champ.ctaSub": "A demo roda o ciclo inteiro de ponta a ponta &mdash; corrigir, confirmar, cair, reconhecer.",
+          "champ.next": "A seguir: o que um único finding realmente te diz &rarr;"
+        }
+      }
+    },
+
+    /* -------------------------------------------------------- finding detail */
+    "findingDetail": {
+      "pt-BR": {
+        "htmlLang": "pt-BR",
+        "title": "O finding, explicado — o que sabemos, inferimos e não conseguimos ver | M.A.R.I.A.",
+        "meta": {
+          "description": "Um scanner te diz o que encontrou. M.A.R.I.A. te diz o que sabe, o que está inferindo, o que não consegue ver e onde as fontes divergem — cada linha com sua fonte, data e confiança.",
+          "ogTitle": "O finding, explicado | M.A.R.I.A.",
+          "ogDescription": "Sabemos, inferimos, não sabemos e divergimos — separado, com fonte e honesto. Comunicação desenhada sobre as máximas de Grice.",
+          "twitterTitle": "O finding, explicado | M.A.R.I.A.",
+          "twitterDescription": "O que sabemos, o que inferimos, o que não conseguimos ver — cada linha com fonte."
+        },
+        "strings": {
+          "fd.crumb": "O finding, explicado",
+          "fd.h1": "Um scanner te diz o que encontrou. M.A.R.I.A. te diz o que <span class=\"text-highlight\">sabe</span>.",
+          "fd.sub": "Todo finding, separado no que sabemos, no que inferimos, no que não sabemos e onde as fontes divergem &mdash; cada linha carregando sua fonte, sua data e sua confiança.",
+          "fd.problemH2": "Um finding cru é uma alegação sem epistemologia",
+          "fd.problem1": "Um scanner te entrega um rule ID, uma severidade, um arquivo e uma linha. O que ele não te diz é o quanto tem certeza, de onde veio cada pedaço disso, se outra ferramenta discorda, ou se o código vulnerável é sequer alcançável. Então o desenvolvedor tem que reconstruir tudo isso na mão &mdash; e geralmente não reconstrói.",
+          "fd.problem2": "A falha mais profunda é de honestidade. A maioria das ferramentas apresenta um palpite e um fato na mesma fonte. \"CVSS 9.8\" (um fato) e \"isto é explorável\" (muitas vezes um palpite) parecem idênticos. Quando um \"crítico\" acaba sendo inalcançável duas vezes seguidas, o desenvolvedor para de acreditar no quarto &mdash; e está certo em parar.",
+          "fd.solutionH2": "Comunicação desenhada sobre as máximas de Grice",
+          "fd.solution1": "Existe um modelo conhecido do que faz a comunicação cooperativa de fato funcionar &mdash; as quatro máximas do filósofo Paul Grice. M.A.R.I.A. constrói o finding em volta delas:",
+          "fd.solution2": "<strong>Qualidade</strong> &mdash; não diga o que você não tem evidência para dizer. Um sinal faltando é mostrado como <em>desconhecido</em>, nunca renderizado sorrateiramente como \"não\".",
+          "fd.solution3": "<strong>Quantidade</strong> &mdash; o suficiente, e nada mais. Seções vazias simplesmente não aparecem; a evidência técnica fica a um clique de distância, não jogada por cima.",
+          "fd.solution4": "<strong>Relevância</strong> &mdash; comece pelo porquê isso importa <em>aqui</em>: a exposição, os dados, a alcançabilidade desta aplicação específica.",
+          "fd.solution5": "<strong>Modo</strong> &mdash; um título orientado à ação, não um rule ID. \"Atualizar lodash 4.17.15 &rarr; 4.17.21 em payments-api\", não \"[CVE-2021-23337] Prototype Pollution\".",
+          "fd.fourH2": "Quatro caixas, e cada linha mostra sua fonte",
+          "fd.four1": "Todo finding é dividido em quatro categorias honestas, e toda alegação contextual carrega sua proveniência &mdash; de onde veio, quando, e o quanto o sistema está confiante:",
+          "fd.four2": "<strong>O que sabemos</strong> &mdash; fatos tirados um-a-um de evidência atribuída: a ferramenta, a versão dela, uma versão de correção confirmada pelo fornecedor, uma dependência direta vs. transitiva.",
+          "fd.four3": "<strong>O que inferimos</strong> &mdash; as conclusões do próprio M.A.R.I.A. a partir de suas políticas determinísticas, cada uma rotulada como inferência com sua base e confiança, nunca disfarçada de fato.",
+          "fd.four4": "<strong>O que não sabemos</strong> &mdash; todo sinal relevante que está faltando, dito em voz alta. Alcançabilidade sem dado é \"desconhecido\", não \"não alcançável\".",
+          "fd.four5": "<strong>Onde as fontes divergem</strong> &mdash; quando dois scanners conflitam, os dois sinais são mostrados com fonte e data, e a regra de resolução aplicada é nomeada. Nada é rebaixado em silêncio.",
+          "fd.four6": "Fato, inferência e recomendação são visualmente distintos, e a IA &mdash; onde é usada &mdash; apenas <em>explica</em> um objeto que o determinismo já decidiu. Ela nunca vê seu código-fonte, e nunca afirma explorabilidade sem evidência. Essas são linhas vermelhas no código, não preferências.",
+          "fd.doneH2": "Uma checkbox não é uma correção",
+          "fd.done1": "A maioria das ferramentas trata \"ticket fechado\" como \"risco eliminado\". M.A.R.I.A. separa os dois. Um finding carrega critérios de aceitação escolhidos por template para sua categoria, uma definition of done, e um método explícito de prova &mdash; e fechar o loop significa que a prova aconteceu:",
+          "fd.done2": "Marcar uma caixa no Jira significa <strong>declarado</strong>, e nada mais.",
+          "fd.done3": "<strong>Verificado</strong> significa que a verificação declarada de fato rodou &mdash; na maioria das vezes, o mesmo scanner re-escaneou e o finding realmente sumiu.",
+          "fd.done4": "Um finding só fecha quando seus critérios obrigatórios estão verificados <em>e</em> ele está ausente do scan mais recente &mdash; ou carrega um aceite de risco formal e responsável.",
+          "fd.done5": "Se reaparece, ele reabre sozinho, o critério \"sumiu no próximo scan\" vira reprovado, e o histórico é preservado.",
+          "fd.done6": "É isso que transforma a trilha de auditoria de um passivo em uma defesa: todo adiamento é registrado, motivado e reversível.",
+          "fd.exampleH2": "Um exemplo prático",
+          "fd.exampleIntro": "O mesmo CVE que um scanner entregaria como uma linha plana, reconstruído como um finding no qual dá para agir:",
+          "fd.exampleOutro": "Repare no que nunca acontece: alcançabilidade não é adivinhada, a versão de correção é atribuída à ferramenta que a confirmou, e o número de prioridade mostra a própria aritmética. Um desenvolvedor age em oito segundos, e um auditor rastreia cada linha até sua fonte.",
+          "fd.whyH2": "Por que isso importa &mdash; e por que vende",
+          "fd.why1": "Confiança é o recurso mais escasso em AppSec. Um desenvolvedor que já se queimou com falsos críticos desconta a ferramenta inteira. Transparência &mdash; separar o que é sabido do que é palpite, e mostrar a fonte dos dois &mdash; é como se reconquista a confiança. E é, francamente, algo que nenhum scanner e quase nenhum ASPM se dá ao trabalho de fazer.",
+          "fd.why2": "E isso se acumula: um finding honesto sobre a própria incerteza é um finding que o desenvolvedor vai abrir uma segunda vez.",
+          "fd.ctaH2": "Abra um finding real na demo.",
+          "fd.ctaSub": "Veja as quatro caixas, a proveniência e a prova-de-correção com dado ao vivo.",
+          "fd.next": "A seguir: como esses findings se somam em um score honesto &rarr;"
+        }
+      }
+    },
+
     /* ------------------------------------------------------------- pricing */
     "pricing": {
       "pt-BR": {
         "htmlLang": "pt-BR",
         "title": "Preços — por repositório, nunca por desenvolvedor | M.A.R.I.A.",
         "meta": {
-          "description": "Produto completo a partir de $9,99/mês, cobrado por repositório. Planos vitalícios a partir de $199. Todas as funcionalidades em todos os planos, sem cobrança por assento.",
+          "description": "Produto completo a partir de $9,99/mês, cobrado por repositório. Assinatura self-service transparente e Enterprise para escala grande. Todas as funcionalidades em todos os planos, sem cobrança por assento.",
           "ogTitle": "Preços | M.A.R.I.A.",
           "ogDescription": "Produto completo. Pague só pela escala. Por repositório, nunca por desenvolvedor.",
           "twitterTitle": "Preços | M.A.R.I.A.",
@@ -480,9 +593,9 @@ window.MARIA_TRANSLATIONS = {
           "pricingPage.q2": "Alguma funcionalidade fica de fora nos planos mais baratos?",
           "pricingPage.a2": "Nenhuma. Score de risco, análise de pull request, timeline e normalização estão em todos os planos. O preço muda com quantos repositórios você conecta, e nada mais.",
           "pricingPage.q3": "E se a minha quantidade de repositórios mudar?",
-          "pricingPage.a3": "A faixa acompanha os repositórios que você tem conectados. Conectou mais, sobe de faixa; desconectou, volta. Nos planos vitalícios, o teto de repositórios é o limite que você comprou.",
-          "pricingPage.q4": "Por que o plano founding é mais barato que o vitalício?",
-          "pricingPage.a4": "Porque founding teams pagam com outra coisa além de dinheiro: retorno direto e desconfortável enquanto o produto ainda é barato de mudar. Isso vale mais para mim agora do que $50. Quando as 50 vagas acabarem, o vitalício será a única opção de pagamento único.",
+          "pricingPage.a3": "A faixa acompanha os repositórios que você tem conectados: conectou mais, sobe de faixa; desconectou, volta. Sem contrato anual, sem multa &mdash; você paga pelo que está de fato analisando.",
+          "pricingPage.q4": "Quando faz sentido ir para o Enterprise?",
+          "pricingPage.a4": "Quando você tem centenas ou milhares de repositórios e a lista por repositório deixa de ser a conversa certa &mdash; aí o preço passa a ser por repositórios ativos e relevantes, com SSO, suporte e onboarding dedicados. <a href=\"/enterprise/\">Ver como o Enterprise funciona &rarr;</a>",
           "pricingPage.q5": "Eu tenho centenas ou milhares de repositórios.",
           "pricingPage.a5": "Então preço de tabela por repositório deixa de ser a conversa certa. <a href=\"/enterprise/\">Veja como funciona em escala enterprise &rarr;</a>",
           "pricingPage.ctaH2": "Veja antes de gastar qualquer coisa.",
@@ -532,34 +645,6 @@ window.MARIA_TRANSLATIONS = {
           "enterprise.inc6": "Suporte e onboarding",
           "enterprise.ctaH2": "Nesse tamanho, o número depende do seu parque.",
           "enterprise.ctaSub": "Me diga quantos repositórios estão de fato ativos, quais scanners você roda e no que seu time está se afogando. Eu digo com franqueza se M.A.R.I.A. encaixa."
-        }
-      }
-    },
-
-    /* -------------------------------------------------------------- thanks */
-    "thanks": {
-      "pt-BR": {
-        "htmlLang": "pt-BR",
-        "title": "Você está dentro | M.A.R.I.A.",
-        "meta": {
-          "description": "Você entrou na waitlist do M.A.R.I.A."
-        },
-        "strings": {
-          "thanks.eyebrow": "WAITLIST",
-          "thanks.h1": "Você está <span class=\"text-highlight\">dentro</span>.",
-          "thanks.sub": "Você vai receber notícia minha &mdash; de um endereço real, não de um no-reply.",
-          "thanks.meanwhileH2": "Duas coisas enquanto espera",
-          "thanks.card1Kicker": "VER",
-          "thanks.card1Title": "Teste a demo numa organização de exemplo.",
-          "thanks.card1Body": "Uma dúzia de aplicações com saída real de scanner por trás. Comece por <code>payments-api</code> &mdash; é a que carrega mais risco.",
-          "thanks.card1Link": "Abrir a demo &rarr;",
-          "thanks.card2Kicker": "RODAR",
-          "thanks.card2Title": "Rode o Open Scan Pack gratuito nos seus repositórios.",
-          "thanks.card2Body": "Escolha uma stack, baixe os templates de CI, rode no seu pipeline. Sem login, sem acesso ao repositório. Quando M.A.R.I.A. abrir, você já vai ter a entrada de que ela precisa.",
-          "thanks.card2Link": "Baixar o pacote &rarr;",
-          "thanks.skipH2": "Quer furar a fila?",
-          "thanks.skipBody": "Responda o e-mail de confirmação com duas coisas: quantos repositórios você tem e o que está deixando seu time louco hoje. Eu leio todas pessoalmente, e founding teams entram primeiro.",
-          "thanks.skipCta": "Falar comigo direto"
         }
       }
     },

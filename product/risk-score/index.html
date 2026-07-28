@@ -91,6 +91,20 @@
 
         <section class="section prose-section">
             <div class="container narrow">
+                <h2 data-i18n="score.honestH2">The honesty engine underneath the number</h2>
+                <p data-i18n="score.honest1">A risk score is only useful if it can go <em>down</em>. That sounds obvious, and it's where most tools quietly fail: they count every finding a repository has ever had, so fixing things never moves the number. M.A.R.I.A.'s score counts <strong>open risk</strong> &mdash; and the counting policy is pure, versioned and deliberately hard to game:</p>
+                <ul class="feature-list">
+                    <li data-i18n="score.honest2"><strong>Fixing reduces the score; accepting risk does not.</strong> Accepted risk keeps counting &mdash; because if silencing a finding improved your posture, the cheapest way to "get secure" would be to look away instead of fix.</li>
+                    <li data-i18n="score.honest3"><strong>A critical is never silenced without accountability.</strong> High and critical findings stay visible regardless of gate, context or config; a scanner that declares a critical "suppressed" is refused &mdash; the claim becomes attributed evidence and the finding still surfaces.</li>
+                    <li data-i18n="score.honest4"><strong>Unknown is never rendered as "no".</strong> Every tri-state signal keeps its middle value; missing data is stated, not assumed safe.</li>
+                    <li data-i18n="score.honest5"><strong>The ruler is versioned.</strong> Changing the methodology never produces a fake "risk improved" &mdash; a score can only be compared against one built the same way.</li>
+                </ul>
+                <p data-i18n="score.honest6">Proven in production: a repository dropped from 92 to 84 the moment six criticals were marked fixed. Before this engine existed, that number couldn't move at all.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section">
+            <div class="container narrow">
                 <h2 data-i18n="score.whyH2">Why it matters</h2>
                 <p data-i18n="score.why1">Because a number everyone trusts changes the conversation.</p>
                 <ul class="feature-list">
@@ -131,7 +145,7 @@ Top 3 drivers of payments-api risk:
                 <p class="section-copy" data-i18n="score.ctaSub">The demo organization has a dozen applications with real scanner output behind them.</p>
                 <div class="section-actions">
                     <a class="button button-primary" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="risk_score_cta" data-i18n="cta.demo">See it on real data</a>
-                    <a class="button button-secondary" href="/#join" data-track-event="waitlist_cta_click" data-track-location="risk_score_cta" data-i18n="cta.waitlist">Join the waitlist</a>
+                    <a class="button button-secondary" href="https://demo.mariaappsec.com/auth/register" target="_blank" rel="noreferrer" data-track-event="demo_register_click" data-track-location="risk_score_cta" data-i18n="cta.demoNow">See the demo now</a>
                 </div>
                 <p class="next-link"><a href="/product/pull-request-risk/" data-i18n="score.next">Next: how risk changes with every pull request &rarr;</a></p>
             </div>

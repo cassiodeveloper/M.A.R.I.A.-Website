@@ -36,8 +36,8 @@
         "@type": "AggregateOffer",
         "priceCurrency": "USD",
         "lowPrice": "9.99",
-        "highPrice": "499",
-        "offerCount": "3",
+        "highPrice": "249",
+        "offerCount": "2",
         "url": "https://mariaappsec.com/pricing/"
       }
     }
@@ -87,7 +87,7 @@
                     <p class="hero-subtitle" data-i18n="hero.sub">M.A.R.I.A. reads the output of the scanners you already run &mdash; SARIF, SBOMs, secrets, dependencies &mdash; and turns it into one risk score per application, per pull request, over time.</p>
                     <div class="hero-actions">
                         <a class="button button-primary" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="hero_primary" data-i18n="cta.demo">See it on real data</a>
-                        <a class="button button-secondary" href="#join" data-track-event="waitlist_cta_click" data-track-location="hero_secondary" data-i18n="cta.waitlist">Join the waitlist</a>
+                        <a class="button button-secondary" href="https://demo.mariaappsec.com/auth/register" target="_blank" rel="noreferrer" data-track-event="demo_register_click" data-track-location="hero_secondary" data-i18n="cta.demoNow">See the demo now</a>
                     </div>
                     <p class="hero-trust" data-i18n="hero.trust">Reads scanner output &mdash; SARIF, CycloneDX, JSON. Sits on top of the tools you already have. Priced per repository, never per developer.</p>
                 </div>
@@ -218,7 +218,7 @@ Not blocking. Baseline updates on merge.</code></pre>
         <section class="value section">
             <div class="container">
                 <p class="eyebrow" data-i18n="features.eyebrow">WHAT'S INSIDE</p>
-                <h2 data-i18n="features.h2">Five things, done properly.</h2>
+                <h2 data-i18n="features.h2">Seven things, done properly.</h2>
                 <div class="card-grid">
                     <article class="value-card">
                         <p class="card-kicker">Risk Score</p>
@@ -249,6 +249,18 @@ Not blocking. Baseline updates on merge.</code></pre>
                         <h3 data-i18n="features.dev.title">Security where engineers already work.</h3>
                         <p data-i18n="features.dev.body">Not a dashboard nobody has a reason to open. One thing to do, with the reason attached.</p>
                         <a href="/product/for-developers/" class="card-link" data-i18n="features.dev.link">Why this matters &rarr;</a>
+                    </article>
+                    <article class="value-card">
+                        <p class="card-kicker">Behavioral AppSec</p>
+                        <h3 data-i18n="features.champ.title">The fix loop nobody else closes.</h3>
+                        <p data-i18n="features.champ.body">Nudge, fix, confirm, recognize &mdash; built on behavioral science, with the ethics written into the code.</p>
+                        <a href="/product/security-champions/" class="card-link" data-i18n="features.champ.link">See the science &rarr;</a>
+                    </article>
+                    <article class="value-card">
+                        <p class="card-kicker">The Finding, Explained</p>
+                        <h3 data-i18n="features.fd.title">What we know, infer, and can't see.</h3>
+                        <p data-i18n="features.fd.body">Every finding separated into fact, inference and unknown &mdash; each line with its source, date and confidence.</p>
+                        <a href="/product/finding-detail/" class="card-link" data-i18n="features.fd.link">How honesty works &rarr;</a>
                     </article>
                 </div>
             </div>
@@ -284,9 +296,9 @@ Not blocking. Baseline updates on merge.</code></pre>
                 <p class="eyebrow" data-i18n="pricing.eyebrow">PRICING</p>
                 <h2 data-i18n="pricing.h2">Full product. Pay only for scale.</h2>
                 <p class="section-copy" data-i18n="pricing.sub">Every feature in every plan. No per-seat pricing. No "contact us" to see a number.</p>
-                <div class="pricing-grid">
+                <div class="pricing-grid is-two">
                     <article class="pricing-card">
-                        <h3 data-i18n="pricing.monthly.title">Monthly</h3>
+                        <h3 data-i18n="pricing.monthly.title">Subscription</h3>
                         <p class="pricing-headline" data-i18n="pricing.monthly.headline">from $9.99<span>/month</span></p>
                         <p class="pricing-note" data-i18n="pricing.monthly.unit">Per repository, per month:</p>
                         <div class="pricing-table">
@@ -298,42 +310,25 @@ Not blocking. Baseline updates on merge.</code></pre>
                         </div>
                         <p class="pricing-example" data-i18n="pricing.monthly.example">Example: 30 repositories = <strong>$60/month</strong>. That's it.</p>
                         <p class="pricing-support" data-i18n="pricing.allIncluded">All features included. No hidden tiers.</p>
-                        <a class="button button-primary button-block" href="#join" data-track-event="waitlist_cta_click" data-track-location="pricing_monthly" data-i18n="cta.waitlist">Join the waitlist</a>
+                        <a class="button button-primary button-block" href="https://demo.mariaappsec.com/auth/register" target="_blank" rel="noreferrer" data-track-event="demo_register_click" data-track-location="pricing_monthly" data-i18n="cta.demoNow">See the demo now</a>
                     </article>
                     <article class="pricing-card pricing-card-alt">
-                        <h3 data-i18n="pricing.lifetime.title">Lifetime</h3>
-                        <p class="pricing-headline" data-i18n="pricing.lifetime.headline">one payment</p>
-                        <p class="pricing-note" data-i18n="pricing.lifetime.unit">Pay once, use it for good:</p>
-                        <div class="pricing-table">
-                            <div class="pricing-row"><span data-i18n="pricing.upto25">Up to 25 repos</span><strong>$199</strong></div>
-                            <div class="pricing-row"><span data-i18n="pricing.upto50">Up to 50 repos</span><strong>$299</strong></div>
-                            <div class="pricing-row"><span data-i18n="pricing.upto100">Up to 100 repos</span><strong>$499</strong></div>
-                            <div class="pricing-row"><span data-i18n="pricing.over100">100+ repos</span><strong data-i18n="pricing.talk">Let's talk</strong></div>
-                        </div>
-                        <p class="pricing-example" data-i18n="pricing.lifetime.example">One-time payment. No renewal, no surprise invoice.</p>
-                        <p class="pricing-support" data-i18n="pricing.allIncluded">All features included. No hidden tiers.</p>
-                        <a class="button button-secondary button-block" href="#join" data-track-event="waitlist_cta_click" data-track-location="pricing_lifetime" data-i18n="cta.reserve">Reserve your spot</a>
-                    </article>
-                    <article class="pricing-card pricing-card-founder">
-                        <p class="card-kicker" data-i18n="founder.kicker">FOUNDING TEAMS</p>
-                        <h3 data-i18n="founder.title">50 teams. Then never again.</h3>
-                        <p class="pricing-headline">$249</p>
-                        <p class="pricing-note" data-i18n="founder.unit">Lifetime access, up to 50 repositories</p>
+                        <p class="card-kicker" data-i18n="pricing.ent.kicker">ENTERPRISE</p>
+                        <h3 data-i18n="pricing.ent.title">Hundreds or thousands of repos</h3>
+                        <p class="pricing-headline" data-i18n="pricing.ent.headline">custom</p>
+                        <p class="pricing-note" data-i18n="pricing.ent.unit">For serious scale:</p>
                         <ul class="feature-list">
-                            <li data-i18n="founder.item1">Lifetime access, up to 50 repos</li>
-                            <li data-i18n="founder.item2">Founding user badge</li>
-                            <li data-i18n="founder.item3">Early access to everything new</li>
-                            <li data-i18n="founder.item4">A direct channel to me, not a support queue</li>
-                            <li data-i18n="founder.item5">Priority onboarding, done with you</li>
+                            <li data-i18n="pricing.ent.item1">Priced by active, relevant repositories &mdash; not by archived inventory</li>
+                            <li data-i18n="pricing.ent.item2">SCM integration and SARIF/CycloneDX normalization</li>
+                            <li data-i18n="pricing.ent.item3">Risk prioritization engine and executive reporting</li>
+                            <li data-i18n="pricing.ent.item4">Dedicated support and onboarding</li>
                         </ul>
-                        <p class="pricing-support" data-i18n="founder.why">This isn't a discount. It's cheaper than the $299 lifetime plan because founding teams pay with something else: telling me what's wrong with the product while it's still cheap to change.</p>
-                        <a class="button button-primary button-block" href="#join" data-track-event="founder_cta_click" data-track-location="pricing_founder" data-i18n="cta.founder">Become a founding team</a>
+                        <p class="pricing-support" data-i18n="pricing.ent.body">At this size, the number depends on your estate. We talk, and I tell you straight whether it fits.</p>
+                        <a class="button button-secondary button-block" href="/enterprise/" data-track-event="enterprise_pricing_click" data-track-location="pricing_enterprise" data-i18n="cta.seeEnterprise">See enterprise pricing</a>
                     </article>
                 </div>
                 <p class="pricing-footer-link">
                     <a href="/pricing/" data-i18n="pricing.fullLink">Full pricing, worked examples and commercial FAQ &rarr;</a>
-                    <span aria-hidden="true">&middot;</span>
-                    <a href="/enterprise/" data-i18n="pricing.enterpriseLink">Hundreds or thousands of repositories? &rarr;</a>
                 </p>
             </div>
         </section>
@@ -410,20 +405,15 @@ Not blocking. Baseline updates on merge.</code></pre>
         </section>
 
         <section class="final-cta section" id="join">
-            <div class="container final-cta-grid">
-                <div>
-                    <p class="eyebrow" data-i18n="join.eyebrow">EARLY ACCESS</p>
-                    <h2 data-i18n="join.h2">Find out what your real risk looks like.</h2>
-                    <p class="section-copy" data-i18n="join.sub">Join the waitlist and I'll reach out personally when your spot opens. Founding teams first.</p>
+            <div class="container narrow center">
+                <p class="eyebrow" data-i18n="join.eyebrow">SEE IT LIVE</p>
+                <h2 data-i18n="join.h2">Find out what your real risk looks like.</h2>
+                <p class="section-copy" data-i18n="join.sub">Create a free demo account and explore a sample organization &mdash; no scanner setup, no sales call.</p>
+                <div class="section-actions">
+                    <a class="button button-primary" href="https://demo.mariaappsec.com/auth/register" target="_blank" rel="noreferrer" data-track-event="demo_register_click" data-track-location="final_cta" data-i18n="cta.demoNow">See the demo now</a>
+                    <a class="button button-secondary" href="mailto:contact@mariaappsec.com?subject=M.A.R.I.A." data-track-event="contact_click" data-track-location="final_cta" data-i18n="cta.talk">Talk to me</a>
                 </div>
-                <form class="waitlist-form" action="https://formspree.io/f/xeerdder" method="POST" data-form-location="landing_final">
-                    <label class="sr-only" for="email" data-i18n="join.label">Email</label>
-                    <input id="email" name="email" type="email" data-i18n-placeholder="join.placeholder" placeholder="you@company.com" autocomplete="email" required>
-                    <input type="hidden" name="_next" value="https://mariaappsec.com/thanks/">
-                    <input type="hidden" name="_subject" value="New M.A.R.I.A. waitlist signup">
-                    <button type="submit" class="button button-primary button-block" data-i18n="cta.waitlist">Join the waitlist</button>
-                    <p class="form-note" data-i18n="join.note">One field. No password. No sales sequence. I read every reply.</p>
-                </form>
+                <p class="form-note" data-i18n="join.note">Free to try. No credit card. I read every message.</p>
             </div>
         </section>
     </main>

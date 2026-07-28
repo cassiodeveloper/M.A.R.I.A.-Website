@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing — priced per repository, never per developer | M.A.R.I.A.</title>
-    <meta name="description" content="Full product from $9.99/month, priced per repository. Lifetime plans from $199. Every feature in every plan, no per-seat pricing, no contact form to see a number.">
+    <meta name="description" content="Full product from $9.99/month, priced per repository — transparent self-service subscription, plus Enterprise for large estates. Every feature in every plan, no per-seat pricing, no contact form to see a number.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://mariaappsec.com/pricing/">
     <meta property="og:type" content="website">
@@ -65,9 +65,9 @@
 
         <section class="pricing section">
             <div class="container">
-                <div class="pricing-grid">
+                <div class="pricing-grid is-two">
                     <article class="pricing-card">
-                        <h3 data-i18n="pricing.monthly.title">Monthly</h3>
+                        <h3 data-i18n="pricing.monthly.title">Subscription</h3>
                         <p class="pricing-headline" data-i18n="pricing.monthly.headline">from $9.99<span>/month</span></p>
                         <p class="pricing-note" data-i18n="pricing.monthly.unit">Per repository, per month:</p>
                         <div class="pricing-table">
@@ -79,39 +79,22 @@
                         </div>
                         <p class="pricing-example" data-i18n="pricing.monthly.example">Example: 30 repositories = <strong>$60/month</strong>. That's it.</p>
                         <p class="pricing-support" data-i18n="pricing.allIncluded">All features included. No hidden tiers.</p>
-                        <a class="button button-primary button-block" href="/#join" data-track-event="waitlist_cta_click" data-track-location="pricing_page_monthly" data-i18n="cta.waitlist">Join the waitlist</a>
+                        <a class="button button-primary button-block" href="https://demo.mariaappsec.com/auth/register" target="_blank" rel="noreferrer" data-track-event="demo_register_click" data-track-location="pricing_page_monthly" data-i18n="cta.demoNow">See the demo now</a>
                     </article>
 
                     <article class="pricing-card pricing-card-alt">
-                        <h3 data-i18n="pricing.lifetime.title">Lifetime</h3>
-                        <p class="pricing-headline" data-i18n="pricing.lifetime.headline">one payment</p>
-                        <p class="pricing-note" data-i18n="pricing.lifetime.unit">Pay once, use it for good:</p>
-                        <div class="pricing-table">
-                            <div class="pricing-row"><span data-i18n="pricing.upto25">Up to 25 repos</span><strong>$199</strong></div>
-                            <div class="pricing-row"><span data-i18n="pricing.upto50">Up to 50 repos</span><strong>$299</strong></div>
-                            <div class="pricing-row"><span data-i18n="pricing.upto100">Up to 100 repos</span><strong>$499</strong></div>
-                            <div class="pricing-row"><span data-i18n="pricing.over100">100+ repos</span><strong data-i18n="pricing.talk">Let's talk</strong></div>
-                        </div>
-                        <p class="pricing-example" data-i18n="pricing.lifetime.example">One-time payment. No renewal, no surprise invoice.</p>
-                        <p class="pricing-support" data-i18n="pricing.allIncluded">All features included. No hidden tiers.</p>
-                        <a class="button button-secondary button-block" href="/#join" data-track-event="waitlist_cta_click" data-track-location="pricing_page_lifetime" data-i18n="cta.reserve">Reserve your spot</a>
-                    </article>
-
-                    <article class="pricing-card pricing-card-founder">
-                        <p class="card-kicker" data-i18n="founder.kicker">FOUNDING TEAMS</p>
-                        <h3 data-i18n="founder.title">50 teams. Then never again.</h3>
-                        <p class="pricing-headline">$249</p>
-                        <p class="pricing-note" data-i18n="founder.unit">Lifetime access, up to 50 repositories</p>
+                        <p class="card-kicker" data-i18n="pricing.ent.kicker">ENTERPRISE</p>
+                        <h3 data-i18n="pricing.ent.title">Hundreds or thousands of repos</h3>
+                        <p class="pricing-headline" data-i18n="pricing.ent.headline">custom</p>
+                        <p class="pricing-note" data-i18n="pricing.ent.unit">For serious scale:</p>
                         <ul class="feature-list">
-                            <li data-i18n="founder.item1">Lifetime access, up to 50 repos</li>
-                            <li data-i18n="founder.item2">Founding user badge</li>
-                            <li data-i18n="founder.item3">Early access to everything new</li>
-                            <li data-i18n="founder.item4">A direct channel to me, not a support queue</li>
-                            <li data-i18n="founder.item5">Priority onboarding, done with you</li>
+                            <li data-i18n="pricing.ent.item1">Priced by active, relevant repositories &mdash; not by archived inventory</li>
+                            <li data-i18n="pricing.ent.item2">SCM integration and SARIF/CycloneDX normalization</li>
+                            <li data-i18n="pricing.ent.item3">Risk prioritization engine and executive reporting</li>
+                            <li data-i18n="pricing.ent.item4">Dedicated support and onboarding</li>
                         </ul>
-                        <p class="pricing-support" data-i18n="founder.why">This isn't a discount. It's cheaper than the $299 lifetime plan because founding teams pay with something else: telling me what's wrong with the product while it's still cheap to change.</p>
-                        <p class="pricing-support" data-i18n="founder.choose">If you just want the tool, take the lifetime plan. If you want to shape it, take this one.</p>
-                        <a class="button button-primary button-block" href="/#join" data-track-event="founder_cta_click" data-track-location="pricing_page_founder" data-i18n="cta.founder">Become a founding team</a>
+                        <p class="pricing-support" data-i18n="pricing.ent.body">At this size, the number depends on your estate. We talk, and I tell you straight whether it fits.</p>
+                        <a class="button button-secondary button-block" href="/enterprise/" data-track-event="enterprise_pricing_click" data-track-location="pricing_page_enterprise" data-i18n="cta.seeEnterprise">See enterprise pricing</a>
                     </article>
                 </div>
             </div>
@@ -148,12 +131,12 @@ Same price with 3 developers or 300.</code></pre>
 
                 <details class="faq-item">
                     <summary data-i18n="pricingPage.q3">What happens if my repository count changes?</summary>
-                    <p data-i18n="pricingPage.a3">The tier follows the repositories you have connected. Add repositories and you move up a tier; disconnect them and you move back down. On lifetime plans, the repository ceiling is the limit you bought.</p>
+                    <p data-i18n="pricingPage.a3">The tier follows the repositories you have connected: add repositories and you move up a tier, disconnect them and you move back down. No annual contract, no penalty &mdash; you pay for what you're actually analyzing.</p>
                 </details>
 
                 <details class="faq-item">
-                    <summary data-i18n="pricingPage.q4">Why is the founding plan cheaper than the lifetime plan?</summary>
-                    <p data-i18n="pricingPage.a4">Because founding teams pay with something other than money: direct, uncomfortable feedback while the product is still cheap to change. That's worth more to me right now than $50. When the 50 spots are gone, the lifetime plan is the only one-time option left.</p>
+                    <summary data-i18n="pricingPage.q4">When does it make sense to move to Enterprise?</summary>
+                    <p data-i18n="pricingPage.a4">When you have hundreds or thousands of repositories and per-repository list pricing stops being the right conversation &mdash; then pricing moves to active, relevant repositories, with SSO, dedicated support and onboarding. <a href="/enterprise/">See how enterprise works &rarr;</a></p>
                 </details>
 
                 <details class="faq-item">
@@ -177,7 +160,7 @@ Same price with 3 developers or 300.</code></pre>
 
                 <details class="faq-item">
                     <summary data-i18n="pricingPage.q8">What is the refund policy?</summary>
-                    <p data-i18n="pricingPage.a8">[especialmente importante para lifetime e founding]</p>
+                    <p data-i18n="pricingPage.a8">[política de reembolso da assinatura]</p>
                 </details>
                 -->
             </div>
@@ -189,7 +172,7 @@ Same price with 3 developers or 300.</code></pre>
                 <p class="section-copy" data-i18n="pricingPage.ctaSub">The demo runs on a sample organization, and the Open Scan Pack is free forever.</p>
                 <div class="section-actions">
                     <a class="button button-primary" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="pricing_page_cta" data-i18n="cta.demo">See it on real data</a>
-                    <a class="button button-secondary" href="/#join" data-track-event="waitlist_cta_click" data-track-location="pricing_page_cta" data-i18n="cta.waitlist">Join the waitlist</a>
+                    <a class="button button-secondary" href="https://demo.mariaappsec.com/auth/register" target="_blank" rel="noreferrer" data-track-event="demo_register_click" data-track-location="pricing_page_cta" data-i18n="cta.demoNow">See the demo now</a>
                 </div>
             </div>
         </section>

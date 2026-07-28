@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The finding, explained — what we know, infer, and can't see | M.A.R.I.A.</title>
+    <meta name="description" content="A scanner tells you what it found. M.A.R.I.A. tells you what it knows, what it's inferring, what it can't see, and where sources disagree — each line with its source, date and confidence.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mariaappsec.com/product/finding-detail/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The finding, explained | M.A.R.I.A.">
+    <meta property="og:description" content="Know, infer, don't-know, and disagree — separated, sourced, and honest. Communication designed on Grice's maxims.">
+    <meta property="og:url" content="https://mariaappsec.com/product/finding-detail/">
+    <meta property="og:site_name" content="M.A.R.I.A.">
+    <meta property="og:image" content="https://mariaappsec.com/img/maria.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The finding, explained | M.A.R.I.A.">
+    <meta name="twitter:description" content="What we know, what we infer, what we can't see — each line sourced.">
+    <meta name="twitter:image" content="https://mariaappsec.com/img/maria.png">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <script>document.documentElement.classList.add('i18n-pending');</script>
+    <script src="../../i18n/translations.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-09VC70Q0TF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-09VC70Q0TF');
+    </script>
+</head>
+<body data-page="findingDetail">
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/" data-i18n-aria="nav.homeAria" aria-label="M.A.R.I.A. home">
+                <span class="brand-mark">M.A.R.I.A.</span>
+                <span class="brand-copy" data-i18n="brand.copy">Application risk intelligence</span>
+            </a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="/product/" class="is-current" data-i18n="nav.product">Product</a>
+                <a href="/openscan/" data-i18n="nav.openscan">Open Scan</a>
+                <a href="/pricing/" data-i18n="nav.pricing">Pricing</a>
+                <a href="/why/" data-i18n="nav.why">Why</a>
+            </nav>
+            <div class="header-actions">
+                <a class="button button-primary button-compact" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="nav_top" data-i18n="cta.demoShort">See the demo</a>
+                <div class="lang-toggle" role="group" aria-label="Language selector" data-active-lang="en-US">
+                    <button type="button" data-lang="en-US" aria-pressed="true"><span class="lang-flag" aria-hidden="true">🇺🇸</span><span class="lang-label">EN</span></button>
+                    <button type="button" data-lang="pt-BR" aria-pressed="false"><span class="lang-flag" aria-hidden="true">🇧🇷</span><span class="lang-label">PT</span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="page-hero section">
+            <div class="container narrow">
+                <p class="breadcrumb"><a href="/product/" data-i18n="nav.product">Product</a> <span aria-hidden="true">/</span> <span data-i18n="fd.crumb">The finding, explained</span></p>
+                <h1 data-i18n="fd.h1">A scanner tells you what it found. M.A.R.I.A. tells you what it <span class="text-highlight">knows</span>.</h1>
+                <p class="section-copy" data-i18n="fd.sub">Every finding, separated into what we know, what we infer, what we don't know, and where sources disagree &mdash; each line carrying its source, its date, and its confidence.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section">
+            <div class="container narrow">
+                <h2 data-i18n="fd.problemH2">A raw finding is a claim with no epistemics</h2>
+                <p data-i18n="fd.problem1">A scanner hands you a rule ID, a severity, a file and a line. What it doesn't tell you is how sure it is, where each piece of that came from, whether another tool disagrees, or whether the vulnerable code is even reachable. So a developer has to reconstruct all of that by hand &mdash; and usually doesn't.</p>
+                <p data-i18n="fd.problem2">The deeper failure is honesty. Most tools present a guess and a fact in the same font. "CVSS 9.8" (a fact) and "this is exploitable" (very often a guess) look identical. When a "critical" turns out to be unreachable twice in a row, the developer stops believing the fourth one &mdash; and they're right to.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section alt-band">
+            <div class="container narrow">
+                <h2 data-i18n="fd.solutionH2">Communication designed on Grice's maxims</h2>
+                <p data-i18n="fd.solution1">There's a well-known model of what makes cooperative communication actually work &mdash; the philosopher Paul Grice's four maxims. M.A.R.I.A. builds the finding around them:</p>
+                <ul class="feature-list">
+                    <li data-i18n="fd.solution2"><strong>Quality</strong> &mdash; don't say what you lack evidence for. A missing signal is shown as <em>unknown</em>, never quietly rendered as "no".</li>
+                    <li data-i18n="fd.solution3"><strong>Quantity</strong> &mdash; enough, and no more. Sections that are empty simply don't appear; the technical evidence is one expand away, not dumped on top.</li>
+                    <li data-i18n="fd.solution4"><strong>Relevance</strong> &mdash; lead with why this matters <em>here</em>: the exposure, the data, the reachability of this specific application.</li>
+                    <li data-i18n="fd.solution5"><strong>Manner</strong> &mdash; an action-oriented title, not a rule ID. "Update lodash 4.17.15 &rarr; 4.17.21 in payments-api", not "[CVE-2021-23337] Prototype Pollution".</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section prose-section">
+            <div class="container narrow">
+                <h2 data-i18n="fd.fourH2">Four buckets, and each line shows its source</h2>
+                <p data-i18n="fd.four1">Every finding is split into four honest categories, and every contextual claim carries its provenance &mdash; where it came from, when, and how confident the system is:</p>
+                <ul class="feature-list">
+                    <li data-i18n="fd.four2"><strong>What we know</strong> &mdash; facts drawn one-to-one from attributed evidence: the tool, its version, a vendor-confirmed fix version, a direct vs. transitive dependency.</li>
+                    <li data-i18n="fd.four3"><strong>What we infer</strong> &mdash; M.A.R.I.A.'s own conclusions from its deterministic policies, each labelled as an inference with its basis and confidence, never dressed up as fact.</li>
+                    <li data-i18n="fd.four4"><strong>What we don't know</strong> &mdash; every relevant missing signal, stated out loud. Reachability with no data is "unknown", not "not reachable".</li>
+                    <li data-i18n="fd.four5"><strong>Where sources disagree</strong> &mdash; when two scanners conflict, both signals are shown with their source and date, and the resolution rule that was applied is named. Nothing is silently downgraded.</li>
+                </ul>
+                <p data-i18n="fd.four6">Fact, inference and recommendation are visually distinct, and the AI &mdash; where it's used at all &mdash; only ever <em>explains</em> an object that determinism already decided. It never sees your source code, and never asserts exploitability without evidence. Those are red lines in the code, not preferences.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section alt-band">
+            <div class="container narrow">
+                <h2 data-i18n="fd.doneH2">A checkbox is not a fix</h2>
+                <p data-i18n="fd.done1">Most tools treat "ticket closed" as "risk gone". M.A.R.I.A. separates the two. A finding carries acceptance criteria chosen by template for its category, a definition of done, and an explicit method of proof &mdash; and closing the loop means the proof happened:</p>
+                <ul class="feature-list">
+                    <li data-i18n="fd.done2">Ticking a box in Jira means <strong>declared</strong>, and nothing more.</li>
+                    <li data-i18n="fd.done3"><strong>Verified</strong> means the stated verification actually ran &mdash; most often, the same scanner re-scanned and the finding is genuinely gone.</li>
+                    <li data-i18n="fd.done4">A finding only closes when its required criteria are verified <em>and</em> it's absent from the latest scan &mdash; or it carries a formal, accountable risk acceptance.</li>
+                    <li data-i18n="fd.done5">If it reappears, it reopens itself, the "gone in next scan" criterion flips to failed, and the history is preserved.</li>
+                </ul>
+                <p class="pull-quote" data-i18n="fd.done6">This is what turns the audit trail from a liability into a defense: every deferral is recorded, motivated, and reversible.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section">
+            <div class="container narrow">
+                <h2 data-i18n="fd.exampleH2">A practical example</h2>
+                <p data-i18n="fd.exampleIntro">The same CVE a scanner would hand over as one flat row, rebuilt as a finding you can act on:</p>
+                <pre class="code-block" aria-label="Example of an explained finding"><code>Update lodash 4.17.19 → 4.17.21 in checkout-api          [High]
+
+WHY IT MATTERS HERE
+  Direct dependency in an internet-facing service handling orders.
+
+WHAT WE KNOW              (fact · source · date)
+  · Fix available: 4.17.21     — snyk        · 2026-07-14
+  · Direct dependency         — SBOM (syft)  · 2026-07-14
+  · EPSS 0.62                  — first.org    · 2026-07-13
+
+WHAT WE INFER             (maria policy · confidence)
+  · Actionability 73/100      — ActionabilityPolicy v3 · High
+    (fix available +15, direct dep +3, EPSS +8)
+
+WHAT WE DON'T KNOW
+  · Reachability — no data → treated as unknown, not "safe"
+
+NEXT ACTION
+  Bump to 4.17.21 (patch, no API change expected)
+  Proof: the SCA scan stops reporting CVE-2024-XXXX in this repo
+  Owner (accountable): @checkout-team · Champion: @squad-champion</code></pre>
+                <p class="evidence-tag" data-i18n="common.illustrative">Illustrative example</p>
+                <p data-i18n="fd.exampleOutro">Notice what never happens: reachability isn't guessed, the fix version is attributed to the tool that confirmed it, and the priority number shows its own arithmetic. A developer can act in eight seconds, and an auditor can trace every line to its source.</p>
+            </div>
+        </section>
+
+        <section class="section prose-section alt-band">
+            <div class="container narrow">
+                <h2 data-i18n="fd.whyH2">Why it matters &mdash; and why it sells</h2>
+                <p data-i18n="fd.why1">Trust is the scarcest resource in AppSec. A developer who's been burned by false criticals discounts the whole tool. Transparency &mdash; separating what's known from what's guessed, and showing the source of both &mdash; is how you earn the trust back. It's also, bluntly, something no scanner and almost no ASPM bothers to do.</p>
+                <p data-i18n="fd.why2">And it compounds: a finding that's honest about its own uncertainty is a finding a developer will open a second time.</p>
+            </div>
+        </section>
+
+        <section class="final-cta section">
+            <div class="container narrow center">
+                <h2 data-i18n="fd.ctaH2">Open a real finding in the demo.</h2>
+                <p class="section-copy" data-i18n="fd.ctaSub">See the four buckets, the provenance, and the proof-of-fix on live data.</p>
+                <div class="section-actions">
+                    <a class="button button-primary" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="finding_detail_cta" data-i18n="cta.demo">See it on real data</a>
+                    <a class="button button-secondary" href="https://demo.mariaappsec.com/auth/register" target="_blank" rel="noreferrer" data-track-event="demo_register_click" data-track-location="finding_detail_cta" data-i18n="cta.demoNow">See the demo now</a>
+                </div>
+                <p class="next-link"><a href="/product/risk-score/" data-i18n="fd.next">Next: how those findings roll up into one honest score &rarr;</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="/product/" data-i18n="nav.product">Product</a>
+                <a href="/pricing/" data-i18n="nav.pricing">Pricing</a>
+                <a href="/openscan/" data-i18n="nav.openscan">Open Scan</a>
+                <a href="/why/" data-i18n="nav.why">Why</a>
+                <a href="/enterprise/" data-i18n="nav.enterprise">Enterprise</a>
+                <a href="mailto:contact@mariaappsec.com" class="footer-link" data-i18n="nav.contact">Contact</a>
+            </nav>
+            <p class="footer-copy" data-i18n="footer.copy">Built for developers and AppSec teams who want less noise and better decisions.</p>
+            <p class="footer-note">Management Application Risk Integrated Analysis</p>
+            <p>&copy; 2026 M.A.R.I.A.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+</body>
+</html>
