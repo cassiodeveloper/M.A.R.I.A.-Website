@@ -1160,7 +1160,9 @@ h3 {
 
 .openscan-stack-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    /* min() keeps the 360px track from exceeding the viewport on small phones,
+       which was pushing the page ~20px wide. */
+    grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
     gap: 1rem;
 }
 
@@ -2130,3 +2132,302 @@ h3 {
     }
 }
 
+
+/* --- optional add-on modules (pricing) --------------------------------- */
+.addons-section {
+    border-top: 1px solid var(--line);
+}
+
+.addons-section h2 {
+    max-width: 24ch;
+    margin-bottom: 1rem;
+    font-size: clamp(1.9rem, 5vw, 3rem);
+}
+
+.addon-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.addon-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.012));
+}
+
+.addon-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.addon-head h3 {
+    font-size: clamp(1.2rem, 2.6vw, 1.5rem);
+    line-height: 1.1;
+}
+
+.addon-price {
+    flex: none;
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--accent-strong);
+}
+
+.addon-price span {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: var(--muted);
+}
+
+.addon-card p {
+    margin: 0 0 1.25rem;
+    font-size: 0.98rem;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+.addon-card .card-link {
+    margin-top: auto;
+}
+
+.pricing-addon-line {
+    margin: 2rem 0 0;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+.pricing-addon-line strong {
+    color: var(--text);
+}
+
+@media (min-width: 720px) {
+    .addon-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* --- pricing minimum note + 7-day guarantee --------------------------- */
+.pricing-min {
+    margin: 0.4rem 0 0;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    color: var(--muted);
+}
+
+.pricing-guarantee {
+    margin: 0.9rem 0 0;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.85rem;
+    line-height: 1.45;
+    font-weight: 700;
+    color: var(--accent-strong);
+    text-align: center;
+}
+
+/* --- 60 seconds block -------------------------------------------------- */
+.sixty-section {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background:
+        radial-gradient(circle at 12% 20%, rgba(255, 90, 54, 0.10), transparent 40%),
+        rgba(255, 255, 255, 0.015);
+}
+
+.sixty-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+}
+
+.sixty-copy h2 {
+    max-width: 100%;
+    margin-bottom: 1.25rem;
+    font-size: clamp(2.6rem, 8vw, 5rem);
+}
+
+.sixty-copy .section-copy {
+    max-width: 46ch;
+    margin: 0 0 1rem;
+}
+
+.sixty-list {
+    display: grid;
+    gap: 0.75rem;
+    margin: 1.75rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sixty-list li {
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--line);
+    font-size: 1.02rem;
+    color: var(--muted);
+}
+
+.sixty-list strong {
+    display: inline-block;
+    min-width: 4.5rem;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    color: var(--accent-strong);
+}
+
+/* Placeholder keeps the layout stable until the real timer video lands. */
+.sixty-media {
+    margin: 0;
+}
+
+.sixty-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    aspect-ratio: 16 / 10;
+    border: 1px dashed var(--line);
+    border-radius: var(--radius);
+    background: rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.sixty-clock {
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: clamp(2.8rem, 8vw, 5rem);
+    letter-spacing: -0.04em;
+    color: var(--accent);
+}
+
+.sixty-placeholder p {
+    margin: 0;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.hero-timer {
+    margin: 1.25rem 0 0;
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
+    line-height: 1.45;
+    color: var(--text);
+}
+
+.hero-timer strong {
+    color: var(--accent-strong);
+}
+
+.step-time {
+    margin: 0 0 0.6rem !important;
+    font-size: 0.78rem !important;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-strong) !important;
+}
+
+@media (min-width: 900px) {
+    .sixty-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+}
+
+/* --- Open Scan promo (home) -------------------------------------------- */
+.openscan-promo {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.openscan-promo-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+}
+
+.openscan-promo h2 {
+    max-width: 20ch;
+    margin-bottom: 1.25rem;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.openscan-promo .section-copy {
+    max-width: 54ch;
+    margin: 0 0 1rem;
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
+}
+
+.openscan-promo-list {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 1.5rem;
+    list-style: none;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.openscan-promo-list li {
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+.openscan-promo-list li:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.openscan-promo-list strong {
+    display: inline-block;
+    min-width: 7.5rem;
+    color: var(--accent-strong);
+}
+
+@media (min-width: 900px) {
+    .openscan-promo-grid {
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 3rem;
+    }
+}
+
+/* --- header with two CTAs: wrap on narrow screens ---------------------- */
+/* The header carries demo + connect + language toggle since the CTA
+   hierarchy change; below ~560px that no longer fits on one line. */
+@media (max-width: 560px) {
+    .header-actions {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 0.5rem;
+        max-width: 100%;
+    }
+
+    .header-actions .button-compact {
+        flex: 1 1 auto;
+        min-width: 0;
+        padding-inline: 0.75rem;
+        font-size: 0.72rem;
+    }
+
+    .lang-toggle {
+        min-width: 118px;
+    }
+
+    .lang-toggle button {
+        font-size: 0.7rem;
+    }
+}

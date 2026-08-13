@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M.A.R.I.A. | Application Risk Intelligence</title>
-    <meta name="description" content="M.A.R.I.A. reads the output of the scanners you already run and turns it into one risk score per application, per pull request, over time. Repository-based pricing.">
+    <meta name="description" content="About 60 seconds from account to your first risk score. M.A.R.I.A. reads the scanners you already run and turns them into one risk score per application, per pull request, over time. From $10/month, priced per repository.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="M.A.R.I.A.">
     <link rel="canonical" href="https://mariaappsec.com/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="M.A.R.I.A. | Stop fixing vulnerabilities. Start reducing risk.">
-    <meta property="og:description" content="Application risk intelligence on top of the security tools you already have. Built for developers and AppSec teams.">
+    <meta property="og:title" content="M.A.R.I.A. | From signup to your first risk score in 60 seconds">
+    <meta property="og:description" content="Not a sales estimate — the actual time. Application risk intelligence on top of the security tools you already run. From $10/month, priced per repository, never per developer.">
     <meta property="og:url" content="https://mariaappsec.com/">
     <meta property="og:site_name" content="M.A.R.I.A.">
     <meta property="og:locale" content="en_US">
     <meta property="og:image" content="https://mariaappsec.com/img/maria.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="M.A.R.I.A. | Application Risk Intelligence">
-    <meta name="twitter:description" content="One risk score per application. Risk impact on every pull request. Built on the tools you already run.">
+    <meta name="twitter:title" content="M.A.R.I.A. | First risk score in 60 seconds">
+    <meta name="twitter:description" content="Connect a repository, get one honest risk score per application. Built on the scanners you already run. From $10/month.">
     <meta name="twitter:image" content="https://mariaappsec.com/img/maria.png">
     <link rel="stylesheet" href="css/styles.css">
     <script>document.documentElement.classList.add('i18n-pending');</script>
@@ -35,7 +35,7 @@
       "offers": {
         "@type": "AggregateOffer",
         "priceCurrency": "USD",
-        "lowPrice": "9.99",
+        "lowPrice": "10",
         "highPrice": "249",
         "offerCount": "2",
         "url": "https://mariaappsec.com/pricing/"
@@ -50,6 +50,8 @@
         gtag('js', new Date());
         gtag('config', 'G-09VC70Q0TF');
     </script>
+  <!-- GA4 propriedade compartilhada cassiodeveloper.com.br (config adicional, reaproveita loader existente) -->
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('config','G-NL5R9VPGV9');</script>
 </head>
 <body data-page="index">
     <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
@@ -67,7 +69,8 @@
                 <a href="/why/" data-i18n="nav.why">Why</a>
             </nav>
             <div class="header-actions">
-                <a class="button button-primary button-compact" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="nav_top" data-i18n="cta.demoShort">See the demo</a>
+                <a class="button button-secondary button-compact" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="nav_top" data-i18n="cta.demoShort">See the demo</a>
+                <a class="button button-primary button-compact" href="https://demo.mariaappsec.com/auth/register" target="_blank" rel="noreferrer" data-track-event="demo_register_click" data-track-location="nav_top" data-i18n="cta.connectShort">Connect a repo</a>
                 <div class="lang-toggle" role="group" aria-label="Language selector" data-active-lang="en-US">
                     <button type="button" data-lang="en-US" aria-pressed="true"><span class="lang-flag" aria-hidden="true">🇺🇸</span><span class="lang-label">EN</span></button>
                     <button type="button" data-lang="pt-BR" aria-pressed="false"><span class="lang-flag" aria-hidden="true">🇧🇷</span><span class="lang-label">PT</span></button>
@@ -86,9 +89,10 @@
                 <div class="hero-copy">
                     <p class="hero-subtitle" data-i18n="hero.sub">M.A.R.I.A. reads the output of the scanners you already run &mdash; SARIF, SBOMs, secrets, dependencies &mdash; and turns it into one risk score per application, per pull request, over time.</p>
                     <div class="hero-actions">
-                        <a class="button button-primary" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="hero_primary" data-i18n="cta.demo">See it on real data</a>
-                        <a class="button button-secondary" href="https://demo.mariaappsec.com/auth/register" target="_blank" rel="noreferrer" data-track-event="demo_register_click" data-track-location="hero_secondary" data-i18n="cta.demoNow">See the demo now</a>
+                        <a class="button button-primary" href="https://demo.mariaappsec.com/auth/register" target="_blank" rel="noreferrer" data-track-event="demo_register_click" data-track-location="hero_primary" data-i18n="cta.connect">Connect my repository</a>
+                        <a class="button button-secondary" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="hero_secondary" data-i18n="cta.demo">See it on the demo first</a>
                     </div>
+                    <p class="hero-timer" data-i18n="hero.timer"><strong>About 60 seconds</strong> from creating the account to your first risk score. Not a sales estimate &mdash; the actual time.</p>
                     <p class="hero-trust" data-i18n="hero.trust">Reads scanner output &mdash; SARIF, CycloneDX, JSON. Sits on top of the tools you already have. Priced per repository, never per developer.</p>
                 </div>
                 <div class="hero-panel" aria-label="Example application risk view">
@@ -138,6 +142,34 @@
             </div>
         </section>
 
+        <section class="section sixty-section" id="sixty-seconds">
+            <div class="container sixty-grid">
+                <div class="sixty-copy">
+                    <p class="eyebrow" data-i18n="sixty.eyebrow">TIME TO FIRST VALUE</p>
+                    <h2 data-i18n="sixty.h2">Sixty seconds.</h2>
+                    <p class="section-copy" data-i18n="sixty.p1">Not the optimistic sales estimate. It's the time between creating the account and seeing the first risk calculated on your own repositories.</p>
+                    <p class="section-copy" data-i18n="sixty.p2">No discovery call. No deployment. No quarter-long project.</p>
+                    <ul class="sixty-list">
+                        <li data-i18n="sixty.item1"><strong>0:00</strong> &mdash; create the account</li>
+                        <li data-i18n="sixty.item2"><strong>0:20</strong> &mdash; connect a repository</li>
+                        <li data-i18n="sixty.item3"><strong>~1:00</strong> &mdash; first risk score, with the reasons behind it</li>
+                    </ul>
+                    <div class="section-actions">
+                        <a class="button button-primary" href="https://demo.mariaappsec.com/auth/register" target="_blank" rel="noreferrer" data-track-event="demo_register_click" data-track-location="sixty_block" data-i18n="cta.connect">Connect my repository</a>
+                    </div>
+                </div>
+                <!-- TODO(cassio): substituir pelo vídeo do cronômetro quando gravado.
+                     Sugestão: <video> com poster, muted, playsinline, controls, preload="none"
+                     para não pesar no LCP. O placeholder abaixo mantém o layout. -->
+                <figure class="sixty-media" aria-label="Timer video placeholder">
+                    <div class="sixty-placeholder">
+                        <span class="sixty-clock" aria-hidden="true">00:60</span>
+                        <p data-i18n="sixty.videoNote">Timer video &mdash; recording pending</p>
+                    </div>
+                </figure>
+            </div>
+        </section>
+
         <section class="pain section">
             <div class="container narrow">
                 <p data-i18n="pain.line1">You have <span class="text-highlight">1,000</span> vulnerabilities.</p>
@@ -164,25 +196,49 @@
         <section class="flow section">
             <div class="container">
                 <p class="eyebrow" data-i18n="how.eyebrow">HOW IT WORKS</p>
-                <h2 data-i18n="how.h2">Three steps. No new scanners.</h2>
+                <h2 data-i18n="how.h2">Three steps. No new scanners. About a minute.</h2>
                 <ol class="step-list">
                     <li>
                         <span class="step-number" aria-hidden="true">1</span>
                         <h3 data-i18n="how.step1.title">Connect</h3>
+                        <p class="step-time" data-i18n="how.step1.time">~20 seconds</p>
                         <p data-i18n="how.step1.body">Point M.A.R.I.A. at the repositories you want covered. It works from findings and repository metadata.</p>
                     </li>
                     <li>
                         <span class="step-number" aria-hidden="true">2</span>
                         <h3 data-i18n="how.step2.title">Ingest</h3>
+                        <p class="step-time" data-i18n="how.step2.time">Runs in your CI</p>
                         <p data-i18n="how.step2.body">Your existing scanners upload their output &mdash; SARIF, CycloneDX, JSON. M.A.R.I.A. deduplicates, normalizes and correlates it into one model.</p>
                         <p class="step-aside"><a href="/openscan/" data-track-event="openscan_click" data-track-location="how_step2" data-i18n="how.step2.link">No scanners yet? Start with the free Open Scan Pack &rarr;</a></p>
                     </li>
                     <li>
                         <span class="step-number" aria-hidden="true">3</span>
                         <h3 data-i18n="how.step3.title">Act</h3>
+                        <p class="step-time" data-i18n="how.step3.time">First score in ~60 seconds</p>
                         <p data-i18n="how.step3.body">Every application gets a risk score with the reasons behind it. Every pull request gets a risk delta before merge. Every week you can see what moved, and why.</p>
                     </li>
                 </ol>
+            </div>
+        </section>
+
+        <section class="section openscan-promo">
+            <div class="container openscan-promo-grid">
+                <div>
+                    <p class="eyebrow" data-i18n="osp.eyebrow">FREE, NO ACCOUNT NEEDED</p>
+                    <h2 data-i18n="osp.h2">No scanners yet? Start there, free.</h2>
+                    <p class="section-copy" data-i18n="osp.body">The Open Scan Pack builds a ready-to-run CI setup from open-source scanners &mdash; SAST, secrets, SCA, container, IaC, DAST and SBOM. Pick your stack, download the templates, run them in your own pipeline. No login, no repository access, nothing leaves your CI.</p>
+                    <p class="section-copy" data-i18n="osp.bridge">Once those run, you have exactly the input M.A.R.I.A. needs &mdash; and the free pack stays free either way.</p>
+                    <div class="section-actions">
+                        <a class="button button-primary" href="/openscan/" data-track-event="openscan_click" data-track-location="home_promo" data-i18n="cta.openscan">Get the free Open Scan Pack</a>
+                    </div>
+                </div>
+                <ul class="openscan-promo-list">
+                    <li data-i18n="osp.item1"><strong>SAST</strong> &middot; Semgrep, Opengrep</li>
+                    <li data-i18n="osp.item2"><strong>Secrets</strong> &middot; Gitleaks, TruffleHog</li>
+                    <li data-i18n="osp.item3"><strong>SCA / SBOM</strong> &middot; Trivy, Grype, Syft, OSV</li>
+                    <li data-i18n="osp.item4"><strong>IaC</strong> &middot; Checkov, KICS</li>
+                    <li data-i18n="osp.item5"><strong>DAST</strong> &middot; OWASP ZAP, Nuclei</li>
+                </ul>
             </div>
         </section>
 
@@ -295,11 +351,12 @@ Not blocking. Baseline updates on merge.</code></pre>
             <div class="container">
                 <p class="eyebrow" data-i18n="pricing.eyebrow">PRICING</p>
                 <h2 data-i18n="pricing.h2">Full product. Pay only for scale.</h2>
-                <p class="section-copy" data-i18n="pricing.sub">Every feature in every plan. No per-seat pricing. No "contact us" to see a number.</p>
+                <p class="section-copy" data-i18n="pricing.sub">The full core in every plan &mdash; no feature locked behind a tier, no "contact us" to see a price. Two optional modules are billed separately, and their price is right here.</p>
                 <div class="pricing-grid is-two">
                     <article class="pricing-card">
                         <h3 data-i18n="pricing.monthly.title">Subscription</h3>
-                        <p class="pricing-headline" data-i18n="pricing.monthly.headline">from $9.99<span>/month</span></p>
+                        <p class="pricing-headline" data-i18n="pricing.monthly.headline">from $10<span>/month</span></p>
+                        <p class="pricing-min" data-i18n="pricing.monthly.min">$10/month minimum. The per-repo rates below only start adding up above that.</p>
                         <p class="pricing-note" data-i18n="pricing.monthly.unit">Per repository, per month:</p>
                         <div class="pricing-table">
                             <div class="pricing-row"><span>1&ndash;10 <span data-i18n="pricing.repos">repos</span></span><strong>$0.99</strong></div>
@@ -309,8 +366,9 @@ Not blocking. Baseline updates on merge.</code></pre>
                             <div class="pricing-row"><span>400+ <span data-i18n="pricing.repos">repos</span></span><strong data-i18n="pricing.talk">Let's talk</strong></div>
                         </div>
                         <p class="pricing-example" data-i18n="pricing.monthly.example">Example: 30 repositories = <strong>$60/month</strong>. That's it.</p>
-                        <p class="pricing-support" data-i18n="pricing.allIncluded">All features included. No hidden tiers.</p>
-                        <a class="button button-primary button-block" href="https://demo.mariaappsec.com/auth/register" target="_blank" rel="noreferrer" data-track-event="demo_register_click" data-track-location="pricing_monthly" data-i18n="cta.demoNow">See the demo now</a>
+                        <p class="pricing-support" data-i18n="pricing.allIncluded">Full core included. Optional modules priced separately, below.</p>
+                        <a class="button button-primary button-block" href="https://demo.mariaappsec.com/auth/register" target="_blank" rel="noreferrer" data-track-event="demo_register_click" data-track-location="pricing_monthly" data-i18n="cta.connect">Connect my repository</a>
+                        <p class="pricing-guarantee" data-i18n="pricing.guarantee">7 days. Didn't fit? I refund you. No question, no form, no retention call.</p>
                     </article>
                     <article class="pricing-card pricing-card-alt">
                         <p class="card-kicker" data-i18n="pricing.ent.kicker">ENTERPRISE</p>
@@ -327,8 +385,11 @@ Not blocking. Baseline updates on merge.</code></pre>
                         <a class="button button-secondary button-block" href="/enterprise/" data-track-event="enterprise_pricing_click" data-track-location="pricing_enterprise" data-i18n="cta.seeEnterprise">See enterprise pricing</a>
                     </article>
                 </div>
+                <p class="pricing-addon-line" data-i18n="pricing.addons.landingLine">Optional modules: <strong>Champions Module</strong> $29/mo &middot; <strong>V.AI</strong> $39/mo. Everything else is core.</p>
                 <p class="pricing-footer-link">
                     <a href="/pricing/" data-i18n="pricing.fullLink">Full pricing, worked examples and commercial FAQ &rarr;</a>
+                    <span aria-hidden="true">&middot;</span>
+                    <a href="mailto:contact@mariaappsec.com?subject=M.A.R.I.A.%20-%20150%2B%20repos" data-track-event="big_estate_click" data-track-location="pricing_tertiary" data-i18n="cta.bigEstate">More than 150 repositories? Talk to me directly &rarr;</a>
                 </p>
             </div>
         </section>
@@ -410,7 +471,7 @@ Not blocking. Baseline updates on merge.</code></pre>
                 <h2 data-i18n="join.h2">Find out what your real risk looks like.</h2>
                 <p class="section-copy" data-i18n="join.sub">Create a free demo account and explore a sample organization &mdash; no scanner setup, no sales call.</p>
                 <div class="section-actions">
-                    <a class="button button-primary" href="https://demo.mariaappsec.com/auth/register" target="_blank" rel="noreferrer" data-track-event="demo_register_click" data-track-location="final_cta" data-i18n="cta.demoNow">See the demo now</a>
+                    <a class="button button-primary" href="https://demo.mariaappsec.com/auth/register" target="_blank" rel="noreferrer" data-track-event="demo_register_click" data-track-location="final_cta" data-i18n="cta.connect">Connect my repository</a>
                     <a class="button button-secondary" href="mailto:contact@mariaappsec.com?subject=M.A.R.I.A." data-track-event="contact_click" data-track-location="final_cta" data-i18n="cta.talk">Talk to me</a>
                 </div>
                 <p class="form-note" data-i18n="join.note">Free to try. No credit card. I read every message.</p>
@@ -418,7 +479,52 @@ Not blocking. Baseline updates on merge.</code></pre>
         </section>
     </main>
 
-    <footer class="site-footer">
+    <section class="ladder-next" aria-label="next">
+  <div class="ladder-next__inner">
+    <p class="ladder-next__kicker" data-pt="Próximo passo" data-en="What comes next">What comes next</p>
+    <div class="ladder-next__cards">
+      <a class="ladder-next__card ladder-next__card--primary" href="https://cassiodeveloper.com.br/IronSoftware/" data-ladder-from="recorrencia" data-ladder-to="capacitacao">
+        <span class="ladder-next__title" data-pt="AppSec: Software de Ferro" data-en="AppSec: Software of Iron">AppSec: Software of Iron</span>
+        <span class="ladder-next__reason" data-pt="Ferramenta sozinha não muda cultura. Ensine o time a operar o risco." data-en="A tool alone will not change culture. Teach the team to operate risk.">A tool alone will not change culture. Teach the team to operate risk.</span>
+        <span class="ladder-next__go" data-pt="Capacitar o time →" data-en="Train the team →">Train the team →</span>
+      </a>
+      <a class="ladder-next__card" href="https://cassiodeveloper.com.br/appsec-nightmare/" data-ladder-from="recorrencia" data-ladder-to="intervencao">
+        <span class="ladder-next__title" data-pt="AppSec Nightmare" data-en="AppSec Nightmare">AppSec Nightmare</span>
+        <span class="ladder-next__reason" data-pt="Nunca passou por uma autópsia? Comece pela intervenção." data-en="Never been through an autopsy? Start with the intervention.">Never been through an autopsy? Start with the intervention.</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ladder-next{--ln-bg:#0e0e10;--ln-card:#17171b;--ln-line:#2a2a30;--ln-fg:#fff;--ln-muted:#a0a0a8;--ln-accent:#C73E1D;
+    background:var(--ln-bg);color:var(--ln-fg);padding:48px 20px;border-top:1px solid var(--ln-line);font-family:inherit}
+  .ladder-next__inner{max-width:900px;margin:0 auto}
+  .ladder-next__kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ln-accent);margin:0 0 16px;font-weight:700}
+  .ladder-next__cards{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:720px){.ladder-next__cards{grid-template-columns:1fr 1fr}.ladder-next__card--primary{grid-column:1/-1}}
+  .ladder-next__card{display:flex;flex-direction:column;gap:6px;padding:20px 22px;background:var(--ln-card);
+    border:1px solid var(--ln-line);border-radius:12px;text-decoration:none;color:var(--ln-fg);transition:border-color .2s,transform .2s}
+  .ladder-next__card:hover{border-color:var(--ln-accent);transform:translateY(-2px)}
+  .ladder-next__card--primary{border-color:var(--ln-accent)}
+  .ladder-next__title{font-size:20px;font-weight:700}
+  .ladder-next__reason{font-size:15px;color:var(--ln-muted);line-height:1.45}
+  .ladder-next__go{margin-top:6px;font-weight:700;color:var(--ln-accent)}
+</style>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  function apply(){var pt=(root.getAttribute('lang')||'').toLowerCase().indexOf('pt')===0;
+    document.querySelectorAll('.ladder-next [data-pt][data-en]').forEach(function(el){el.textContent=pt?el.getAttribute('data-pt'):el.getAttribute('data-en');});}
+  apply();
+  try{new MutationObserver(apply).observe(root,{attributes:true,attributeFilter:['lang']});}catch(e){}
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.ladder-next__card');if(!a||!window.gtag)return;
+    gtag('event','ladder_click',{from_step:a.getAttribute('data-ladder-from'),to_step:a.getAttribute('data-ladder-to'),link_url:a.href,source_page:location.pathname});});
+})();
+</script>
+
+<footer class="site-footer">
         <div class="container footer-inner">
             <nav class="footer-nav" aria-label="Footer">
                 <a href="/product/" data-i18n="nav.product">Product</a>
@@ -427,6 +533,7 @@ Not blocking. Baseline updates on merge.</code></pre>
                 <a href="/why/" data-i18n="nav.why">Why</a>
                 <a href="/enterprise/" data-i18n="nav.enterprise">Enterprise</a>
                 <a href="mailto:contact@mariaappsec.com" class="footer-link" data-i18n="nav.contact">Contact</a>
+                <a href="mailto:contact@mariaappsec.com?subject=M.A.R.I.A.%20-%20150%2B%20repos" class="footer-link" data-track-event="big_estate_click" data-track-location="footer_tertiary" data-i18n="cta.bigEstateShort">150+ repos? Talk to me</a>
             </nav>
             <p class="footer-copy" data-i18n="footer.copy">Built for developers and AppSec teams who want less noise and better decisions.</p>
             <p class="footer-note">Management Application Risk Integrated Analysis</p>

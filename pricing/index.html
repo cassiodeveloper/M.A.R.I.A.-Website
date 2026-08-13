@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing — priced per repository, never per developer | M.A.R.I.A.</title>
-    <meta name="description" content="Full product from $9.99/month, priced per repository — transparent self-service subscription, plus Enterprise for large estates. Every feature in every plan, no per-seat pricing, no contact form to see a number.">
+    <meta name="description" content="M.A.R.I.A. pricing in the open: subscription priced per repository, plus two optional paid modules (Champions $29/mo, V.AI $39/mo) and Enterprise for large estates. No per-seat pricing, no contact form to see a price.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://mariaappsec.com/pricing/">
     <meta property="og:type" content="website">
@@ -45,7 +45,8 @@
                 <a href="/why/" data-i18n="nav.why">Why</a>
             </nav>
             <div class="header-actions">
-                <a class="button button-primary button-compact" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="nav_top" data-i18n="cta.demoShort">See the demo</a>
+                <a class="button button-secondary button-compact" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="nav_top" data-i18n="cta.demoShort">See the demo</a>
+                <a class="button button-primary button-compact" href="https://demo.mariaappsec.com/auth/register" target="_blank" rel="noreferrer" data-track-event="demo_register_click" data-track-location="nav_top" data-i18n="cta.connectShort">Connect a repo</a>
                 <div class="lang-toggle" role="group" aria-label="Language selector" data-active-lang="en-US">
                     <button type="button" data-lang="en-US" aria-pressed="true"><span class="lang-flag" aria-hidden="true">🇺🇸</span><span class="lang-label">EN</span></button>
                     <button type="button" data-lang="pt-BR" aria-pressed="false"><span class="lang-flag" aria-hidden="true">🇧🇷</span><span class="lang-label">PT</span></button>
@@ -59,7 +60,7 @@
             <div class="container narrow">
                 <p class="eyebrow" data-i18n="pricing.eyebrow">PRICING</p>
                 <h1 data-i18n="pricingPage.h1">Full product. Pay only for <span class="text-highlight">scale</span>.</h1>
-                <p class="section-copy" data-i18n="pricingPage.sub">Every feature in every plan. No per-seat pricing. No "contact us" to see a number.</p>
+                <p class="section-copy" data-i18n="pricingPage.sub">The full core in every plan, priced in the open. Two optional modules &mdash; Champions and V.AI &mdash; are billed separately, and you'll find their price on this page too.</p>
             </div>
         </section>
 
@@ -68,7 +69,8 @@
                 <div class="pricing-grid is-two">
                     <article class="pricing-card">
                         <h3 data-i18n="pricing.monthly.title">Subscription</h3>
-                        <p class="pricing-headline" data-i18n="pricing.monthly.headline">from $9.99<span>/month</span></p>
+                        <p class="pricing-headline" data-i18n="pricing.monthly.headline">from $10<span>/month</span></p>
+                        <p class="pricing-min" data-i18n="pricing.monthly.min">$10/month minimum. The per-repo rates below only start adding up above that.</p>
                         <p class="pricing-note" data-i18n="pricing.monthly.unit">Per repository, per month:</p>
                         <div class="pricing-table">
                             <div class="pricing-row"><span>1&ndash;10 <span data-i18n="pricing.repos">repos</span></span><strong>$0.99</strong></div>
@@ -78,8 +80,9 @@
                             <div class="pricing-row"><span>400+ <span data-i18n="pricing.repos">repos</span></span><strong data-i18n="pricing.talk">Let's talk</strong></div>
                         </div>
                         <p class="pricing-example" data-i18n="pricing.monthly.example">Example: 30 repositories = <strong>$60/month</strong>. That's it.</p>
-                        <p class="pricing-support" data-i18n="pricing.allIncluded">All features included. No hidden tiers.</p>
-                        <a class="button button-primary button-block" href="https://demo.mariaappsec.com/auth/register" target="_blank" rel="noreferrer" data-track-event="demo_register_click" data-track-location="pricing_page_monthly" data-i18n="cta.demoNow">See the demo now</a>
+                        <p class="pricing-support" data-i18n="pricing.allIncluded">Full core included. Optional modules priced separately, below.</p>
+                        <a class="button button-primary button-block" href="https://demo.mariaappsec.com/auth/register" target="_blank" rel="noreferrer" data-track-event="demo_register_click" data-track-location="pricing_page_monthly" data-i18n="cta.connect">Connect my repository</a>
+                        <p class="pricing-guarantee" data-i18n="pricing.guarantee">7 days. Didn't fit? I refund you. No question, no form, no retention call.</p>
                     </article>
 
                     <article class="pricing-card pricing-card-alt">
@@ -100,17 +103,44 @@
             </div>
         </section>
 
+        <section class="section addons-section">
+            <div class="container narrow">
+                <p class="eyebrow" data-i18n="pricing.addons.eyebrow">OPTIONAL MODULES</p>
+                <h2 data-i18n="pricing.addons.h2">Two modules you can add. Everything else is core.</h2>
+                <p class="section-copy" data-i18n="pricing.addons.sub">No "no hidden tiers" theatre: these two are genuinely optional and genuinely paid, and here's what they cost. Risk score, PR analysis, timeline, normalization, policy engine and advanced insights are all core &mdash; in every plan, at no extra charge.</p>
+                <div class="addon-grid">
+                    <article class="addon-card">
+                        <div class="addon-head">
+                            <h3 data-i18n="pricing.addons.champions.name">Champions Module</h3>
+                            <span class="addon-price">$29<span data-i18n="pricing.addons.perMonth">/mo</span></span>
+                        </div>
+                        <p data-i18n="pricing.addons.champions.desc">The behavioral loop &mdash; nudge, fix, confirm, recognize &mdash; plus the champion program and per-squad enablement.</p>
+                        <a href="/product/security-champions/" class="card-link" data-i18n="pricing.addons.champions.link">How it works &rarr;</a>
+                    </article>
+                    <article class="addon-card">
+                        <div class="addon-head">
+                            <h3 data-i18n="pricing.addons.vai.name">V.AI &mdash; Vulnerability AI</h3>
+                            <span class="addon-price">$39<span data-i18n="pricing.addons.perMonth">/mo</span></span>
+                        </div>
+                        <p data-i18n="pricing.addons.vai.desc">Assisted, explainable prioritization on top of the deterministic risk data. It explains; it never decides, and never sees your source code.</p>
+                        <a href="/product/finding-detail/" class="card-link" data-i18n="pricing.addons.vai.link">See the transparency model &rarr;</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <section class="section prose-section alt-band">
             <div class="container narrow">
                 <h2 data-i18n="pricingPage.mathH2">What it costs, worked out</h2>
                 <p data-i18n="pricingPage.mathIntro">Repository pricing is simple, but nobody should have to do arithmetic to find out what a product costs:</p>
-                <pre class="code-block" aria-label="Worked pricing examples"><code>8 repositories     → below the $9.99 minimum   →  $9.99 / month
-30 repositories    → 30 × $2                   →  $60 / month
-80 repositories    → 80 × $3                   →  $240 / month
-200 repositories   → 200 × $4                  →  $800 / month
+                <pre class="code-block" aria-label="Worked pricing examples"><code>8 repositories          → below the $10 minimum   →  $10 / month
+30 repositories         → 30 × $2                 →  $60 / month
+30 repos + Champions    → $60 + $29 add-on        →  $89 / month
+80 repositories         → 80 × $3                 →  $240 / month
+200 repositories        → 200 × $4                →  $800 / month
 
 Same price with 3 developers or 300.</code></pre>
-                <p data-i18n="pricingPage.mathNote">The $9.99 minimum is why very small teams pay $9.99 rather than $0.99 &times; their repository count. It's the floor, not a surprise.</p>
+                <p data-i18n="pricingPage.mathNote">The $10 minimum is why very small teams pay $10 rather than $0.99 &times; their repository count. It's the floor, not a surprise. Optional add-ons (Champions $29, V.AI $39) stack on top.</p>
             </div>
         </section>
 
@@ -126,7 +156,7 @@ Same price with 3 developers or 300.</code></pre>
 
                 <details class="faq-item">
                     <summary data-i18n="pricingPage.q2">Are any features held back on cheaper plans?</summary>
-                    <p data-i18n="pricingPage.a2">No. Risk score, pull request analysis, timeline and normalization are in every plan. The price changes with how many repositories you connect, and nothing else.</p>
+                    <p data-i18n="pricingPage.a2">No &mdash; every plan is the full core: risk score, pull request analysis, timeline and normalization are all there. The subscription price changes with how many repositories you connect. The only thing that adds to it is an optional module (Champions or V.AI), and only if you choose one.</p>
                 </details>
 
                 <details class="faq-item">
@@ -172,7 +202,7 @@ Same price with 3 developers or 300.</code></pre>
                 <p class="section-copy" data-i18n="pricingPage.ctaSub">The demo runs on a sample organization, and the Open Scan Pack is free forever.</p>
                 <div class="section-actions">
                     <a class="button button-primary" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="pricing_page_cta" data-i18n="cta.demo">See it on real data</a>
-                    <a class="button button-secondary" href="https://demo.mariaappsec.com/auth/register" target="_blank" rel="noreferrer" data-track-event="demo_register_click" data-track-location="pricing_page_cta" data-i18n="cta.demoNow">See the demo now</a>
+                    <a class="button button-secondary" href="https://demo.mariaappsec.com/auth/register" target="_blank" rel="noreferrer" data-track-event="demo_register_click" data-track-location="pricing_page_cta" data-i18n="cta.connect">Connect my repository</a>
                 </div>
             </div>
         </section>
@@ -187,6 +217,7 @@ Same price with 3 developers or 300.</code></pre>
                 <a href="/why/" data-i18n="nav.why">Why</a>
                 <a href="/enterprise/" data-i18n="nav.enterprise">Enterprise</a>
                 <a href="mailto:contact@mariaappsec.com" class="footer-link" data-i18n="nav.contact">Contact</a>
+                <a href="mailto:contact@mariaappsec.com?subject=M.A.R.I.A.%20-%20150%2B%20repos" class="footer-link" data-track-event="big_estate_click" data-track-location="footer_tertiary" data-i18n="cta.bigEstateShort">150+ repos? Talk to me</a>
             </nav>
             <p class="footer-copy" data-i18n="footer.copy">Built for developers and AppSec teams who want less noise and better decisions.</p>
             <p class="footer-note">Management Application Risk Integrated Analysis</p>

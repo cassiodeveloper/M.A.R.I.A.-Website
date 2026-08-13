@@ -30,6 +30,42 @@ let i18nConfig = window.MARIA_TRANSLATIONS || null;
 
 /* ---------------------------------------------------------------- analytics */
 
+/**
+ * Traffic origin, resolved once per page view.
+ *
+ * UTM parameters win when present; otherwise the referrer host is used, so an
+ * organic link from HN or LinkedIn is still attributable. Nothing here reads or
+ * writes storage — it's derived from the current URL and document.referrer only.
+ */
+const getTrafficSource = () => {
+    const params = new URLSearchParams(window.location.search);
+    const utmSource = params.get('utm_source');
+
+    if (utmSource) {
+        return {
+            traffic_source: utmSource,
+            traffic_medium: params.get('utm_medium') || '(not set)',
+            traffic_campaign: params.get('utm_campaign') || '(not set)'
+        };
+    }
+
+    if (!document.referrer) {
+        return { traffic_source: '(direct)', traffic_medium: '(none)' };
+    }
+
+    try {
+        const host = new URL(document.referrer).hostname;
+        if (host === window.location.hostname) {
+            return { traffic_source: '(internal)', traffic_medium: 'internal' };
+        }
+        return { traffic_source: host, traffic_medium: 'referral' };
+    } catch {
+        return { traffic_source: '(unknown)', traffic_medium: '(unknown)' };
+    }
+};
+
+const trafficSource = getTrafficSource();
+
 const trackGAEvent = (eventName, params = {}) => {
     if (!eventName) {
         return;
@@ -38,6 +74,8 @@ const trackGAEvent = (eventName, params = {}) => {
     const eventParams = {
         page_key: pageKey,
         page_path: window.location.pathname,
+        language: document.documentElement.lang,
+        ...trafficSource,
         ...params
     };
 
