@@ -122,7 +122,33 @@ const copy = {
         previewCopy: 'Nada é executado pelo site. O download é gerado no navegador e os scanners rodam no CI/CD do seu repositório.',
         bottomDownload: 'Baixar maria-open-scan-pack.zip',
         paidCta: 'Quero o MARIA automatizando isso',
-        footerCopy: 'Templates grátis colocam você em movimento. MARIA transforma outputs de scanners em inteligência de risco de aplicação.'
+        footerCopy: 'Templates grátis colocam você em movimento. MARIA transforma outputs de scanners em inteligência de risco de aplicação.',
+        afterEyebrow: 'PACK BAIXADO',
+        afterTitle: 'Agora instale. Leva menos de um minuto.',
+        afterSteps: [
+            'Descompacte na raiz do repositório. Os caminhos já estão prontos: <code>.github/workflows/</code>, <code>.maria/</code> e os arquivos de config na raiz.',
+            'Abra <code>.github/workflows/maria-open-scan.yml</code> e revise os gatilhos. Ele já vem com <code>workflow_dispatch</code>, então dá para rodar na mão antes de ligar no push.',
+            'Se marcou Container, DAST ou VirusTotal, defina as variáveis do repositório que o workflow referencia (<code>MARIA_TRIVY_IMAGE_REF</code>, <code>MARIA_ZAP_TARGET_URL</code> e afins). Sem elas, esses jobs não têm alvo.',
+            'Commit, push e rode pela aba Actions. Os resultados saem em <code>maria-results/</code> como SARIF, JSON e CycloneDX.'
+        ],
+        optinTitle: 'Quer saber quando eu atualizar isso?',
+        optinBody: 'Os scanners mudam de versão, quebram flag e mudam formato de saída. Quando eu atualizar os templates, eu te aviso. Sem sequência de vendas.',
+        optinEmailLabel: 'E-mail',
+        optinPlaceholder: 'voce@empresa.com',
+        optinConsent: 'Pode me mandar atualizações dos templates e conteúdo de AppSec.',
+        optinSubmit: 'Me avisa quando atualizar',
+        optinSending: 'Enviando...',
+        optinOk: 'Pronto. Te aviso quando sair versão nova.',
+        optinErrEmail: 'Confere o e-mail.',
+        optinErrConsent: 'Marque o consentimento para eu poder te escrever.',
+        optinErrGeneric: 'Não consegui registrar agora. Seu download não foi afetado.',
+        ladderEyebrow: 'PRÓXIMO DEGRAU',
+        ladderItems: [
+            { text: 'Quer isso rodando contínuo no CI, com risco calculado e delta em PR', link: 'MARIA', href: '/pricing/' },
+            { text: 'Quer alguém junto por 3 dias arrumando isso no seu ambiente', link: 'AppSec Nightmare', href: 'COLE_AQUI_URL_APPSEC_NIGHTMARE' },
+            { text: 'Quer capacitar o time para não depender de você', link: 'Software de Ferro', href: 'COLE_AQUI_URL_SOFTWARE_DE_FERRO' }
+        ],
+        ladderBook: 'Falar comigo'
     },
     'en-US': {
         notSelected: 'Not selected',
@@ -162,7 +188,33 @@ const copy = {
         previewCopy: 'Nothing runs on this site. The download is generated in your browser and scanners run in your repository CI/CD.',
         bottomDownload: 'Download maria-open-scan-pack.zip',
         paidCta: 'I want MARIA to automate this',
-        footerCopy: 'Free templates get you started. MARIA turns scanner outputs into application risk intelligence.'
+        footerCopy: 'Free templates get you started. MARIA turns scanner outputs into application risk intelligence.',
+        afterEyebrow: 'PACK DOWNLOADED',
+        afterTitle: 'Now install it. Takes under a minute.',
+        afterSteps: [
+            'Unzip at the root of your repository. The paths are already correct: <code>.github/workflows/</code>, <code>.maria/</code> and the config files at root level.',
+            'Open <code>.github/workflows/maria-open-scan.yml</code> and review the triggers. It ships with <code>workflow_dispatch</code>, so you can run it by hand before wiring it to push.',
+            'If you picked Container, DAST or VirusTotal, set the repository variables the workflow references (<code>MARIA_TRIVY_IMAGE_REF</code>, <code>MARIA_ZAP_TARGET_URL</code> and friends). Without them those jobs have no target.',
+            'Commit, push and run it from the Actions tab. Results land in <code>maria-results/</code> as SARIF, JSON and CycloneDX.'
+        ],
+        optinTitle: 'Want to know when I update this?',
+        optinBody: 'Scanners bump versions, break flags and change output formats. When I update the templates, I let you know. No sales sequence.',
+        optinEmailLabel: 'Email',
+        optinPlaceholder: 'you@company.com',
+        optinConsent: 'You can send me template updates and AppSec content.',
+        optinSubmit: 'Tell me when it updates',
+        optinSending: 'Sending...',
+        optinOk: 'Done. I will ping you when a new version ships.',
+        optinErrEmail: 'Check the email address.',
+        optinErrConsent: 'Tick the consent box so I can write to you.',
+        optinErrGeneric: 'Could not register that right now. Your download was not affected.',
+        ladderEyebrow: 'NEXT STEP',
+        ladderItems: [
+            { text: 'Want this running continuously in CI, with calculated risk and PR deltas', link: 'MARIA', href: '/pricing/' },
+            { text: 'Want someone alongside you for 3 days fixing this in your environment', link: 'AppSec Nightmare', href: 'COLE_AQUI_URL_APPSEC_NIGHTMARE' },
+            { text: 'Want to train the team so it stops depending on you', link: 'Software de Ferro', href: 'COLE_AQUI_URL_SOFTWARE_DE_FERRO' }
+        ],
+        ladderBook: 'Talk to me'
     }
 };
 
@@ -220,6 +272,9 @@ function applyOpenScanLanguage() {
             button.textContent = button.id === 'downloadPackBottom' ? lang.bottomDownload : lang.download;
         }
     });
+    if (typeof renderAfterPanel === 'function' && document.getElementById('openscanAfter')) {
+        renderAfterPanel();
+    }
     render();
 }
 
@@ -585,6 +640,8 @@ function downloadPack(button) {
             selected_tools: Array.from(selected).join(',')
         });
     }
+
+    revealAfterPanel();
 }
 
 document.getElementById('selectRecommended')?.addEventListener('click', () => {
@@ -606,4 +663,141 @@ document.addEventListener('click', event => {
     }
 });
 
+
+
+/* =========================================================================
+   Painel pos-download: instrucoes, opt-in de e-mail e ponte para a escada.
+   O download NAO depende de nada aqui. Os templates ja sao publicos em
+   js/openscan.js e no repositorio, entao gatear o arquivo seria teatro.
+   O e-mail e opt-in honesto, pedido depois da pessoa ja ter o que veio buscar.
+   ========================================================================= */
+
+const afterPanel = document.getElementById('openscanAfter');
+const optinForm = document.getElementById('optinForm');
+const optinNote = document.getElementById('optinNote');
+const optinSubmit = document.getElementById('optinSubmit');
+
+let afterPanelShown = false;
+
+function renderAfterPanel() {
+    if (!afterPanel) return;
+    const lang = t();
+
+    setText('#afterEyebrow', lang.afterEyebrow);
+    setText('#afterTitle', lang.afterTitle);
+    setHtml('#afterSteps', (lang.afterSteps || []).map(step => `<li>${step}</li>`).join(''));
+
+    setText('#optinTitle', lang.optinTitle);
+    setText('#optinBody', lang.optinBody);
+    setText('#optinEmailLabel', lang.optinEmailLabel);
+    setText('#optinConsentText', lang.optinConsent);
+    const email = document.getElementById('optinEmail');
+    if (email) email.setAttribute('placeholder', lang.optinPlaceholder);
+    if (optinSubmit && !optinSubmit.disabled) optinSubmit.textContent = lang.optinSubmit;
+
+    setText('#ladderEyebrow', lang.ladderEyebrow);
+    setHtml('#ladderList', (lang.ladderItems || []).map(item =>
+        `<li>${item.text} <a href="${item.href}" data-track-event="ladder_click" data-track-location="openscan_after" data-ladder="${item.link}">${item.link}</a></li>`
+    ).join(''));
+    setText('#ladderBook', lang.ladderBook);
+}
+
+function revealAfterPanel() {
+    if (!afterPanel) return;
+    renderAfterPanel();
+    afterPanel.hidden = false;
+
+    // Rola uma vez so, e de forma suave. Nao rouba a rolagem em cada download.
+    if (!afterPanelShown) {
+        afterPanelShown = true;
+        window.setTimeout(() => {
+            afterPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 400);
+    }
+}
+
+function setFormState(state, message) {
+    if (!optinForm) return;
+    optinForm.dataset.state = state;
+    if (optinNote) optinNote.textContent = message || '';
+    if (optinSubmit) {
+        optinSubmit.disabled = state === 'sending' || state === 'success';
+        if (state === 'sending') optinSubmit.textContent = t().optinSending;
+        else if (state === 'success') optinSubmit.textContent = t().optinOk;
+        else optinSubmit.textContent = t().optinSubmit;
+    }
+}
+
+/**
+ * Mailchimp nao devolve CORS utilizavel. Tanto o fetch no-cors quanto o POST
+ * via iframe sao opacos: da para saber que a requisicao saiu, nao da para saber
+ * o que o Mailchimp respondeu. "Sucesso" aqui significa ENVIADO, nao CONFIRMADO.
+ * Isso esta dito assim de proposito, para o codigo nao fingir uma garantia.
+ */
+function postToMailchimp(action, formData) {
+    return fetch(action, { method: 'POST', mode: 'no-cors', body: formData })
+        .catch(() => {
+            // Fallback: POST nativo num iframe escondido, sem navegar a pagina.
+            return new Promise((resolve, reject) => {
+                try {
+                    let frame = document.getElementById('mcSink');
+                    if (!frame) {
+                        frame = document.createElement('iframe');
+                        frame.id = 'mcSink';
+                        frame.name = 'mcSink';
+                        frame.style.display = 'none';
+                        document.body.appendChild(frame);
+                    }
+                    optinForm.setAttribute('action', action);
+                    optinForm.setAttribute('target', 'mcSink');
+                    HTMLFormElement.prototype.submit.call(optinForm);
+                    resolve();
+                } catch (err) {
+                    reject(err);
+                }
+            });
+        });
+}
+
+optinForm?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const lang = t();
+    const email = document.getElementById('optinEmail');
+    const consent = document.getElementById('optinConsent');
+
+    if (!email || !email.value || !email.checkValidity()) {
+        setFormState('error', lang.optinErrEmail);
+        email?.focus();
+        return;
+    }
+    if (consent && !consent.checked) {
+        setFormState('error', lang.optinErrConsent);
+        consent.focus();
+        return;
+    }
+
+    setFormState('sending');
+
+    const action = optinForm.dataset.mcAction || '';
+    if (!action || action.startsWith('COLE_AQUI')) {
+        // Mailchimp ainda nao configurado. Nao finge que deu certo.
+        setFormState('error', lang.optinErrGeneric);
+        return;
+    }
+
+    try {
+        await postToMailchimp(action, new FormData(optinForm));
+        setFormState('success', lang.optinOk);
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', 'lead_capture', {
+                event_category: 'conversion',
+                source: 'openscan'
+            });
+        }
+    } catch (err) {
+        setFormState('error', lang.optinErrGeneric);
+    }
+});
+
+// Inicializa por ultimo: o painel pos-download precisa dos consts acima.
 applyOpenScanLanguage();
