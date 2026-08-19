@@ -30,6 +30,8 @@
         gtag('js', new Date());
         gtag('config', 'G-09VC70Q0TF');
     </script>
+  <!-- GA4 propriedade compartilhada cassiodeveloper.com.br (config adicional, reaproveita loader existente) -->
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('config','G-NL5R9VPGV9');</script>
 </head>
 <body class="openscan-page" data-page="openscan">
     <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -112,6 +114,50 @@
                     <a class="button button-secondary" href="https://demo.mariaappsec.com" target="_blank" rel="noreferrer" data-track-event="demo_click" data-track-location="openscan_bottom">Quero o MARIA automatizando isso</a>
                 </div>
                 <div class="openscan-file-list" id="fileList" aria-label="Generated files"></div>
+            </div>
+        </section>
+
+        <!-- Revelado por js/openscan.js apos o download comecar. Nunca no load, nunca pop-up. -->
+        <section class="section openscan-after" id="openscanAfter" hidden>
+            <div class="container openscan-after-grid">
+                <div class="openscan-after-main">
+                    <p class="eyebrow" id="afterEyebrow">PACK BAIXADO</p>
+                    <h2 id="afterTitle">Agora instale. Leva menos de um minuto.</h2>
+                    <ol class="openscan-steps" id="afterSteps"></ol>
+                </div>
+
+                <aside class="openscan-optin" aria-labelledby="optinTitle">
+                    <h3 id="optinTitle">Quer saber quando eu atualizar isso?</h3>
+                    <p id="optinBody">Os scanners mudam de versão, quebram flag e mudam formato de saída. Quando eu atualizar os templates, eu te aviso. Sem sequência de vendas.</p>
+
+                    <!-- MAILCHIMP: substituir action e honeypot -->
+                    <form class="openscan-form" id="optinForm"
+                          data-mc-action="COLE_AQUI_A_ACTION_URL"
+                          method="post" novalidate>
+                        <label class="sr-only" for="optinEmail" id="optinEmailLabel">E-mail</label>
+                        <input type="email" id="optinEmail" name="EMAIL" required autocomplete="email" placeholder="voce@empresa.com">
+
+                        <label class="openscan-consent">
+                            <input type="checkbox" id="optinConsent" name="CONSENT" required value="1">
+                            <span id="optinConsentText">Pode me mandar atualizações dos templates e conteúdo de AppSec.</span>
+                        </label>
+
+                        <div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_XXXX_YYYY" tabindex="-1" value=""></div>
+
+                        <button type="submit" class="button button-primary button-block" id="optinSubmit">Me avisa quando atualizar</button>
+                        <p class="openscan-form-note" id="optinNote" role="status" aria-live="polite"></p>
+                    </form>
+                </aside>
+            </div>
+
+            <div class="container">
+                <div class="openscan-ladder" id="afterLadder">
+                    <p class="eyebrow" id="ladderEyebrow">PRÓXIMO DEGRAU</p>
+                    <ul class="openscan-ladder-list" id="ladderList"></ul>
+                    <p class="openscan-ladder-cta">
+                        <a class="button button-secondary" href="https://calendar.app.google/BJYeQfjmCdEQNSfe6" target="_blank" rel="noreferrer" data-track-event="book_click" data-track-location="openscan_after" id="ladderBook">Falar comigo</a>
+                    </p>
+                </div>
             </div>
         </section>
     </main>
