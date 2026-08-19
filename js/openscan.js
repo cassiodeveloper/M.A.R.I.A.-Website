@@ -145,8 +145,8 @@ const copy = {
         ladderEyebrow: 'PRÓXIMO DEGRAU',
         ladderItems: [
             { text: 'Quer isso rodando contínuo no CI, com risco calculado e delta em PR', link: 'MARIA', href: '/pricing/' },
-            { text: 'Quer alguém junto por 3 dias arrumando isso no seu ambiente', link: 'AppSec Nightmare', href: 'COLE_AQUI_URL_APPSEC_NIGHTMARE' },
-            { text: 'Quer capacitar o time para não depender de você', link: 'Software de Ferro', href: 'COLE_AQUI_URL_SOFTWARE_DE_FERRO' }
+            { text: 'Quer alguém junto por 3 dias arrumando isso no seu ambiente', link: 'AppSec Nightmare', href: 'https://cassiodeveloper.com.br/appsec-nightmare/' },
+            { text: 'Quer capacitar o time para não depender de você', link: 'Software de Ferro', href: 'https://cassiodeveloper.com.br/IronSoftware/' }
         ],
         ladderBook: 'Falar comigo'
     },
@@ -211,8 +211,8 @@ const copy = {
         ladderEyebrow: 'NEXT STEP',
         ladderItems: [
             { text: 'Want this running continuously in CI, with calculated risk and PR deltas', link: 'MARIA', href: '/pricing/' },
-            { text: 'Want someone alongside you for 3 days fixing this in your environment', link: 'AppSec Nightmare', href: 'COLE_AQUI_URL_APPSEC_NIGHTMARE' },
-            { text: 'Want to train the team so it stops depending on you', link: 'Software de Ferro', href: 'COLE_AQUI_URL_SOFTWARE_DE_FERRO' }
+            { text: 'Want someone alongside you for 3 days fixing this in your environment', link: 'AppSec Nightmare', href: 'https://cassiodeveloper.com.br/appsec-nightmare/' },
+            { text: 'Want to train the team so it stops depending on you', link: 'Software de Ferro', href: 'https://cassiodeveloper.com.br/IronSoftware/' }
         ],
         ladderBook: 'Talk to me'
     }
