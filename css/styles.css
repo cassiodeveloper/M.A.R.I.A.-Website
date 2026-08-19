@@ -2431,3 +2431,167 @@ h3 {
         font-size: 0.7rem;
     }
 }
+
+/* --- Open Scan: painel pos-download (instrucoes + opt-in + escada) ------ */
+.openscan-after {
+    border-top: 1px solid var(--line);
+    background:
+        radial-gradient(circle at 15% 10%, rgba(255, 90, 54, 0.10), transparent 40%),
+        rgba(255, 255, 255, 0.015);
+}
+
+.openscan-after[hidden] {
+    display: none;
+}
+
+.openscan-after-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+}
+
+.openscan-after-main h2 {
+    max-width: 22ch;
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+}
+
+.openscan-steps {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+    padding-left: 1.25rem;
+    color: var(--muted);
+}
+
+.openscan-steps li {
+    padding-left: 0.35rem;
+    font-size: 1rem;
+    line-height: 1.55;
+}
+
+.openscan-steps code {
+    padding: 0.1em 0.4em;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.07);
+    font-family: ui-monospace, SFMono-Regular, "Cascadia Mono", Consolas, monospace;
+    font-size: 0.88em;
+    color: var(--text);
+}
+
+/* opt-in */
+.openscan-optin {
+    padding: 1.6rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
+    box-shadow: var(--shadow);
+}
+
+.openscan-optin h3 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    margin-bottom: 0.75rem;
+}
+
+.openscan-optin p {
+    margin: 0 0 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+.openscan-form input[type="email"] {
+    width: 100%;
+    min-height: 52px;
+    padding: 0 1rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text);
+}
+
+.openscan-form input[type="email"]::placeholder {
+    color: #928a7c;
+}
+
+.openscan-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin: 0.9rem 0 0;
+    font-size: 0.86rem;
+    line-height: 1.45;
+    color: var(--muted);
+    cursor: pointer;
+}
+
+.openscan-consent input {
+    flex: none;
+    margin-top: 0.2rem;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent);
+}
+
+.openscan-form-note {
+    margin: 0.85rem 0 0;
+    min-height: 1.2em;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--muted);
+}
+
+.openscan-form[data-state="error"] .openscan-form-note {
+    color: #ff7043;
+}
+
+.openscan-form[data-state="success"] .openscan-form-note {
+    color: var(--accent-strong);
+}
+
+.openscan-form[data-state="error"] input[type="email"] {
+    border-color: rgba(255, 112, 67, 0.6);
+}
+
+.openscan-form[data-state="sending"] {
+    opacity: 0.7;
+}
+
+/* escada */
+.openscan-ladder {
+    margin-top: 2.5rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--line);
+}
+
+.openscan-ladder-list {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    list-style: none;
+}
+
+.openscan-ladder-list li {
+    font-size: 0.98rem;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+.openscan-ladder-list a {
+    font-weight: 700;
+    color: var(--accent-strong);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.openscan-ladder-cta {
+    margin: 0;
+}
+
+@media (min-width: 900px) {
+    .openscan-after-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 3rem;
+    }
+}
