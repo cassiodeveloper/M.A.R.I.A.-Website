@@ -140,6 +140,8 @@ const copy = {
         optinSending: 'Enviando...',
         optinOk: 'Pronto. Te aviso quando sair versão nova.',
         optinAlready: 'Você já está na lista. Nada a fazer.',
+        optinBlocked: 'Uma extensão do navegador bloqueou a requisição para o Mailchimp. Dá para se inscrever direto:',
+        optinBlockedLink: 'abrir o formulário do Mailchimp',
         optinErrEmail: 'Confere o e-mail.',
         optinErrConsent: 'Marque o consentimento para eu poder te escrever.',
         optinErrGeneric: 'Não consegui registrar agora. Seu download não foi afetado.',
@@ -207,6 +209,8 @@ const copy = {
         optinSending: 'Sending...',
         optinOk: 'Done. I will ping you when a new version ships.',
         optinAlready: 'You are already on the list. Nothing to do.',
+        optinBlocked: 'A browser extension blocked the request to Mailchimp. You can subscribe directly:',
+        optinBlockedLink: 'open the Mailchimp form',
         optinErrEmail: 'Check the email address.',
         optinErrConsent: 'Tick the consent box so I can write to you.',
         optinErrGeneric: 'Could not register that right now. Your download was not affected.',
@@ -783,6 +787,31 @@ function subscribeViaJsonp(action, params) {
     });
 }
 
+/**
+ * ERR_BLOCKED_BY_CLIENT: ad blockers bloqueiam list-manage.com por padrao
+ * (EasyPrivacy). O publico deste site e dev e AppSec, entao isso NAO e caso
+ * de borda aqui. Em vez de dar erro generico e perder a pessoa, oferece o
+ * formulario hospedado. Navegacao costuma passar onde subrequest e bloqueado.
+ * Nao e garantia: se o bloqueio for por DNS, nem o link resolve.
+ */
+function showBlockedFallback(action) {
+    const box = document.getElementById('optinFallback');
+    if (!box) return;
+    const lang = t();
+    const hosted = action.replace('/subscribe/post', '/subscribe');
+
+    box.textContent = lang.optinBlocked + ' ';
+    const a = document.createElement('a');
+    a.href = hosted;                 // URL vem do codigo, nunca de input
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.textContent = lang.optinBlockedLink;
+    a.setAttribute('data-track-event', 'lead_capture_fallback');
+    a.setAttribute('data-track-location', 'openscan_after');
+    box.appendChild(a);
+    box.hidden = false;
+}
+
 optinForm?.addEventListener('submit', async (event) => {
     event.preventDefault();
     const lang = t();
@@ -801,6 +830,8 @@ optinForm?.addEventListener('submit', async (event) => {
     }
 
     setFormState('sending');
+    const fallbackBox = document.getElementById('optinFallback');
+    if (fallbackBox) { fallbackBox.hidden = true; fallbackBox.textContent = ''; }
 
     const action = optinForm.dataset.mcAction || '';
     if (!action || action.startsWith('COLE_AQUI')) {
@@ -840,7 +871,9 @@ optinForm?.addEventListener('submit', async (event) => {
         // Mailchimp respondeu erro de verdade. Mostra o motivo dele.
         setFormState('error', msg || lang.optinErrGeneric);
     } catch (err) {
+        // jsonp_failed = bloqueio de rede (extensao, DNS, firewall corporativo).
         setFormState('error', lang.optinErrGeneric);
+        showBlockedFallback(action);
     }
 });
 
