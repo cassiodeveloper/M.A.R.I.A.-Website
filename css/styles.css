@@ -2596,21 +2596,3 @@ h3 {
     }
 }
 
-/* --- fallback quando o ad blocker derruba a requisicao ----------------- */
-.openscan-form-fallback {
-    margin: 0.6rem 0 0;
-    font-size: 0.85rem;
-    line-height: 1.45;
-    color: var(--muted);
-}
-
-.openscan-form-fallback[hidden] {
-    display: none;
-}
-
-.openscan-form-fallback a {
-    font-weight: 700;
-    color: var(--accent-strong);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-}
