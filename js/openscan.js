@@ -731,12 +731,6 @@ function setFormState(state, message) {
 }
 
 /**
- * Mailchimp nao devolve CORS utilizavel. Tanto o fetch no-cors quanto o POST
- * via iframe sao opacos: da para saber que a requisicao saiu, nao da para saber
- * o que o Mailchimp respondeu. "Sucesso" aqui significa ENVIADO, nao CONFIRMADO.
- * Isso esta dito assim de proposito, para o codigo nao fingir uma garantia.
- */
-/**
  * Mailchimp via JSONP no endpoint /subscribe/post-json.
  *
  * Este e o caminho que o proprio Mailchimp documenta para AJAX, e e o unico
