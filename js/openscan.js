@@ -139,6 +139,7 @@ const copy = {
         optinSubmit: 'Me avisa quando atualizar',
         optinSending: 'Enviando...',
         optinOk: 'Pronto. Te aviso quando sair versão nova.',
+        optinAlready: 'Você já está na lista. Nada a fazer.',
         optinErrEmail: 'Confere o e-mail.',
         optinErrConsent: 'Marque o consentimento para eu poder te escrever.',
         optinErrGeneric: 'Não consegui registrar agora. Seu download não foi afetado.',
@@ -205,6 +206,7 @@ const copy = {
         optinSubmit: 'Tell me when it updates',
         optinSending: 'Sending...',
         optinOk: 'Done. I will ping you when a new version ships.',
+        optinAlready: 'You are already on the list. Nothing to do.',
         optinErrEmail: 'Check the email address.',
         optinErrConsent: 'Tick the consent box so I can write to you.',
         optinErrGeneric: 'Could not register that right now. Your download was not affected.',
@@ -734,29 +736,57 @@ function setFormState(state, message) {
  * o que o Mailchimp respondeu. "Sucesso" aqui significa ENVIADO, nao CONFIRMADO.
  * Isso esta dito assim de proposito, para o codigo nao fingir uma garantia.
  */
-function postToMailchimp(action, formData) {
-    return fetch(action, { method: 'POST', mode: 'no-cors', body: formData })
-        .catch(() => {
-            // Fallback: POST nativo num iframe escondido, sem navegar a pagina.
-            return new Promise((resolve, reject) => {
-                try {
-                    let frame = document.getElementById('mcSink');
-                    if (!frame) {
-                        frame = document.createElement('iframe');
-                        frame.id = 'mcSink';
-                        frame.name = 'mcSink';
-                        frame.style.display = 'none';
-                        document.body.appendChild(frame);
-                    }
-                    optinForm.setAttribute('action', action);
-                    optinForm.setAttribute('target', 'mcSink');
-                    HTMLFormElement.prototype.submit.call(optinForm);
-                    resolve();
-                } catch (err) {
-                    reject(err);
-                }
-            });
-        });
+/**
+ * Mailchimp via JSONP no endpoint /subscribe/post-json.
+ *
+ * Este e o caminho que o proprio Mailchimp documenta para AJAX, e e o unico
+ * que devolve resposta LEGIVEL: {"result":"success"|"error","msg":"..."}.
+ * O POST opaco anterior (fetch no-cors) nao dava para distinguir gravado de
+ * descartado, e mandava multipart/form-data onde o endpoint classico espera
+ * urlencoded. Por isso a tela dizia sucesso e a lista ficava vazia.
+ *
+ * JSONP injeta um <script> apontando para o proprio dominio do Mailchimp com
+ * quem ja estamos falando. Nao entra biblioteca, framework nem CDN novo.
+ */
+function subscribeViaJsonp(action, params) {
+    return new Promise((resolve, reject) => {
+        const callback = 'mcCallback' + Math.floor(Math.random() * 1e9);
+        const url = action.replace('/subscribe/post', '/subscribe/post-json')
+            + (action.indexOf('?') === -1 ? '?' : '&')
+            + params.toString()
+            + '&c=' + callback;
+
+        const script = document.createElement('script');
+        let settled = false;
+
+        const cleanup = () => {
+            try { delete window[callback]; } catch (e) { window[callback] = undefined; }
+            script.remove();
+        };
+
+        window[callback] = (data) => {
+            settled = true;
+            cleanup();
+            resolve(data);
+        };
+
+        script.onerror = () => {
+            if (settled) return;
+            settled = true;
+            cleanup();
+            reject(new Error('jsonp_failed'));
+        };
+
+        window.setTimeout(() => {
+            if (settled) return;
+            settled = true;
+            cleanup();
+            reject(new Error('jsonp_timeout'));
+        }, 12000);
+
+        script.src = url;
+        document.head.appendChild(script);
+    });
 }
 
 optinForm?.addEventListener('submit', async (event) => {
@@ -785,15 +815,36 @@ optinForm?.addEventListener('submit', async (event) => {
         return;
     }
 
+    // urlencoded, que e o que o endpoint classico do Mailchimp espera.
+    const honeypot = optinForm.querySelector('input[name^="b_"]');
+    const params = new URLSearchParams();
+    params.set('EMAIL', email.value.trim());
+    params.set('CONSENT', consent && consent.checked ? '1' : '');
+    if (honeypot) params.set(honeypot.name, '');
+
     try {
-        await postToMailchimp(action, new FormData(optinForm));
-        setFormState('success', lang.optinOk);
-        if (typeof window.gtag === 'function') {
-            window.gtag('event', 'lead_capture', {
-                event_category: 'conversion',
-                source: 'openscan'
-            });
+        const data = await subscribeViaJsonp(action, params);
+        const msg = String((data && data.msg) || '').replace(/<[^>]*>/g, '').trim();
+
+        if (data && data.result === 'success') {
+            setFormState('success', lang.optinOk);
+            if (typeof window.gtag === 'function') {
+                window.gtag('event', 'lead_capture', {
+                    event_category: 'conversion',
+                    source: 'openscan'
+                });
+            }
+            return;
         }
+
+        // Ja inscrito nao e falha do ponto de vista da pessoa.
+        if (/already subscribed|ja esta inscrito/i.test(msg)) {
+            setFormState('success', lang.optinAlready);
+            return;
+        }
+
+        // Mailchimp respondeu erro de verdade. Mostra o motivo dele.
+        setFormState('error', msg || lang.optinErrGeneric);
     } catch (err) {
         setFormState('error', lang.optinErrGeneric);
     }
